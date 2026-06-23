@@ -1,0 +1,17 @@
+# Netlify deployment config
+[build]
+  command   = "npm run build"
+  publish   = "dist"
+
+# Redirect all routes to index.html for React Router
+[[redirects]]
+  from   = "/*"
+  to     = "/index.html"
+  status = 200
+
+# Proxy API calls to your deployed backend
+[[redirects]]
+  from   = "/api/*"
+  to     = "https://your-backend-url.onrender.com/:splat"
+  status = 200
+  force  = true

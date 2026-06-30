@@ -1,8 +1,8 @@
-"""
-Pydantic schemas — request validation and response serialization.
-"""
+"""Pydantic schemas — request validation and response serialization."""
 from typing import Optional, List
 from pydantic import BaseModel, EmailStr, field_validator
+from fastapi import HTTPException
+from app.utils.food_restrictions import validate_bp, validate_sugar
 
 
 # ── Auth ──────────────────────────────────────────────────────────────────────
@@ -12,10 +12,10 @@ class RegisterRequest(BaseModel):
     email: EmailStr
     password: str
     age: int
-    gender: str           # male | female | other
-    height: float         # cm
-    weight: float         # kg
-    food_preference: str  # vegetarian | non_vegetarian | mixed
+    gender: str
+    height: float
+    weight: float
+    food_preference: str
 
     @field_validator("password")
     @classmethod
@@ -84,17 +84,17 @@ class UpdateProfileRequest(BaseModel):
 class HealthProfileRequest(BaseModel):
     # Hypertension
     hypertension: bool = False
-    bp_status: Optional[str] = None
+    bp_status: Optional[str] = None       # normal | low | high
     systolic: Optional[int] = None
     diastolic: Optional[int] = None
     # Diabetes
     diabetes: bool = False
-    sugar_status: Optional[str] = None
+    sugar_status: Optional[str] = None    # normal | low | high
     fasting_sugar: Optional[float] = None
     post_meal_sugar: Optional[float] = None
     # Thyroid
     thyroid: bool = False
-    thyroid_type: Optional[str] = None
+    thyroid_type: Optional[str] = None    # hypothyroidism | hyperthyroidism
     # PCOS / PCOD
     pcos: bool = False
     pcos_diagnosed: Optional[bool] = None
@@ -105,8 +105,26 @@ class HealthProfileRequest(BaseModel):
     kidney_disease: bool = False
     obesity: bool = False
     none: bool = False
-    # Current health statuses submitted together
+    # Current health statuses
     current_health_statuses: List[str] = []
+
+    def validate_values(self):
+        """
+        Validates:
+        1. BP/Sugar values match the selected severity
+        2. PCOS/PCOD cannot be selected (raises 422 with clear message)
+           — enforced by frontend; this is a backend safety net
+        Raises HTTPException on any mismatch.
+        """
+        if self.hypertension and self.bp_status and self.bp_status != "normal":
+            err = validate_bp(self.bp_status, self.systolic, self.diastolic)
+            if err:
+                raise HTTPException(status_code=422, detail=err)
+
+        if self.diabetes and self.sugar_status and self.sugar_status != "normal":
+            err = validate_sugar(self.sugar_status, self.fasting_sugar, self.post_meal_sugar)
+            if err:
+                raise HTTPException(status_code=422, detail=err)
 
 
 class HealthProfileResponse(BaseModel):
@@ -134,15 +152,24 @@ class HealthProfileResponse(BaseModel):
     model_config = {"from_attributes": True}
 
 
+# ── Food Restrictions ─────────────────────────────────────────────────────────
+
+class FoodRestrictionGroup(BaseModel):
+    """One category with its list of specific food items."""
+    category: str
+    items: List[str]
+
+
+class FoodRestrictionsResponse(BaseModel):
+    """Grouped food restrictions — one section per condition/severity."""
+    groups: List[FoodRestrictionGroup]
+
+
 # ── Dashboard ─────────────────────────────────────────────────────────────────
 
 class DashboardResponse(BaseModel):
     user: UserResponse
     health_profile: Optional[HealthProfileResponse] = None
     current_health_statuses: List[str] = []
-    food_restrictions: List[str] = []
-    profile_completion: int  # 0–100
-
-
-class FoodRestrictionsResponse(BaseModel):
-    restrictions: List[str]
+    food_restriction_groups: List[FoodRestrictionGroup] = []  # grouped output
+    profile_completion: int

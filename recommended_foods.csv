@@ -1,0 +1,160 @@
+Food,FoodCategory,Condition,Benefit,Key_Nutrient,Serving_Size,Frequency,Evidence_Level,Recommendation,Source
+Oats,Whole Grain,Diabetes,Lowers blood glucose and improves insulin sensitivity,Beta-glucan fiber,40,g,Daily,Strong,Highly Recommended,ADA
+Oats,Whole Grain,High Cholesterol,Reduces LDL cholesterol significantly,Soluble fiber beta-glucan,40,g,Daily,Strong,Highly Recommended,AHA
+Oats,Whole Grain,Heart Disease,Reduces cardiovascular risk,Soluble fiber antioxidants,40,g,Daily,Strong,Highly Recommended,AHA
+Oats,Whole Grain,Obesity,Promotes satiety and reduces caloric intake,Fiber protein,40,g,Daily,Moderate,Recommended,WHO
+Oats,Whole Grain,Hypertension,Modest blood pressure lowering effect,Magnesium potassium,40,g,Daily,Moderate,Recommended,AHA
+Brown Rice,Whole Grain,Diabetes,Lower glycemic index than white rice,Fiber magnesium,75,g,Daily,Moderate,Recommended,ADA
+Brown Rice,Whole Grain,Obesity,Higher satiety than refined grains,Fiber B vitamins,75,g,Daily,Moderate,Recommended,WHO
+Brown Rice,Whole Grain,Heart Disease,Reduces cardiovascular risk,Fiber antioxidants,75,g,Daily,Moderate,Recommended,AHA
+Quinoa,Whole Grain,Diabetes,Complete protein with low glycemic index,Protein fiber magnesium,75,g,3-4 times/week,Moderate,Recommended,ADA
+Quinoa,Whole Grain,PCOS,Low GI helps insulin management,Protein fiber,75,g,3-4 times/week,Moderate,Recommended,NHS
+Quinoa,Whole Grain,Obesity,High protein satiety-promoting grain,Protein fiber,75,g,3-4 times/week,Moderate,Recommended,WHO
+Spinach,Leafy Green,Hypertension,Rich in nitrates and potassium lowering BP,Nitrates potassium,100,g,Daily,Strong,Highly Recommended,AHA
+Spinach,Leafy Green,Diabetes,Low glycemic anti-inflammatory,Magnesium antioxidants,100,g,Daily,Strong,Highly Recommended,ADA
+Spinach,Leafy Green,Heart Disease,Antioxidants and folate protect the heart,Folate vitamin K,100,g,Daily,Strong,Highly Recommended,AHA
+Spinach,Leafy Green,PCOS,Anti-inflammatory magnesium-rich,Magnesium iron,100,g,Daily,Strong,Highly Recommended,NHS
+Spinach,Leafy Green,High Cholesterol,Fiber and sterols help lower cholesterol,Plant sterols fiber,100,g,Daily,Moderate,Recommended,AHA
+Kale,Leafy Green,Heart Disease,Rich in antioxidants and vitamin K,Vitamin K antioxidants,80,g,4-5 times/week,Strong,Highly Recommended,AHA
+Kale,Leafy Green,High Cholesterol,Bile acid sequestrant lowers LDL,Fiber plant sterols,80,g,4-5 times/week,Strong,Highly Recommended,AHA
+Kale,Leafy Green,Diabetes,Low carb anti-inflammatory,Vitamin C magnesium,80,g,4-5 times/week,Moderate,Recommended,ADA
+Kale,Leafy Green,Obesity,Very low calorie high nutrient density,Fiber vitamins,80,g,4-5 times/week,Moderate,Recommended,WHO
+Broccoli,Cruciferous Vegetable,Heart Disease,Sulforaphane reduces cardiovascular inflammation,Sulforaphane fiber,100,g,4-5 times/week,Strong,Highly Recommended,AHA
+Broccoli,Cruciferous Vegetable,Diabetes,Low GI and insulin-sensitizing,Chromium fiber,100,g,4-5 times/week,Moderate,Recommended,ADA
+Broccoli,Cruciferous Vegetable,Fatty Liver,Protects liver from oxidative stress,Sulforaphane antioxidants,100,g,4-5 times/week,Moderate,Recommended,NHS
+Broccoli,Cruciferous Vegetable,High Cholesterol,Fiber and sterols reduce LDL,Fiber plant sterols,100,g,4-5 times/week,Moderate,Recommended,AHA
+Blueberries,Berries,Heart Disease,Anthocyanins reduce cardiovascular risk,Anthocyanins antioxidants,80,g,Daily,Strong,Highly Recommended,AHA
+Blueberries,Berries,Diabetes,Low GI improves insulin sensitivity,Anthocyanins fiber,80,g,Daily,Strong,Highly Recommended,ADA
+Blueberries,Berries,Hypertension,Anthocyanins lower blood pressure,Anthocyanins potassium,80,g,Daily,Strong,Highly Recommended,AHA
+Blueberries,Berries,Obesity,Low calorie high antioxidant snack,Fiber antioxidants,80,g,Daily,Moderate,Recommended,WHO
+Blueberries,Berries,Fatty Liver,Antioxidants protect liver tissue,Anthocyanins resveratrol,80,g,Daily,Moderate,Recommended,NHS
+Strawberries,Berries,Diabetes,Low GI with anti-inflammatory properties,Vitamin C anthocyanins,100,g,Daily,Moderate,Recommended,ADA
+Strawberries,Berries,Heart Disease,Reduces LDL oxidation,Antioxidants folate,100,g,Daily,Moderate,Recommended,AHA
+Strawberries,Berries,High Cholesterol,Polyphenols improve lipid profile,Polyphenols fiber,100,g,Daily,Moderate,Recommended,AHA
+Salmon,Fatty Fish,Heart Disease,Omega-3 reduces cardiovascular mortality,EPA DHA omega-3,100,g,2-3 times/week,Strong,Highly Recommended,AHA
+Salmon,Fatty Fish,Hypertension,Omega-3 lowers blood pressure,Omega-3 potassium,100,g,2-3 times/week,Strong,Highly Recommended,AHA
+Salmon,Fatty Fish,Diabetes,Omega-3 improves insulin sensitivity,Omega-3 protein,100,g,2-3 times/week,Strong,Highly Recommended,ADA
+Salmon,Fatty Fish,High Cholesterol,Omega-3 raises HDL lowers triglycerides,Omega-3 EPA DHA,100,g,2-3 times/week,Strong,Highly Recommended,AHA
+Salmon,Fatty Fish,Hypothyroidism,Rich in iodine and selenium for thyroid,Iodine selenium,100,g,2-3 times/week,Strong,Highly Recommended,NHS
+Mackerel,Fatty Fish,Heart Disease,High omega-3 reduces cardiac risk,EPA DHA,100,g,2-3 times/week,Strong,Highly Recommended,AHA
+Mackerel,Fatty Fish,High Cholesterol,Omega-3 improves lipid profile,Omega-3 protein,100,g,2-3 times/week,Strong,Highly Recommended,AHA
+Sardines,Fatty Fish,Kidney Disease,Low potassium omega-3 source,Omega-3 calcium,85,g,2 times/week,Moderate,Recommended,NKF
+Sardines,Fatty Fish,Hypertension,Omega-3 and calcium lower BP,Omega-3 calcium,85,g,2 times/week,Moderate,Recommended,AHA
+Lentils,Legumes,Diabetes,Very low GI slows glucose absorption,Protein fiber,100,g,3-4 times/week,Strong,Highly Recommended,ADA
+Lentils,Legumes,Heart Disease,Soluble fiber reduces cholesterol,Soluble fiber plant protein,100,g,3-4 times/week,Strong,Highly Recommended,AHA
+Lentils,Legumes,Obesity,High protein and fiber promote satiety,Protein fiber,100,g,3-4 times/week,Strong,Highly Recommended,WHO
+Lentils,Legumes,PCOS,Low GI protein-rich helps insulin sensitivity,Protein fiber iron,100,g,3-4 times/week,Moderate,Recommended,NHS
+Lentils,Legumes,High Cholesterol,Reduces LDL through soluble fiber,Soluble fiber,100,g,3-4 times/week,Strong,Highly Recommended,AHA
+Chickpeas,Legumes,Diabetes,Low GI complex carbohydrate,Protein fiber,100,g,3-4 times/week,Strong,Highly Recommended,ADA
+Chickpeas,Legumes,Heart Disease,Fiber and plant sterols reduce cholesterol,Fiber plant sterols,100,g,3-4 times/week,Moderate,Recommended,AHA
+Chickpeas,Legumes,Obesity,Very high satiety reduces overall intake,Protein fiber,100,g,3-4 times/week,Moderate,Recommended,WHO
+Chickpeas,Legumes,PCOS,Protein and fiber stabilize blood sugar,Protein fiber,100,g,3-4 times/week,Moderate,Recommended,NHS
+Almonds,Tree Nuts,Heart Disease,Monounsaturated fat reduces LDL,MUFA vitamin E,28,g,Daily,Strong,Highly Recommended,AHA
+Almonds,Tree Nuts,Diabetes,Reduces postprandial glucose spike,Fiber healthy fat,28,g,Daily,Strong,Highly Recommended,ADA
+Almonds,Tree Nuts,High Cholesterol,Reduces LDL and total cholesterol,MUFA plant sterols,28,g,Daily,Strong,Highly Recommended,AHA
+Almonds,Tree Nuts,Obesity,Promotes satiety despite caloric density,Protein fiber,28,g,Daily,Moderate,Recommended,WHO
+Almonds,Tree Nuts,PCOS,Magnesium improves insulin signaling,Magnesium MUFA,28,g,Daily,Moderate,Recommended,NHS
+Walnuts,Tree Nuts,Heart Disease,Highest plant omega-3 reduces cardiac risk,ALA omega-3,28,g,Daily,Strong,Highly Recommended,AHA
+Walnuts,Tree Nuts,Diabetes,Alpha-linolenic acid improves insulin sensitivity,ALA omega-3,28,g,Daily,Moderate,Recommended,ADA
+Walnuts,Tree Nuts,High Cholesterol,Reduces LDL and triglycerides,Omega-3 MUFA,28,g,Daily,Strong,Highly Recommended,AHA
+Walnuts,Tree Nuts,Hypertension,Omega-3 and magnesium lower BP,Omega-3 magnesium,28,g,Daily,Moderate,Recommended,AHA
+Flaxseeds,Seeds,Hypertension,Alpha-linolenic acid lowers blood pressure,ALA omega-3,15,g,Daily,Strong,Highly Recommended,AHA
+Flaxseeds,Seeds,High Cholesterol,Lignans and fiber reduce LDL,Lignans fiber,15,g,Daily,Strong,Highly Recommended,AHA
+Flaxseeds,Seeds,Diabetes,Reduces fasting blood glucose,Fiber ALA,15,g,Daily,Moderate,Recommended,ADA
+Flaxseeds,Seeds,PCOS,Lignans help balance estrogen levels,Lignans omega-3,15,g,Daily,Moderate,Recommended,NHS
+Flaxseeds,Seeds,Obesity,High fiber promotes satiety,Fiber protein,15,g,Daily,Moderate,Recommended,WHO
+Chia Seeds,Seeds,Diabetes,Slows glucose absorption significantly,Soluble fiber omega-3,15,g,Daily,Moderate,Recommended,ADA
+Chia Seeds,Seeds,Heart Disease,Omega-3 and fiber reduce cardiac risk,Omega-3 fiber,15,g,Daily,Moderate,Recommended,AHA
+Chia Seeds,Seeds,High Cholesterol,Soluble fiber reduces LDL,Soluble fiber ALA,15,g,Daily,Moderate,Recommended,AHA
+Chia Seeds,Seeds,Obesity,Forms gel reducing appetite significantly,Soluble fiber,15,g,Daily,Moderate,Recommended,WHO
+Chia Seeds,Seeds,Hypertension,Omega-3 and potassium lower BP,Omega-3 potassium,15,g,Daily,Moderate,Recommended,AHA
+Avocado,Fruit,Heart Disease,Monounsaturated fat improves lipid profile,MUFA potassium,80,g,4-5 times/week,Strong,Highly Recommended,AHA
+Avocado,Fruit,Hypertension,High potassium lowers blood pressure,Potassium MUFA,80,g,4-5 times/week,Strong,Highly Recommended,AHA
+Avocado,Fruit,Diabetes,Healthy fat slows glucose absorption,MUFA fiber,80,g,4-5 times/week,Moderate,Recommended,ADA
+Avocado,Fruit,High Cholesterol,Raises HDL lowers LDL,MUFA plant sterols,80,g,4-5 times/week,Strong,Highly Recommended,AHA
+Avocado,Fruit,PCOS,Anti-inflammatory healthy fat,MUFA magnesium,80,g,4-5 times/week,Moderate,Recommended,NHS
+Olive Oil,Oil,Heart Disease,Reduces cardiovascular events significantly,MUFA polyphenols,15,ml,Daily,Strong,Highly Recommended,AHA
+Olive Oil,Oil,Hypertension,Polyphenols and MUFA lower BP,Polyphenols MUFA,15,ml,Daily,Strong,Highly Recommended,AHA
+Olive Oil,Oil,High Cholesterol,Improves LDL/HDL ratio,MUFA antioxidants,15,ml,Daily,Strong,Highly Recommended,AHA
+Olive Oil,Oil,Diabetes,Reduces postprandial glucose,MUFA antioxidants,15,ml,Daily,Moderate,Recommended,ADA
+Olive Oil,Oil,Fatty Liver,Oleic acid reduces liver fat,Oleic acid MUFA,15,ml,Daily,Moderate,Recommended,NHS
+Greek Yogurt,Dairy,Diabetes,Protein and probiotics improve glucose,Protein probiotics,150,g,Daily,Moderate,Recommended,ADA
+Greek Yogurt,Dairy,Obesity,High protein promotes satiety,Protein calcium,150,g,Daily,Moderate,Recommended,WHO
+Greek Yogurt,Dairy,Hypertension,Calcium and probiotics lower BP,Calcium probiotics,150,g,Daily,Moderate,Recommended,AHA
+Greek Yogurt,Dairy,PCOS,Protein and probiotics support insulin sensitivity,Protein probiotics,150,g,Daily,Moderate,Recommended,NHS
+Garlic,Allium Vegetable,Hypertension,Allicin significantly lowers blood pressure,Allicin sulfur compounds,5,g,Daily,Strong,Highly Recommended,WHO
+Garlic,Allium Vegetable,Heart Disease,Reduces cholesterol and atherosclerosis,Allicin antioxidants,5,g,Daily,Strong,Highly Recommended,AHA
+Garlic,Allium Vegetable,High Cholesterol,Modest LDL reduction effect,Allicin plant compounds,5,g,Daily,Moderate,Recommended,AHA
+Garlic,Allium Vegetable,Diabetes,May improve insulin sensitivity,Allicin sulfur,5,g,Daily,Moderate,Recommended,ADA
+Garlic,Allium Vegetable,Fatty Liver,Garlic supplementation reduces liver fat,Allicin antioxidants,5,g,Daily,Moderate,Recommended,NHS
+Turmeric,Spice,Fatty Liver,Curcumin reduces liver inflammation and fat,Curcumin,3,g,Daily,Moderate,Recommended,NHS
+Turmeric,Spice,Diabetes,Curcumin improves insulin sensitivity,Curcumin,3,g,Daily,Moderate,Recommended,ADA
+Turmeric,Spice,Heart Disease,Anti-inflammatory reduces cardiovascular risk,Curcumin antioxidants,3,g,Daily,Moderate,Recommended,AHA
+Turmeric,Spice,PCOS,Anti-inflammatory properties support hormonal balance,Curcumin,3,g,Daily,Moderate,Recommended,NHS
+Turmeric,Spice,High Cholesterol,Curcumin modestly improves lipid profile,Curcumin,3,g,Daily,Moderate,Recommended,AHA
+Ginger,Spice,Hypertension,Gingerols have vasodilatory effect,Gingerols,5,g,Daily,Moderate,Recommended,NHS
+Ginger,Spice,Diabetes,Improves insulin sensitivity and fasting glucose,Gingerols,5,g,Daily,Moderate,Recommended,ADA
+Ginger,Spice,Heart Disease,Anti-inflammatory cardioprotective effects,Gingerols antioxidants,5,g,Daily,Moderate,Recommended,AHA
+Ginger,Spice,PCOS,Anti-inflammatory improves hormone balance,Gingerols,5,g,Daily,Moderate,Recommended,NHS
+Green Tea,Beverage,Diabetes,EGCG improves insulin sensitivity,EGCG catechins,240,ml,1-2 cups/day,Strong,Highly Recommended,ADA
+Green Tea,Beverage,Heart Disease,Catechins reduce cardiovascular risk,Catechins EGCG,240,ml,1-2 cups/day,Strong,Highly Recommended,AHA
+Green Tea,Beverage,High Cholesterol,EGCG reduces LDL cholesterol,EGCG polyphenols,240,ml,1-2 cups/day,Moderate,Recommended,AHA
+Green Tea,Beverage,Obesity,Catechins and caffeine boost fat metabolism,Catechins EGCG,240,ml,1-2 cups/day,Moderate,Recommended,WHO
+Green Tea,Beverage,Fatty Liver,EGCG reduces liver fat and enzymes,EGCG antioxidants,240,ml,1-2 cups/day,Moderate,Recommended,NHS
+Sweet Potato,Root Vegetable,Diabetes,Lower GI than white potato,Fiber beta-carotene,120,g,3-4 times/week,Moderate,Recommended,ADA
+Sweet Potato,Root Vegetable,Heart Disease,Beta-carotene and potassium protect heart,Potassium beta-carotene,120,g,3-4 times/week,Moderate,Recommended,AHA
+Sweet Potato,Root Vegetable,Obesity,Fiber promotes satiety,Fiber vitamins,120,g,3-4 times/week,Moderate,Recommended,WHO
+Sweet Potato,Root Vegetable,Hypertension,High potassium content lowers BP,Potassium,120,g,3-4 times/week,Moderate,Recommended,AHA
+Cauliflower,Cruciferous Vegetable,Diabetes,Very low carbohydrate vegetable,Fiber vitamin C,100,g,Daily,Moderate,Recommended,ADA
+Cauliflower,Cruciferous Vegetable,Kidney Disease,Low potassium low phosphorus vegetable,Low K low P,100,g,Daily,Moderate,Recommended,NKF
+Cauliflower,Cruciferous Vegetable,Obesity,Very low calorie high fiber,Fiber,100,g,Daily,Moderate,Recommended,WHO
+Cauliflower,Cruciferous Vegetable,Heart Disease,Glucosinolates reduce cardiovascular risk,Sulforaphane fiber,100,g,Daily,Moderate,Recommended,AHA
+Cabbage,Cruciferous Vegetable,Kidney Disease,Very low potassium suitable for CKD,Low potassium fiber,100,g,Daily,Moderate,Recommended,NKF
+Cabbage,Cruciferous Vegetable,Fatty Liver,Glucosinolates support liver detoxification,Sulforaphane antioxidants,100,g,Daily,Moderate,Recommended,NHS
+Cabbage,Cruciferous Vegetable,Heart Disease,Fiber and antioxidants protect cardiovascular system,Fiber vitamin C,100,g,Daily,Moderate,Recommended,AHA
+Apple,Fruit,Diabetes,Pectin fiber slows glucose absorption,Pectin polyphenols,120,g,1 medium/day,Moderate,Recommended,ADA
+Apple,Fruit,Heart Disease,Quercetin and fiber reduce heart disease risk,Quercetin fiber,120,g,1 medium/day,Moderate,Recommended,AHA
+Apple,Fruit,High Cholesterol,Pectin reduces LDL cholesterol,Pectin antioxidants,120,g,1 medium/day,Strong,Highly Recommended,AHA
+Apple,Fruit,Obesity,High fiber and water content promote fullness,Fiber water,120,g,1 medium/day,Moderate,Recommended,WHO
+Pomegranate,Fruit,Hypertension,Punicalagins significantly lower blood pressure,Punicalagins polyphenols,80,g,Daily,Strong,Highly Recommended,AHA
+Pomegranate,Fruit,Heart Disease,Reduces atherosclerosis and inflammation,Punicalagins antioxidants,80,g,Daily,Strong,Highly Recommended,AHA
+Pomegranate,Fruit,Diabetes,Reduces insulin resistance,Polyphenols,80,g,Daily,Moderate,Recommended,ADA
+Pomegranate,Fruit,High Cholesterol,Reduces LDL oxidation,Antioxidants polyphenols,80,g,Daily,Moderate,Recommended,AHA
+Egg Whites,Protein Source,Obesity,High protein low calorie,Protein,60,g,Daily,Moderate,Recommended,WHO
+Egg Whites,Protein Source,Diabetes,High protein no carbohydrate,Protein,60,g,Daily,Moderate,Recommended,ADA
+Egg Whites,Protein Source,Heart Disease,Cholesterol-free protein source,Protein,60,g,Daily,Moderate,Recommended,AHA
+Tofu,Plant Protein,Heart Disease,Soy protein reduces LDL cholesterol,Soy protein isoflavones,100,g,3-4 times/week,Strong,Highly Recommended,AHA
+Tofu,Plant Protein,Diabetes,Low GI plant protein,Protein isoflavones,100,g,3-4 times/week,Moderate,Recommended,ADA
+Tofu,Plant Protein,High Cholesterol,Soy protein reduces LDL by 5-6%,Soy protein plant sterols,100,g,3-4 times/week,Strong,Highly Recommended,AHA
+Tofu,Plant Protein,Obesity,High protein promotes satiety,Protein,100,g,3-4 times/week,Moderate,Recommended,WHO
+Kidney Beans,Legumes,Diabetes,Extremely low GI complex carbs,Fiber protein,100,g,3-4 times/week,Strong,Highly Recommended,ADA
+Kidney Beans,Legumes,Heart Disease,Soluble fiber significantly reduces LDL,Soluble fiber protein,100,g,3-4 times/week,Strong,Highly Recommended,AHA
+Kidney Beans,Legumes,Obesity,Very high satiety low energy density,Protein fiber,100,g,3-4 times/week,Strong,Highly Recommended,WHO
+Kidney Beans,Legumes,High Cholesterol,Reduces LDL through soluble fiber,Soluble fiber,100,g,3-4 times/week,Strong,Highly Recommended,AHA
+Barley,Whole Grain,Diabetes,High beta-glucan lowers glycemic response,Beta-glucan fiber,75,g,3-4 times/week,Strong,Highly Recommended,ADA
+Barley,Whole Grain,Heart Disease,Beta-glucan significantly reduces cholesterol,Beta-glucan,75,g,3-4 times/week,Strong,Highly Recommended,AHA
+Barley,Whole Grain,High Cholesterol,Highest beta-glucan content of grains,Beta-glucan,75,g,3-4 times/week,Strong,Highly Recommended,AHA
+Barley,Whole Grain,Obesity,High fiber promotes satiety,Fiber beta-glucan,75,g,3-4 times/week,Moderate,Recommended,WHO
+Pumpkin Seeds,Seeds,Hypertension,Magnesium lowers blood pressure,Magnesium,28,g,3-4 times/week,Moderate,Recommended,AHA
+Pumpkin Seeds,Seeds,Diabetes,Magnesium improves insulin sensitivity,Magnesium zinc,28,g,3-4 times/week,Moderate,Recommended,ADA
+Pumpkin Seeds,Seeds,PCOS,Zinc supports hormone regulation,Zinc magnesium,28,g,3-4 times/week,Moderate,Recommended,NHS
+Sunflower Seeds,Seeds,Heart Disease,Vitamin E and MUFA protect the heart,Vitamin E MUFA,28,g,3-4 times/week,Moderate,Recommended,AHA
+Sunflower Seeds,Seeds,High Cholesterol,Phytosterols reduce LDL absorption,Phytosterols MUFA,28,g,3-4 times/week,Moderate,Recommended,AHA
+Red Bell Pepper,Vegetable,Diabetes,Low GI with anti-inflammatory vitamin C,Vitamin C antioxidants,100,g,Daily,Moderate,Recommended,ADA
+Red Bell Pepper,Vegetable,Heart Disease,Lycopene and vitamin C reduce cardiac risk,Lycopene vitamin C,100,g,Daily,Moderate,Recommended,AHA
+Red Bell Pepper,Vegetable,Kidney Disease,Low potassium and phosphorus for CKD,Low K low P vitamin C,100,g,Daily,Moderate,Recommended,NKF
+Mushrooms,Fungi,Diabetes,Beta-glucans improve insulin sensitivity,Beta-glucan selenium,80,g,3-4 times/week,Moderate,Recommended,ADA
+Mushrooms,Fungi,Heart Disease,Beta-glucans reduce cholesterol,Beta-glucan,80,g,3-4 times/week,Moderate,Recommended,AHA
+Mushrooms,Fungi,Obesity,Very low calorie high satiety,Fiber protein,80,g,3-4 times/week,Moderate,Recommended,WHO
+Asparagus,Vegetable,Hypertension,Diuretic properties and folate lower BP,Folate potassium,80,g,3-4 times/week,Moderate,Recommended,AHA
+Asparagus,Vegetable,Diabetes,Low GI with folate and chromium,Folate chromium,80,g,3-4 times/week,Moderate,Recommended,ADA
+Asparagus,Vegetable,Fatty Liver,Saponins protect liver cells,Saponins antioxidants,80,g,3-4 times/week,Moderate,Recommended,NHS
+Beetroot,Root Vegetable,Hypertension,Dietary nitrates lower blood pressure,Nitrates potassium,80,g,3-4 times/week,Strong,Highly Recommended,AHA
+Beetroot,Root Vegetable,Heart Disease,Betaine and nitrates protect the heart,Betaine nitrates,80,g,3-4 times/week,Moderate,Recommended,AHA
+Beetroot,Root Vegetable,Obesity,Low calorie high fiber and satiety,Fiber,80,g,3-4 times/week,Moderate,Recommended,WHO
+Cinnamon,Spice,Diabetes,Improves insulin sensitivity significantly,Cinnamaldehyde,3,g,Daily,Moderate,Recommended,ADA
+Cinnamon,Spice,High Cholesterol,Reduces total cholesterol and LDL,Cinnamaldehyde,3,g,Daily,Moderate,Recommended,AHA
+Cinnamon,Spice,PCOS,Improves insulin resistance in PCOS,Cinnamaldehyde,3,g,Daily,Moderate,Recommended,NHS
+Fenugreek,Spice,Diabetes,Soluble fiber delays glucose absorption,Galactomannan fiber,5,g,Daily,Strong,Highly Recommended,ADA
+Fenugreek,Spice,PCOS,Helps reduce androgen levels,Phytoestrogens fiber,5,g,Daily,Moderate,Recommended,NHS
+Fenugreek,Spice,High Cholesterol,Saponins reduce LDL absorption,Saponins fiber,5,g,Daily,Moderate,Recommended,AHA

@@ -20,7 +20,13 @@ export default function BmiPage() {
 
   useEffect(() => {
     getDashboard()
-      .then((r) => setUser(r.data.user))
+      .then((r) => {
+        setUser(r.data.user)
+        // If health profile already exists, skip to dashboard
+        if (r.data.health_profile) {
+          navigate('/dashboard')
+        }
+      })
       .catch(() => navigate('/dashboard'))
       .finally(() => setLoading(false))
   }, [navigate])

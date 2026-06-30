@@ -1,0 +1,86 @@
+Ingredient,Category,Nutrient_Flag,Condition,Impact,RiskWeight,Recommendation,Reason,Source
+Sodium,Mineral,High Sodium,Hypertension,Raises blood pressure,8,Avoid,Excess sodium directly elevates blood pressure,WHO
+Sodium,Mineral,High Sodium,Heart Disease,Increases cardiac fluid load,8,Avoid,High sodium increases fluid retention and cardiac workload,AHA
+Sodium,Mineral,High Sodium,Kidney Disease,Worsens kidney function,9,Strictly Avoid,Kidneys struggle to excrete excess sodium in CKD,NKF
+Sodium,Mineral,High Sodium,Obesity,Promotes fluid retention,4,Limit,Sodium-rich foods are often calorie-dense processed foods,WHO
+Added Sugar,Carbohydrate,High Sugar,Diabetes,Raises blood glucose,10,Strictly Avoid,Direct glucose load rapidly elevates blood sugar,ADA
+Added Sugar,Carbohydrate,High Sugar,Obesity,Promotes fat storage,8,Avoid,Empty calories from sugar directly cause weight gain,WHO
+Added Sugar,Carbohydrate,High Sugar,Fatty Liver,Causes hepatic steatosis,9,Strictly Avoid,Fructose in added sugars directly converts to liver fat,NHS
+Added Sugar,Carbohydrate,High Sugar,PCOS,Worsens insulin resistance,8,Avoid,Sugar spikes insulin worsening PCOS hormonal imbalance,ADA
+Added Sugar,Carbohydrate,High Sugar,High Cholesterol,Raises triglycerides,7,Avoid,Excess sugar converts to triglycerides in the liver,AHA
+Saturated Fat,Fat,High Saturated Fat,Heart Disease,Raises LDL cholesterol,9,Strictly Avoid,Saturated fat directly raises LDL promoting atherosclerosis,AHA
+Saturated Fat,Fat,High Saturated Fat,High Cholesterol,Increases LDL levels,8,Avoid,Saturated fat is a primary dietary driver of high LDL,AHA
+Saturated Fat,Fat,High Saturated Fat,Obesity,Promotes visceral fat,7,Avoid,Saturated fat promotes abdominal fat accumulation,WHO
+Saturated Fat,Fat,High Saturated Fat,Fatty Liver,Promotes liver inflammation,7,Avoid,Saturated fat promotes hepatic lipid accumulation,NHS
+Saturated Fat,Fat,High Saturated Fat,Diabetes,Worsens insulin resistance,6,Avoid Often,Saturated fat impairs insulin receptor function,ADA
+Trans Fat,Fat,Trans Fat,Heart Disease,Raises LDL lowers HDL,10,Strictly Avoid,Trans fat is the most damaging dietary fat for the heart,AHA
+Trans Fat,Fat,Trans Fat,High Cholesterol,Critically raises LDL,10,Strictly Avoid,Trans fat simultaneously raises LDL and lowers HDL,AHA
+Trans Fat,Fat,Trans Fat,Obesity,Promotes visceral fat,8,Avoid,Trans fat promotes abdominal obesity,WHO
+Trans Fat,Fat,Trans Fat,Diabetes,Severely worsens insulin resistance,8,Avoid,Trans fat impairs glucose metabolism,ADA
+Trans Fat,Fat,Trans Fat,Fatty Liver,Promotes NASH progression,9,Strictly Avoid,Trans fat promotes liver inflammation and fibrosis,NHS
+Cholesterol,Lipid,High Cholesterol,Heart Disease,Raises blood cholesterol,8,Avoid,Dietary cholesterol contributes to plaque formation,AHA
+Cholesterol,Lipid,High Cholesterol,High Cholesterol,Worsens hypercholesterolemia,8,Avoid,Dietary cholesterol raises LDL in susceptible individuals,AHA
+Cholesterol,Lipid,High Cholesterol,Diabetes,Increases cardiovascular risk,6,Avoid Often,Diabetics are at high cardiovascular risk from cholesterol,ADA
+Potassium,Mineral,High Potassium,Kidney Disease,Causes hyperkalemia,9,Strictly Avoid,Failed kidneys cannot excrete excess potassium safely,NKF
+Potassium,Mineral,High Potassium,Heart Disease,May cause arrhythmia in excess,5,Limit,Monitor potassium levels in heart failure patients,AHA
+Potassium,Mineral,Beneficial,Hypertension,Lowers blood pressure,1,Safe,Potassium is beneficial for blood pressure control,WHO
+Phosphorus,Mineral,High Phosphorus,Kidney Disease,Causes bone disease,9,Strictly Avoid,Phosphorus buildup causes renal osteodystrophy,NKF
+Phosphorus,Mineral,High Phosphorus,Heart Disease,Increases cardiovascular risk,6,Avoid Often,High phosphorus linked to cardiovascular mortality in CKD,NKF
+Caffeine,Stimulant,Stimulant,Hypertension,Acutely raises blood pressure,6,Avoid Often,Caffeine causes transient but significant BP elevation,NHS
+Caffeine,Stimulant,Stimulant,Heart Disease,Can trigger arrhythmias,7,Avoid,Caffeine can cause atrial fibrillation in susceptible patients,AHA
+Caffeine,Stimulant,Stimulant,Hyperthyroidism,Worsens palpitations,8,Avoid,Caffeine worsens thyroid-induced tachycardia,NHS
+Caffeine,Stimulant,Stimulant,PCOS,May affect cortisol levels,4,Limit,High caffeine may elevate cortisol worsening PCOS,NHS
+Refined Flour,Carbohydrate,High GI,Diabetes,Spikes blood glucose,8,Avoid,High glycemic index causes rapid blood sugar elevation,ADA
+Refined Flour,Carbohydrate,High GI,Obesity,Promotes fat storage,7,Avoid,Refined carbs spike insulin promoting fat storage,WHO
+Refined Flour,Carbohydrate,High GI,PCOS,Worsens insulin resistance,7,Avoid,Refined carbs worsen the insulin-androgen cycle in PCOS,NHS
+Refined Flour,Carbohydrate,High GI,Fatty Liver,Promotes liver fat,7,Avoid,Refined flour promotes de novo lipogenesis in the liver,NHS
+Refined Flour,Carbohydrate,High GI,High Cholesterol,Raises triglycerides,5,Avoid Often,Refined carbs convert to triglycerides in the liver,AHA
+Glucose Syrup,Carbohydrate,Very High GI,Diabetes,Critically spikes blood sugar,10,Strictly Avoid,Glucose syrup has extremely high glycemic index,ADA
+Glucose Syrup,Carbohydrate,Very High GI,Fatty Liver,Causes hepatic steatosis,9,Strictly Avoid,Glucose syrup directly converts to liver fat,NHS
+Glucose Syrup,Carbohydrate,Very High GI,Obesity,Promotes rapid weight gain,8,Avoid,High calorie liquid carbohydrate promotes obesity,WHO
+Glucose Syrup,Carbohydrate,Very High GI,PCOS,Critically worsens insulin resistance,9,Strictly Avoid,Glucose syrup causes massive insulin spikes,ADA
+Glucose Syrup,Carbohydrate,Very High GI,High Cholesterol,Raises triglycerides sharply,7,Avoid,Glucose syrup massively elevates triglyceride levels,AHA
+Corn Syrup,Carbohydrate,Very High Fructose,Diabetes,Causes blood sugar spikes,10,Strictly Avoid,HFCS has very high glycemic impact,ADA
+Corn Syrup,Carbohydrate,Very High Fructose,Fatty Liver,Directly causes hepatic fat,10,Strictly Avoid,HFCS fructose is directly hepatotoxic,NHS
+Corn Syrup,Carbohydrate,Very High Fructose,Obesity,Promotes visceral fat,9,Strictly Avoid,HFCS promotes visceral adiposity and metabolic syndrome,WHO
+Corn Syrup,Carbohydrate,Very High Fructose,High Cholesterol,Sharply raises triglycerides,8,Avoid,HFCS is a primary driver of hypertriglyceridemia,AHA
+Corn Syrup,Carbohydrate,Very High Fructose,PCOS,Severely worsens insulin resistance,9,Strictly Avoid,HFCS dramatically worsens PCOS insulin signaling,ADA
+MSG,Food Additive,Sodium Additive,Hypertension,Adds sodium load,5,Avoid Often,MSG significantly adds to dietary sodium intake,FSSAI
+MSG,Food Additive,Appetite Stimulant,Obesity,May stimulate appetite,4,Limit,MSG may activate appetite signaling pathways,FSSAI
+MSG,Food Additive,Sodium Additive,Kidney Disease,Adds sodium and glutamate load,6,Avoid Often,MSG sodium load stresses diseased kidneys,NKF
+Processed Meat,Meat Product,High Sodium and Nitrates,Hypertension,Raises blood pressure,8,Avoid,High sodium and nitrates in processed meat elevate BP,WHO
+Processed Meat,Meat Product,High Sodium and Nitrates,Heart Disease,Increases cardiovascular risk,9,Strictly Avoid,Processed meat is a major risk factor for heart disease,AHA
+Processed Meat,Meat Product,High Sodium and Nitrates,Kidney Disease,Overloads kidney filtration,9,Strictly Avoid,Phosphorus and sodium in processed meat harm kidneys,NKF
+Processed Meat,Meat Product,High Saturated Fat,High Cholesterol,Raises LDL levels,7,Avoid,Processed meat is high in saturated fat,AHA
+Processed Meat,Meat Product,High Sodium and Nitrates,Cancer Risk,Classified as Group 1 carcinogen,8,Avoid,WHO classifies processed meat as Group 1 carcinogen,WHO
+Soft Drinks,Beverage,High Sugar and Phosphoric Acid,Diabetes,Spikes blood glucose,9,Strictly Avoid,Sugary drinks rapidly elevate blood sugar,ADA
+Soft Drinks,Beverage,High Sugar and Phosphoric Acid,Kidney Disease,Phosphoric acid harms kidneys,8,Avoid,Phosphoric acid in cola drinks worsens kidney function,NKF
+Soft Drinks,Beverage,High Sugar and Phosphoric Acid,Obesity,Provides empty liquid calories,8,Avoid,Liquid calories from sodas promote weight gain,WHO
+Soft Drinks,Beverage,High Sugar and Phosphoric Acid,Fatty Liver,HFCS causes liver fat,9,Strictly Avoid,High fructose corn syrup in sodas directly causes fatty liver,NHS
+Soft Drinks,Beverage,High Sugar and Phosphoric Acid,Hypertension,Sodium and sugar raise BP,7,Avoid,Phosphoric acid and sugar in sodas worsen hypertension,AHA
+Energy Drinks,Beverage,Caffeine and Sugar,Heart Disease,Triggers arrhythmias,10,Strictly Avoid,Energy drinks are linked to cardiac events and arrhythmias,AHA
+Energy Drinks,Beverage,Caffeine and Sugar,Hypertension,Spikes blood pressure acutely,9,Strictly Avoid,High caffeine and stimulants in energy drinks dangerously raise BP,AHA
+Energy Drinks,Beverage,Caffeine and Sugar,Diabetes,Very high sugar load,9,Strictly Avoid,Energy drinks have extremely high sugar content,ADA
+Energy Drinks,Beverage,Caffeine and Sugar,Hyperthyroidism,Worsens cardiac effects,10,Strictly Avoid,Stimulants in energy drinks worsen hyperthyroid heart effects,NHS
+Energy Drinks,Beverage,Caffeine and Sugar,Kidney Disease,Electrolyte overload,9,Strictly Avoid,Energy drinks overload kidneys with potassium and sodium,NKF
+Pickles,Preserved Food,Very High Sodium,Hypertension,Critically raises blood pressure,9,Strictly Avoid,Pickles contain extremely high levels of sodium,NHS
+Pickles,Preserved Food,Very High Sodium,Kidney Disease,Overloads renal sodium excretion,8,Avoid,Very high sodium in pickles harmful for CKD patients,NKF
+Pickles,Preserved Food,Very High Sodium,Heart Disease,Increases fluid retention,7,Avoid,High sodium pickles worsen cardiac fluid overload,AHA
+Pickles,Preserved Food,Very High Sodium,Obesity,High sodium promotes water retention,5,Avoid Often,Sodium in pickles promotes water retention and bloating,WHO
+Instant Noodles,Processed Food,High Sodium and Refined Carbs,Hypertension,Very high sodium content,8,Avoid,Instant noodles contain extremely high sodium per serving,FSSAI
+Instant Noodles,Processed Food,High Sodium and Refined Carbs,Diabetes,High glycemic refined carbs,8,Avoid,Refined carbs in instant noodles spike blood sugar rapidly,ADA
+Instant Noodles,Processed Food,High Sodium and Refined Carbs,Kidney Disease,Sodium and phosphate overload,8,Avoid,Multiple minerals in instant noodles stress diseased kidneys,NKF
+Instant Noodles,Processed Food,High Sodium and Refined Carbs,Obesity,High sodium and refined carbs,7,Avoid,Calorie dense with minimal nutrition promoting obesity,WHO
+White Bread,Baked Good,High GI Refined Carbs,Diabetes,Rapidly spikes blood sugar,8,Avoid,White bread has glycemic index close to pure glucose,ADA
+White Bread,Baked Good,High GI Refined Carbs,Obesity,Promotes fat storage,6,Avoid Often,High GI carbs spike insulin promoting fat storage,WHO
+White Bread,Baked Good,High GI Refined Carbs,PCOS,Worsens insulin resistance,7,Avoid,Refined carbs in white bread worsen PCOS insulin cycle,NHS
+White Bread,Baked Good,High GI Refined Carbs,Hypertension,May contain added sodium,4,Limit,Some white breads contain significant sodium,NHS
+Pastries,Baked Good,Trans Fat and Sugar,Heart Disease,Contains trans fat,9,Strictly Avoid,Commercial pastries contain trans fat harmful for heart,AHA
+Pastries,Baked Good,Trans Fat and Sugar,Diabetes,High sugar and refined carbs,9,Strictly Avoid,Pastries combine multiple diabetogenic ingredients,ADA
+Pastries,Baked Good,Trans Fat and Sugar,Obesity,Very high calorie density,8,Avoid,Pastries are extremely calorie dense promoting obesity,WHO
+Pastries,Baked Good,Trans Fat and Sugar,High Cholesterol,Trans fat raises LDL,9,Strictly Avoid,Trans fat in pastries dramatically raises LDL cholesterol,AHA
+Bakery Products,Baked Good,Trans Fat and Refined Carbs,Heart Disease,Trans fat and saturated fat,8,Avoid,Commercial baked goods contain harmful fats,AHA
+Bakery Products,Baked Good,Trans Fat and Refined Carbs,High Cholesterol,Trans fat raises LDL,8,Avoid,Trans fat in bakery products significantly raises LDL,AHA
+Bakery Products,Baked Good,Trans Fat and Refined Carbs,Kidney Disease,Hidden phosphorus additives,7,Avoid,Bakery products contain phosphate additives harmful in CKD,NKF
+Bakery Products,Baked Good,Trans Fat and Refined Carbs,Diabetes,High refined carbs,8,Avoid,Refined flour in bakery products spikes blood sugar,ADA
+Bakery Products,Baked Good,Trans Fat and Refined Carbs,Obesity,Very calorie dense,7,Avoid,Bakery products are calorie dense promoting weight gain,WHO

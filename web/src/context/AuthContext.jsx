@@ -14,9 +14,8 @@ export function AuthProvider({ children }) {
   }, [])
 
   const register = useCallback(async (data) => {
-    const res = await authApi.register(data)
-    saveTokens(res.data.access_token, res.data.refresh_token)
-    setAuthenticated(true)
+    await authApi.register(data)
+    // Do NOT save tokens — user must log in after registering
   }, [])
 
   const logout = useCallback(() => {

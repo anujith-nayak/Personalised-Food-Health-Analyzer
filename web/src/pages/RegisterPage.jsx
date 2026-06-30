@@ -75,8 +75,8 @@ export default function RegisterPage() {
         weight:          parseFloat(form.weight),
         food_preference: form.food_preference,
       })
-      toast.success('Account created!')
-      navigate('/bmi')
+      toast.success('Account created! Please log in.')
+      navigate('/login')
     } catch (err) {
       toast.error(err.message || 'Registration failed')
     } finally {

@@ -19,6 +19,15 @@ from app.routes import auth, profile, health, dashboard, scanner
 # Auto-create all database tables on startup (SQLite file created if not exists)
 Base.metadata.create_all(bind=engine)
 
+# Seed default food restriction rules if table is empty
+from app.database.db import SessionLocal
+from app.utils.food_restrictions import seed_rules
+_db = SessionLocal()
+try:
+    seed_rules(_db)
+finally:
+    _db.close()
+
 app = FastAPI(
     title="FoodHealth AI API",
     description="AI-Based Personalized Food Health Recommendation System — Phase 1",

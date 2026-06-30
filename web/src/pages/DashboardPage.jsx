@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useNavigate, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { getDashboard } from '../api/health'
 import { PageSpinner } from '../components/Spinner'
 import Navbar from '../components/Navbar'
@@ -7,7 +7,7 @@ import Card, { CardHeader } from '../components/Card'
 import BMIBadge from '../components/BMIBadge'
 import {
   User, Scale, HeartPulse, Activity,
-  ShieldAlert, CheckSquare, ScanLine, Pencil, RefreshCw
+  ShieldAlert, ScanLine, Pencil, RefreshCw
 } from 'lucide-react'
 import toast from 'react-hot-toast'
 
@@ -32,7 +32,6 @@ function Chip({ label, color = 'gray' }) {
 }
 
 export default function DashboardPage() {
-  const navigate = useNavigate()
   const [data, setData]     = useState(null)
   const [loading, setLoading] = useState(true)
   const [refreshing, setRefreshing] = useState(false)
@@ -55,7 +54,20 @@ export default function DashboardPage() {
 
   if (loading) return <PageSpinner />
 
-  const { user, health_profile: hp, current_health_statuses: statuses, food_restrictions: restrictions, profile_completion: completion } = data
+  // If data failed to load, show error state instead of crashing
+  if (!data) {
+    return (
+      <div className="min-h-screen bg-gray-50">
+        <Navbar />
+        <div className="flex flex-col items-center justify-center min-h-[60vh] gap-4">
+          <p className="text-gray-500">Could not load dashboard. Is the backend running?</p>
+          <button onClick={() => load()} className="btn-primary px-6 py-2">Retry</button>
+        </div>
+      </div>
+    )
+  }
+
+  const { user, health_profile: hp, current_health_statuses: statuses, profile_completion: completion } = data
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -177,12 +189,22 @@ export default function DashboardPage() {
             <Card>
               <CardHeader icon={ShieldAlert} title="Food Restrictions" color="text-red-500" />
               <div className="p-6">
-                {restrictions.length ? (
-                  <div className="grid sm:grid-cols-2 gap-2">
-                    {restrictions.map((r) => (
-                      <div key={r} className="flex items-center gap-2 bg-red-50 rounded-xl px-3 py-2">
-                        <span className="w-2 h-2 rounded-full bg-red-400 flex-shrink-0" />
-                        <span className="text-sm text-red-800 font-medium">{r}</span>
+                {data.food_restriction_groups && data.food_restriction_groups.length > 0 ? (
+                  <div className="space-y-5">
+                    {data.food_restriction_groups.map((group) => (
+                      <div key={group.category}>
+                        <p className="text-sm font-bold text-gray-700 mb-2 flex items-center gap-2">
+                          <span className="w-2 h-2 rounded-full bg-red-400 inline-block" />
+                          {group.category}
+                        </p>
+                        <div className="grid sm:grid-cols-2 gap-1.5 pl-4">
+                          {group.items.map((item) => (
+                            <div key={item} className="flex items-center gap-2 bg-red-50 rounded-lg px-3 py-1.5">
+                              <span className="w-1.5 h-1.5 rounded-full bg-red-400 flex-shrink-0" />
+                              <span className="text-sm text-red-800">{item}</span>
+                            </div>
+                          ))}
+                        </div>
                       </div>
                     ))}
                   </div>

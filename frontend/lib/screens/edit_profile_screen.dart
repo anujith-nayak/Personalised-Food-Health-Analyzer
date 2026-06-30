@@ -290,11 +290,20 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                   label: Text(c),
                   selected: sel,
                   onSelected: (val) => setState(() {
-                    if (val) {
-                      if (c == 'None') _conditions.clear();
-                      _conditions.add(c);
+                    if (c == 'None') {
+                      if (_conditions.contains('None')) {
+                        _conditions.remove('None'); // deselect None → re-enables all
+                      } else {
+                        _conditions.clear();
+                        _conditions.add('None');
+                      }
                     } else {
-                      _conditions.remove(c);
+                      if (val) {
+                        _conditions.remove('None');
+                        _conditions.add(c);
+                      } else {
+                        _conditions.remove(c);
+                      }
                     }
                   }),
                 );

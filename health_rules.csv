@@ -1,0 +1,315 @@
+Condition,Severity,Parameter,Nutrient_Ingredient,Threshold,Unit,RiskWeight,Recommendation,Reason,Source
+Hypertension,Elevated,BP 120-129,Sodium,2300,mg,3,Limit,High sodium intake raises blood pressure,WHO
+Hypertension,Elevated,BP 120-129,Added Sugar,36,g,2,Limit,Excess sugar contributes to weight gain and BP elevation,AHA
+Hypertension,Elevated,BP 120-129,Caffeine,300,mg,2,Limit,Caffeine can cause transient BP spikes,NHS
+Hypertension,Elevated,BP 120-129,Saturated Fat,20,g,3,Limit,Saturated fat promotes arterial stiffness,AHA
+Hypertension,Elevated,BP 120-129,Processed Meat,50,g,3,Limit,Processed meats are high in sodium and preservatives,WHO
+Hypertension,Elevated,BP 120-129,Pickles,30,g,3,Limit,Pickles contain very high sodium levels,NHS
+Hypertension,Elevated,BP 120-129,MSG,500,mg,2,Limit,MSG contributes to sodium load,FSSAI
+Hypertension,Stage1,BP 130-139,Sodium,2000,mg,6,Avoid Often,Sodium restriction is critical in Stage 1 hypertension,WHO
+Hypertension,Stage1,BP 130-139,Added Sugar,25,g,5,Avoid Often,Sugar increases insulin resistance worsening hypertension,AHA
+Hypertension,Stage1,BP 130-139,Caffeine,200,mg,5,Avoid Often,Regular caffeine raises resting blood pressure,NHS
+Hypertension,Stage1,BP 130-139,Saturated Fat,15,g,6,Avoid Often,Saturated fat hardens arteries increasing BP,AHA
+Hypertension,Stage1,BP 130-139,Trans Fat,2,g,7,Avoid,Trans fat increases LDL and arterial inflammation,AHA
+Hypertension,Stage1,BP 130-139,Processed Meat,30,g,6,Avoid Often,High sodium and nitrates in processed meats worsen BP,WHO
+Hypertension,Stage1,BP 130-139,Soft Drinks,250,ml,5,Avoid Often,Soft drinks add sugar and phosphoric acid harmful for BP,AHA
+Hypertension,Stage1,BP 130-139,Pickles,20,g,6,Avoid Often,Very high sodium content in pickles,NHS
+Hypertension,Stage1,BP 130-139,Instant Noodles,1,serving,6,Avoid Often,Instant noodles contain excessive sodium per serving,FSSAI
+Hypertension,Stage1,BP 130-139,White Bread,60,g,4,Limit,Refined carbs spike insulin linked to BP elevation,NHS
+Hypertension,Stage2,BP >=140,Sodium,1500,mg,9,Strictly Avoid,Excess sodium critically worsens severe hypertension,WHO
+Hypertension,Stage2,BP >=140,Added Sugar,15,g,8,Avoid,Sugar worsens metabolic syndrome and hypertension,AHA
+Hypertension,Stage2,BP >=140,Caffeine,100,mg,7,Avoid,Caffeine causes acute hypertensive episodes,NHS
+Hypertension,Stage2,BP >=140,Saturated Fat,10,g,8,Avoid,Saturated fat severely impacts arterial health,AHA
+Hypertension,Stage2,BP >=140,Trans Fat,0,g,10,Strictly Avoid,Trans fat is critically dangerous for hypertensive patients,AHA
+Hypertension,Stage2,BP >=140,Processed Meat,0,g,9,Strictly Avoid,Processed meat is a major sodium and nitrate source,WHO
+Hypertension,Stage2,BP >=140,Soft Drinks,0,ml,8,Avoid,Sugar and phosphoric acid in sodas worsen hypertension,AHA
+Hypertension,Stage2,BP >=140,Pickles,0,g,9,Strictly Avoid,Pickles are critically high in sodium,NHS
+Hypertension,Stage2,BP >=140,Instant Noodles,0,serving,9,Strictly Avoid,Instant noodles have dangerous sodium levels,FSSAI
+Hypertension,Stage2,BP >=140,Energy Drinks,0,ml,10,Strictly Avoid,Energy drinks spike BP dangerously,AHA
+Hypertension,Stage2,BP >=140,MSG,0,mg,8,Avoid,MSG adds significant sodium load,FSSAI
+Hypertension,Stage2,BP >=140,Cholesterol,200,mg,8,Avoid,High dietary cholesterol worsens cardiovascular risk,AHA
+Diabetes,Prediabetic,Fasting Sugar 100-125,Added Sugar,25,g,6,Avoid Often,Added sugar raises blood glucose rapidly,ADA
+Diabetes,Prediabetic,Fasting Sugar 100-125,Refined Flour,50,g,5,Avoid Often,Refined flour spikes blood glucose levels,ADA
+Diabetes,Prediabetic,Fasting Sugar 100-125,Glucose Syrup,10,g,7,Avoid,Glucose syrup causes rapid glycemic spike,ADA
+Diabetes,Prediabetic,Fasting Sugar 100-125,Corn Syrup,10,g,7,Avoid,Corn syrup has very high glycemic index,ADA
+Diabetes,Prediabetic,Fasting Sugar 100-125,Soft Drinks,150,ml,6,Avoid Often,Sugary drinks rapidly raise blood glucose,ADA
+Diabetes,Prediabetic,Fasting Sugar 100-125,White Bread,60,g,5,Avoid Often,White bread has high glycemic index,NHS
+Diabetes,Prediabetic,Fasting Sugar 100-125,Pastries,50,g,6,Avoid Often,Pastries contain refined carbs and added sugars,NHS
+Diabetes,Prediabetic,Fasting Sugar 100-125,Calories,2000,kcal,4,Limit,Caloric excess promotes insulin resistance,ADA
+Diabetes,Prediabetic,Fasting Sugar 100-125,Saturated Fat,20,g,5,Avoid Often,Saturated fat worsens insulin resistance,ADA
+Diabetes,Diabetic,Fasting Sugar >=126,Added Sugar,10,g,9,Strictly Avoid,Added sugar critically elevates blood glucose,ADA
+Diabetes,Diabetic,Fasting Sugar >=126,Refined Flour,30,g,8,Avoid,Refined flour causes uncontrolled glucose spikes,ADA
+Diabetes,Diabetic,Fasting Sugar >=126,Glucose Syrup,0,g,10,Strictly Avoid,Glucose syrup causes dangerous blood sugar spikes,ADA
+Diabetes,Diabetic,Fasting Sugar >=126,Corn Syrup,0,g,10,Strictly Avoid,Corn syrup dramatically elevates blood glucose,ADA
+Diabetes,Diabetic,Fasting Sugar >=126,Soft Drinks,0,ml,9,Strictly Avoid,Sugary beverages are critically harmful for diabetics,ADA
+Diabetes,Diabetic,Fasting Sugar >=126,White Bread,30,g,7,Avoid,White bread spikes blood sugar rapidly,NHS
+Diabetes,Diabetic,Fasting Sugar >=126,Pastries,0,g,9,Strictly Avoid,Pastries are high in sugar and refined carbs,NHS
+Diabetes,Diabetic,Fasting Sugar >=126,Energy Drinks,0,ml,10,Strictly Avoid,Energy drinks contain massive sugar loads,ADA
+Diabetes,Diabetic,Fasting Sugar >=126,Bakery Products,30,g,8,Avoid,Bakery products are dense in refined carbs and sugar,FSSAI
+Diabetes,Diabetic,Fasting Sugar >=126,Trans Fat,0,g,8,Avoid,Trans fat worsens insulin resistance,ADA
+Diabetes,Diabetic,Fasting Sugar >=126,Saturated Fat,15,g,7,Avoid,Saturated fat increases cardiovascular risk in diabetics,ADA
+Diabetes,Severe,HbA1c >=9,Added Sugar,0,g,10,Strictly Avoid,Any added sugar is critically dangerous,ADA
+Diabetes,Severe,HbA1c >=9,Refined Flour,0,g,10,Strictly Avoid,Refined carbs cause life-threatening glucose spikes,ADA
+Diabetes,Severe,HbA1c >=9,Glucose Syrup,0,g,10,Strictly Avoid,Glucose syrup is critically dangerous,ADA
+Diabetes,Severe,HbA1c >=9,Corn Syrup,0,g,10,Strictly Avoid,Corn syrup critically elevates HbA1c,ADA
+Diabetes,Severe,HbA1c >=9,Soft Drinks,0,ml,10,Strictly Avoid,Zero tolerance for sugary beverages,ADA
+Diabetes,Severe,HbA1c >=9,Calories,1800,kcal,8,Avoid,Strict caloric control is essential in severe diabetes,ADA
+Diabetes,Severe,HbA1c >=9,Saturated Fat,10,g,8,Avoid,Saturated fat worsens diabetic complications,ADA
+Diabetes,Severe,HbA1c >=9,Cholesterol,150,mg,7,Avoid,Diabetics face elevated cardiovascular risk from cholesterol,ADA
+Obesity,Overweight,BMI 25-29.9,Calories,2000,kcal,5,Limit,Caloric surplus causes weight gain,WHO
+Obesity,Overweight,BMI 25-29.9,Added Sugar,25,g,5,Avoid Often,Added sugar contributes empty calories,WHO
+Obesity,Overweight,BMI 25-29.9,Saturated Fat,20,g,5,Avoid Often,Saturated fat is calorie-dense and promotes fat storage,AHA
+Obesity,Overweight,BMI 25-29.9,Trans Fat,2,g,7,Avoid,Trans fat promotes visceral fat accumulation,AHA
+Obesity,Overweight,BMI 25-29.9,Soft Drinks,250,ml,5,Avoid Often,Liquid calories contribute to weight gain,WHO
+Obesity,Overweight,BMI 25-29.9,Refined Flour,60,g,4,Limit,Refined carbs spike insulin promoting fat storage,NHS
+Obesity,Overweight,BMI 25-29.9,Bakery Products,50,g,5,Avoid Often,High calorie dense foods promote obesity,FSSAI
+Obesity,Overweight,BMI 25-29.9,Energy Drinks,0,ml,7,Avoid,Energy drinks have very high calorie content,AHA
+Obesity,Obese I,BMI 30-34.9,Calories,1800,kcal,7,Avoid,Strict caloric control needed for weight reduction,WHO
+Obesity,Obese I,BMI 30-34.9,Added Sugar,15,g,7,Avoid,Added sugar worsens metabolic syndrome in obesity,WHO
+Obesity,Obese I,BMI 30-34.9,Saturated Fat,15,g,7,Avoid,Saturated fat promotes visceral adiposity,AHA
+Obesity,Obese I,BMI 30-34.9,Trans Fat,0,g,9,Strictly Avoid,Trans fat critically worsens obesity-related risk,AHA
+Obesity,Obese I,BMI 30-34.9,Soft Drinks,0,ml,8,Avoid,Zero calorie beverages only recommended,WHO
+Obesity,Obese I,BMI 30-34.9,Processed Meat,30,g,7,Avoid,Processed meat is calorie and fat dense,WHO
+Obesity,Obese I,BMI 30-34.9,Pastries,0,g,8,Avoid,Pastries are dense in fat and refined carbs,NHS
+Obesity,Obese I,BMI 30-34.9,Instant Noodles,0,serving,7,Avoid,High calorie and sodium content,FSSAI
+Obesity,Obese II,BMI 35-39.9,Calories,1500,kcal,8,Avoid,Significant caloric restriction required,WHO
+Obesity,Obese II,BMI 35-39.9,Added Sugar,10,g,8,Avoid,Minimal sugar intake essential for weight control,WHO
+Obesity,Obese II,BMI 35-39.9,Saturated Fat,10,g,8,Avoid,Fat restriction critical in severe obesity,AHA
+Obesity,Obese II,BMI 35-39.9,Trans Fat,0,g,10,Strictly Avoid,Trans fat is critically harmful in severe obesity,AHA
+Obesity,Obese II,BMI 35-39.9,Soft Drinks,0,ml,9,Strictly Avoid,All sugary beverages strictly contraindicated,WHO
+Obesity,Obese II,BMI 35-39.9,Bakery Products,0,g,8,Avoid,High calorie products contraindicated,NHS
+Obesity,Obese III,BMI >=40,Calories,1200,kcal,10,Strictly Avoid,Very low calorie diet essential under supervision,WHO
+Obesity,Obese III,BMI >=40,Added Sugar,0,g,10,Strictly Avoid,Zero added sugar strictly required,WHO
+Obesity,Obese III,BMI >=40,Saturated Fat,7,g,9,Strictly Avoid,Extreme fat restriction needed,AHA
+Obesity,Obese III,BMI >=40,Trans Fat,0,g,10,Strictly Avoid,Trans fat is absolutely contraindicated,AHA
+Obesity,Obese III,BMI >=40,Soft Drinks,0,ml,10,Strictly Avoid,All sugary drinks strictly contraindicated,WHO
+Obesity,Obese III,BMI >=40,Energy Drinks,0,ml,10,Strictly Avoid,Energy drinks critically worsen obesity,AHA
+Heart Disease,Mild,EF 50-55%,Saturated Fat,15,g,6,Avoid Often,Saturated fat promotes arterial plaque,AHA
+Heart Disease,Mild,EF 50-55%,Trans Fat,2,g,8,Avoid,Trans fat increases LDL and inflammation,AHA
+Heart Disease,Mild,EF 50-55%,Cholesterol,200,mg,6,Avoid Often,Dietary cholesterol raises LDL levels,AHA
+Heart Disease,Mild,EF 50-55%,Sodium,2000,mg,6,Avoid Often,Sodium increases fluid load on the heart,AHA
+Heart Disease,Mild,EF 50-55%,Added Sugar,25,g,5,Avoid Often,Sugar promotes triglyceride elevation,AHA
+Heart Disease,Mild,EF 50-55%,Processed Meat,30,g,6,Avoid Often,Processed meats increase cardiovascular risk,AHA
+Heart Disease,Mild,EF 50-55%,Soft Drinks,200,ml,5,Avoid Often,Sugary drinks worsen cardiac metabolic risk,AHA
+Heart Disease,Moderate,EF 40-49%,Saturated Fat,10,g,8,Avoid,Saturated fat significantly worsens heart disease,AHA
+Heart Disease,Moderate,EF 40-49%,Trans Fat,0,g,10,Strictly Avoid,Trans fat is critically dangerous for heart patients,AHA
+Heart Disease,Moderate,EF 40-49%,Cholesterol,150,mg,8,Avoid,Dietary cholesterol must be strictly limited,AHA
+Heart Disease,Moderate,EF 40-49%,Sodium,1500,mg,8,Avoid,Low sodium essential to reduce cardiac load,AHA
+Heart Disease,Moderate,EF 40-49%,Added Sugar,15,g,7,Avoid,Sugar increases triglycerides and cardiac risk,AHA
+Heart Disease,Moderate,EF 40-49%,Processed Meat,0,g,9,Strictly Avoid,Processed meats critically worsen heart disease,AHA
+Heart Disease,Moderate,EF 40-49%,Energy Drinks,0,ml,10,Strictly Avoid,Energy drinks can trigger arrhythmias,AHA
+Heart Disease,Severe,EF <40%,Saturated Fat,7,g,10,Strictly Avoid,Saturated fat critically worsens heart failure,AHA
+Heart Disease,Severe,EF <40%,Trans Fat,0,g,10,Strictly Avoid,Trans fat is absolutely contraindicated,AHA
+Heart Disease,Severe,EF <40%,Cholesterol,100,mg,9,Strictly Avoid,Dietary cholesterol critically dangerous in severe HF,AHA
+Heart Disease,Severe,EF <40%,Sodium,1000,mg,10,Strictly Avoid,Sodium critically worsens fluid retention in heart failure,AHA
+Heart Disease,Severe,EF <40%,Added Sugar,0,g,9,Strictly Avoid,Sugar worsens cardiac metabolic function,AHA
+Heart Disease,Severe,EF <40%,Caffeine,0,mg,9,Strictly Avoid,Caffeine can trigger dangerous arrhythmias,NHS
+Heart Disease,Severe,EF <40%,Soft Drinks,0,ml,9,Strictly Avoid,Sodas contain sodium phosphates harmful for heart,AHA
+Kidney Disease,Stage1,eGFR >=90,Sodium,2300,mg,3,Limit,Moderate sodium restriction supports kidney health,NKF
+Kidney Disease,Stage1,eGFR >=90,Phosphorus,700,mg,3,Limit,Early phosphorus monitoring is recommended,NKF
+Kidney Disease,Stage1,eGFR >=90,Potassium,4700,mg,2,Limit,Monitor potassium levels in early kidney disease,NKF
+Kidney Disease,Stage1,eGFR >=90,Processed Meat,50,g,4,Limit,Processed meat adds excessive phosphorus and sodium,NKF
+Kidney Disease,Stage2,eGFR 60-89,Sodium,2000,mg,5,Avoid Often,Sodium restriction helps slow kidney disease progression,NKF
+Kidney Disease,Stage2,eGFR 60-89,Phosphorus,600,mg,5,Avoid Often,Phosphorus restriction protects kidney function,NKF
+Kidney Disease,Stage2,eGFR 60-89,Potassium,3500,mg,5,Avoid Often,Elevated potassium stresses compromised kidneys,NKF
+Kidney Disease,Stage2,eGFR 60-89,Processed Meat,30,g,6,Avoid Often,High phosphorus content in processed meats harms kidneys,NKF
+Kidney Disease,Stage2,eGFR 60-89,Soft Drinks,150,ml,6,Avoid Often,Cola drinks contain phosphoric acid harmful for kidneys,NKF
+Kidney Disease,Stage3,eGFR 30-59,Sodium,1500,mg,7,Avoid,Strict sodium control essential for stage 3 CKD,NKF
+Kidney Disease,Stage3,eGFR 30-59,Phosphorus,500,mg,7,Avoid,Phosphorus restriction critical to prevent bone disease,NKF
+Kidney Disease,Stage3,eGFR 30-59,Potassium,2500,mg,7,Avoid,Hyperkalemia risk increases in stage 3 CKD,NKF
+Kidney Disease,Stage3,eGFR 30-59,Processed Meat,0,g,8,Avoid,Processed meat critically overloads failing kidneys,NKF
+Kidney Disease,Stage3,eGFR 30-59,Soft Drinks,0,ml,8,Avoid,Phosphoric acid in soft drinks worsens kidney disease,NKF
+Kidney Disease,Stage3,eGFR 30-59,Instant Noodles,0,serving,8,Avoid,Very high sodium and phosphate content,FSSAI
+Kidney Disease,Stage4,eGFR 15-29,Sodium,1000,mg,9,Strictly Avoid,Severe sodium restriction mandatory in stage 4 CKD,NKF
+Kidney Disease,Stage4,eGFR 15-29,Phosphorus,400,mg,9,Strictly Avoid,Phosphorus buildup causes severe bone and heart disease,NKF
+Kidney Disease,Stage4,eGFR 15-29,Potassium,2000,mg,9,Strictly Avoid,Life-threatening hyperkalemia risk in stage 4 CKD,NKF
+Kidney Disease,Stage4,eGFR 15-29,Processed Meat,0,g,10,Strictly Avoid,Absolutely contraindicated in advanced kidney disease,NKF
+Kidney Disease,Stage4,eGFR 15-29,Soft Drinks,0,ml,10,Strictly Avoid,Cola drinks critically harm stage 4 kidneys,NKF
+Kidney Disease,Stage5,eGFR <15,Sodium,800,mg,10,Strictly Avoid,Minimal sodium intake required in kidney failure,NKF
+Kidney Disease,Stage5,eGFR <15,Phosphorus,300,mg,10,Strictly Avoid,Phosphorus must be strictly controlled in dialysis patients,NKF
+Kidney Disease,Stage5,eGFR <15,Potassium,1500,mg,10,Strictly Avoid,Hyperkalemia can cause fatal arrhythmias in ESRD,NKF
+Kidney Disease,Stage5,eGFR <15,Processed Meat,0,g,10,Strictly Avoid,Absolutely forbidden in end-stage renal disease,NKF
+Kidney Disease,Stage5,eGFR <15,Energy Drinks,0,ml,10,Strictly Avoid,Critically dangerous potassium and phosphorus load,NKF
+PCOS,Mild,Irregular cycles,Added Sugar,20,g,6,Avoid Often,Sugar worsens insulin resistance common in PCOS,ADA
+PCOS,Mild,Irregular cycles,Refined Flour,50,g,5,Avoid Often,Refined carbs spike insulin worsening PCOS hormones,NHS
+PCOS,Mild,Irregular cycles,Trans Fat,2,g,7,Avoid,Trans fat worsens hormonal imbalance in PCOS,AHA
+PCOS,Mild,Irregular cycles,Soft Drinks,200,ml,6,Avoid Often,Sugary drinks worsen insulin resistance in PCOS,NHS
+PCOS,Mild,Irregular cycles,Processed Meat,40,g,5,Avoid Often,Processed meat contributes to inflammation in PCOS,WHO
+PCOS,Moderate,Androgen excess,Added Sugar,10,g,8,Avoid,Sugar critically worsens androgen levels in PCOS,ADA
+PCOS,Moderate,Androgen excess,Refined Flour,30,g,7,Avoid,Refined carbs worsen insulin-androgen cycle,NHS
+PCOS,Moderate,Androgen excess,Trans Fat,0,g,9,Strictly Avoid,Trans fat critically disrupts hormonal balance,AHA
+PCOS,Moderate,Androgen excess,Soft Drinks,0,ml,8,Avoid,Sugary drinks worsen androgen excess,NHS
+PCOS,Moderate,Androgen excess,Glucose Syrup,0,g,9,Strictly Avoid,Glucose syrup causes rapid insulin spikes worsening PCOS,ADA
+PCOS,Moderate,Androgen excess,Corn Syrup,0,g,9,Strictly Avoid,HFCS worsens insulin resistance and androgen excess,ADA
+PCOS,Severe,Metabolic syndrome,Added Sugar,0,g,10,Strictly Avoid,Zero added sugar essential in severe PCOS,ADA
+PCOS,Severe,Metabolic syndrome,Refined Flour,0,g,10,Strictly Avoid,All refined carbs strictly contraindicated,NHS
+PCOS,Severe,Metabolic syndrome,Trans Fat,0,g,10,Strictly Avoid,Trans fat is absolutely contraindicated,AHA
+PCOS,Severe,Metabolic syndrome,Calories,1800,kcal,8,Avoid,Caloric control essential to manage weight in severe PCOS,WHO
+PCOS,Severe,Metabolic syndrome,Saturated Fat,12,g,8,Avoid,Saturated fat worsens metabolic syndrome in PCOS,AHA
+PCOS,Severe,Metabolic syndrome,Sodium,2000,mg,6,Avoid Often,Sodium restriction helps with PCOS-related hypertension,NHS
+Hypothyroidism,Mild,TSH 4.5-10,Processed Meat,40,g,4,Limit,Preservatives in processed meat may affect thyroid function,NHS
+Hypothyroidism,Mild,TSH 4.5-10,Soft Drinks,250,ml,3,Limit,Sugary drinks contribute to weight gain in hypothyroidism,NHS
+Hypothyroidism,Mild,TSH 4.5-10,Refined Flour,60,g,4,Limit,Refined carbs worsen weight gain in hypothyroidism,NHS
+Hypothyroidism,Mild,TSH 4.5-10,Added Sugar,30,g,4,Limit,Sugar contributes to metabolic issues in hypothyroidism,ADA
+Hypothyroidism,Mild,TSH 4.5-10,Calories,2200,kcal,3,Limit,Hypothyroidism slows metabolism requiring caloric moderation,NHS
+Hypothyroidism,Moderate,TSH 10-20,Processed Meat,20,g,6,Avoid Often,Nitrates in processed meat may impair thyroid hormone synthesis,NHS
+Hypothyroidism,Moderate,TSH 10-20,Soft Drinks,150,ml,5,Avoid Often,Phosphoric acid in sodas may inhibit mineral absorption,NHS
+Hypothyroidism,Moderate,TSH 10-20,Refined Flour,40,g,5,Avoid Often,Refined carbs worsen obesity linked to thyroid dysfunction,NHS
+Hypothyroidism,Moderate,TSH 10-20,Added Sugar,20,g,6,Avoid Often,Excess sugar worsens hypothyroid metabolic dysfunction,ADA
+Hypothyroidism,Moderate,TSH 10-20,Trans Fat,1,g,7,Avoid,Trans fat interferes with thyroid hormone receptor activity,AHA
+Hypothyroidism,Severe,TSH >20,Processed Meat,0,g,8,Avoid,Processed meat severely disrupts thyroid function,NHS
+Hypothyroidism,Severe,TSH >20,Soft Drinks,0,ml,7,Avoid,Sodas worsen mineral imbalances in severe hypothyroidism,NHS
+Hypothyroidism,Severe,TSH >20,Refined Flour,20,g,7,Avoid,Severe caloric and carb restriction needed,NHS
+Hypothyroidism,Severe,TSH >20,Added Sugar,10,g,8,Avoid,Minimal sugar intake essential in severe hypothyroidism,ADA
+Hypothyroidism,Severe,TSH >20,Trans Fat,0,g,9,Strictly Avoid,Trans fat critically harmful in severe thyroid dysfunction,AHA
+Hyperthyroidism,Mild,TSH 0.1-0.4,Caffeine,200,mg,5,Avoid Often,Caffeine worsens thyroid-induced palpitations,NHS
+Hyperthyroidism,Mild,TSH 0.1-0.4,Added Sugar,25,g,4,Limit,Sugar worsens energy fluctuations in hyperthyroidism,NHS
+Hyperthyroidism,Mild,TSH 0.1-0.4,Energy Drinks,0,ml,7,Avoid,Energy drinks worsen hyperthyroid tachycardia,AHA
+Hyperthyroidism,Mild,TSH 0.1-0.4,Soft Drinks,200,ml,4,Limit,Caffeine in sodas worsens hyperthyroid symptoms,NHS
+Hyperthyroidism,Moderate,TSH <0.1,Caffeine,100,mg,7,Avoid,Caffeine critically worsens palpitations and tremors,NHS
+Hyperthyroidism,Moderate,TSH <0.1,Added Sugar,15,g,6,Avoid Often,Sugar worsens hypermetabolic state,NHS
+Hyperthyroidism,Moderate,TSH <0.1,Energy Drinks,0,ml,9,Strictly Avoid,Energy drinks can cause dangerous cardiac effects,AHA
+Hyperthyroidism,Moderate,TSH <0.1,Soft Drinks,0,ml,7,Avoid,Caffeinated sodas worsen hyperthyroid symptoms,NHS
+Hyperthyroidism,Moderate,TSH <0.1,Trans Fat,1,g,7,Avoid,Trans fat increases cardiovascular risk in hyperthyroidism,AHA
+Hyperthyroidism,Severe,TSH <0.01,Caffeine,0,mg,10,Strictly Avoid,Caffeine can precipitate thyroid storm,NHS
+Hyperthyroidism,Severe,TSH <0.01,Energy Drinks,0,ml,10,Strictly Avoid,Energy drinks can trigger life-threatening thyroid crisis,AHA
+Hyperthyroidism,Severe,TSH <0.01,Added Sugar,10,g,8,Avoid,Sugar worsens severe hypermetabolic complications,NHS
+Hyperthyroidism,Severe,TSH <0.01,Soft Drinks,0,ml,8,Avoid,All caffeinated beverages contraindicated,NHS
+Hyperthyroidism,Severe,TSH <0.01,Processed Meat,0,g,8,Avoid,High iodine in some processed foods can worsen hyperthyroidism,NHS
+High Cholesterol,Borderline,LDL 130-159,Saturated Fat,20,g,5,Avoid Often,Saturated fat raises LDL cholesterol levels,AHA
+High Cholesterol,Borderline,LDL 130-159,Trans Fat,2,g,8,Avoid,Trans fat raises LDL and lowers HDL cholesterol,AHA
+High Cholesterol,Borderline,LDL 130-159,Cholesterol,300,mg,5,Avoid Often,Dietary cholesterol contributes to high blood cholesterol,AHA
+High Cholesterol,Borderline,LDL 130-159,Processed Meat,40,g,5,Avoid Often,Processed meats are high in saturated fat,AHA
+High Cholesterol,Borderline,LDL 130-159,Bakery Products,60,g,5,Avoid Often,Baked goods often contain trans and saturated fats,NHS
+High Cholesterol,High,LDL 160-189,Saturated Fat,12,g,7,Avoid,Strict saturated fat restriction needed,AHA
+High Cholesterol,High,LDL 160-189,Trans Fat,0,g,10,Strictly Avoid,Trans fat is critically harmful for cholesterol levels,AHA
+High Cholesterol,High,LDL 160-189,Cholesterol,200,mg,7,Avoid,Dietary cholesterol must be strictly limited,AHA
+High Cholesterol,High,LDL 160-189,Processed Meat,20,g,7,Avoid,Processed meat significantly raises LDL levels,AHA
+High Cholesterol,High,LDL 160-189,Bakery Products,30,g,7,Avoid,Trans fat in baked goods worsens high cholesterol,NHS
+High Cholesterol,High,LDL 160-189,Soft Drinks,150,ml,5,Avoid Often,Fructose in sodas raises triglyceride levels,AHA
+High Cholesterol,Very High,LDL >=190,Saturated Fat,7,g,9,Strictly Avoid,Saturated fat is critically harmful at very high LDL,AHA
+High Cholesterol,Very High,LDL >=190,Trans Fat,0,g,10,Strictly Avoid,Trans fat is absolutely contraindicated,AHA
+High Cholesterol,Very High,LDL >=190,Cholesterol,100,mg,9,Strictly Avoid,Minimal dietary cholesterol intake required,AHA
+High Cholesterol,Very High,LDL >=190,Processed Meat,0,g,9,Strictly Avoid,Processed meat is critically harmful for very high LDL,AHA
+High Cholesterol,Very High,LDL >=190,Bakery Products,0,g,9,Strictly Avoid,All trans fat containing baked goods strictly forbidden,NHS
+High Cholesterol,Very High,LDL >=190,Energy Drinks,0,ml,8,Avoid,Energy drinks worsen metabolic lipid profile,AHA
+Fatty Liver,Mild,Grade 1 Steatosis,Added Sugar,25,g,6,Avoid Often,Fructose is directly metabolized to liver fat,WHO
+Fatty Liver,Mild,Grade 1 Steatosis,Saturated Fat,20,g,5,Avoid Often,Saturated fat promotes hepatic fat accumulation,NHS
+Fatty Liver,Mild,Grade 1 Steatosis,Calories,2000,kcal,5,Avoid Often,Caloric excess directly causes liver fat deposition,WHO
+Fatty Liver,Mild,Grade 1 Steatosis,Soft Drinks,200,ml,6,Avoid Often,High fructose corn syrup in sodas directly causes fatty liver,NHS
+Fatty Liver,Mild,Grade 1 Steatosis,Refined Flour,50,g,4,Limit,Refined carbs convert to liver fat via de novo lipogenesis,NHS
+Fatty Liver,Moderate,Grade 2 Steatosis,Added Sugar,10,g,8,Avoid,Sugar severely worsens hepatic steatosis,WHO
+Fatty Liver,Moderate,Grade 2 Steatosis,Saturated Fat,12,g,7,Avoid,Saturated fat promotes liver inflammation,NHS
+Fatty Liver,Moderate,Grade 2 Steatosis,Calories,1800,kcal,7,Avoid,Significant caloric restriction needed to reverse fatty liver,WHO
+Fatty Liver,Moderate,Grade 2 Steatosis,Soft Drinks,0,ml,9,Strictly Avoid,Fructose in sodas critically worsens fatty liver,NHS
+Fatty Liver,Moderate,Grade 2 Steatosis,Corn Syrup,0,g,9,Strictly Avoid,HFCS is directly hepatotoxic causing fatty liver,NHS
+Fatty Liver,Moderate,Grade 2 Steatosis,Glucose Syrup,0,g,8,Avoid,Glucose syrup promotes de novo lipogenesis in liver,NHS
+Fatty Liver,Severe,Grade 3 NASH,Added Sugar,0,g,10,Strictly Avoid,Zero added sugar essential to prevent cirrhosis,WHO
+Fatty Liver,Severe,Grade 3 NASH,Saturated Fat,7,g,9,Strictly Avoid,Saturated fat critically worsens NASH progression,NHS
+Fatty Liver,Severe,Grade 3 NASH,Calories,1600,kcal,9,Strictly Avoid,Severe caloric restriction needed to halt NASH,WHO
+Fatty Liver,Severe,Grade 3 NASH,Soft Drinks,0,ml,10,Strictly Avoid,Fructose containing drinks critically worsen NASH,NHS
+Fatty Liver,Severe,Grade 3 NASH,Trans Fat,0,g,10,Strictly Avoid,Trans fat is absolutely contraindicated in NASH,AHA
+Fatty Liver,Severe,Grade 3 NASH,Processed Meat,0,g,9,Strictly Avoid,Processed meats worsen hepatic inflammation in NASH,WHO
+Hypertension,Elevated,BP 120-129,Energy Drinks,0,ml,7,Avoid,Energy drinks contain stimulants that raise BP acutely,AHA
+Hypertension,Elevated,BP 120-129,Instant Noodles,1,serving,5,Avoid Often,High sodium content in instant noodles elevates BP,FSSAI
+Hypertension,Stage1,BP 130-139,Energy Drinks,0,ml,8,Avoid,Energy drinks cause significant BP elevation,AHA
+Hypertension,Stage1,BP 130-139,Bakery Products,50,g,4,Limit,Bakery products often contain high sodium,FSSAI
+Hypertension,Stage2,BP >=140,Bakery Products,0,g,8,Avoid,Bakery products with high sodium are contraindicated,FSSAI
+Hypertension,Stage2,BP >=140,Refined Flour,30,g,6,Avoid Often,Refined flour promotes weight gain worsening hypertension,NHS
+Diabetes,Prediabetic,Fasting Sugar 100-125,Bakery Products,40,g,6,Avoid Often,Bakery products are dense in refined carbs and sugar,FSSAI
+Diabetes,Prediabetic,Fasting Sugar 100-125,Instant Noodles,0,serving,7,Avoid,Instant noodles have high glycemic index,FSSAI
+Diabetes,Prediabetic,Fasting Sugar 100-125,Trans Fat,1,g,6,Avoid Often,Trans fat worsens insulin sensitivity,ADA
+Diabetes,Diabetic,Fasting Sugar >=126,Instant Noodles,0,serving,9,Strictly Avoid,Instant noodles cause rapid blood sugar spikes,FSSAI
+Diabetes,Diabetic,Fasting Sugar >=126,MSG,200,mg,5,Avoid Often,MSG may impair insulin signaling in some studies,FSSAI
+Diabetes,Severe,HbA1c >=9,Bakery Products,0,g,10,Strictly Avoid,All refined carb products strictly contraindicated,FSSAI
+Diabetes,Severe,HbA1c >=9,Instant Noodles,0,serving,10,Strictly Avoid,Instant noodles critically spike blood glucose,FSSAI
+Obesity,Overweight,BMI 25-29.9,Cholesterol,300,mg,3,Limit,High cholesterol intake worsens obesity comorbidities,AHA
+Obesity,Overweight,BMI 25-29.9,Instant Noodles,1,serving,5,Avoid Often,High calorie and sodium instant noodles worsen obesity,FSSAI
+Obesity,Obese I,BMI 30-34.9,Cholesterol,200,mg,6,Avoid Often,Cholesterol restriction important in obese patients,AHA
+Obesity,Obese I,BMI 30-34.9,MSG,300,mg,4,Limit,Some evidence links MSG to appetite stimulation,FSSAI
+Obesity,Obese II,BMI 35-39.9,Cholesterol,150,mg,7,Avoid,Strict cholesterol limits needed in severe obesity,AHA
+Obesity,Obese II,BMI 35-39.9,Refined Flour,30,g,7,Avoid,Refined carbs promote fat storage in severe obesity,NHS
+Obesity,Obese III,BMI >=40,Cholesterol,100,mg,9,Strictly Avoid,Minimal cholesterol intake required in morbid obesity,AHA
+Obesity,Obese III,BMI >=40,Refined Flour,0,g,9,Strictly Avoid,All refined carbs contraindicated in morbid obesity,NHS
+Heart Disease,Mild,EF 50-55%,Bakery Products,40,g,5,Avoid Often,Bakery products contain hidden trans and saturated fats,NHS
+Heart Disease,Mild,EF 50-55%,Instant Noodles,0,serving,6,Avoid Often,High sodium content worsens cardiac health,FSSAI
+Heart Disease,Moderate,EF 40-49%,Bakery Products,0,g,8,Avoid,Baked goods with trans fats critically harmful for heart,NHS
+Heart Disease,Moderate,EF 40-49%,Instant Noodles,0,serving,8,Avoid,High sodium in instant noodles dangerous for heart patients,FSSAI
+Heart Disease,Severe,EF <40%,Bakery Products,0,g,10,Strictly Avoid,All trans fat products strictly contraindicated,NHS
+Heart Disease,Severe,EF <40%,Cholesterol,80,mg,10,Strictly Avoid,Minimal dietary cholesterol mandatory in severe heart failure,AHA
+Kidney Disease,Stage1,eGFR >=90,Calories,2500,kcal,2,Limit,Moderate caloric intake supports kidney health,NKF
+Kidney Disease,Stage1,eGFR >=90,Added Sugar,30,g,3,Limit,Sugar contributes to diabetes risk worsening kidney disease,NKF
+Kidney Disease,Stage2,eGFR 60-89,Calories,2200,kcal,4,Limit,Caloric moderation helps slow CKD progression,NKF
+Kidney Disease,Stage2,eGFR 60-89,Added Sugar,20,g,5,Avoid Often,Sugar worsens diabetes and kidney disease,NKF
+Kidney Disease,Stage3,eGFR 30-59,Calories,2000,kcal,6,Avoid Often,Caloric control essential in stage 3 CKD,NKF
+Kidney Disease,Stage3,eGFR 30-59,Added Sugar,10,g,7,Avoid,Minimal sugar needed to protect kidney function,NKF
+Kidney Disease,Stage4,eGFR 15-29,Calories,1800,kcal,8,Avoid,Significant dietary restriction needed in stage 4 CKD,NKF
+Kidney Disease,Stage4,eGFR 15-29,Added Sugar,5,g,8,Avoid,Minimal sugar intake essential in advanced CKD,NKF
+Kidney Disease,Stage5,eGFR <15,Calories,1600,kcal,9,Strictly Avoid,Strict dietary management required in ESRD,NKF
+Kidney Disease,Stage5,eGFR <15,Added Sugar,0,g,9,Strictly Avoid,Zero added sugar in end-stage renal disease,NKF
+PCOS,Mild,Irregular cycles,Glucose Syrup,15,g,6,Avoid Often,Glucose syrup causes insulin spikes worsening PCOS,ADA
+PCOS,Mild,Irregular cycles,Corn Syrup,15,g,6,Avoid Often,HFCS directly worsens insulin resistance in PCOS,ADA
+PCOS,Moderate,Androgen excess,Saturated Fat,15,g,6,Avoid Often,Saturated fat promotes inflammation worsening PCOS,AHA
+PCOS,Moderate,Androgen excess,Calories,1900,kcal,6,Avoid Often,Caloric surplus worsens PCOS metabolic syndrome,WHO
+PCOS,Severe,Metabolic syndrome,Glucose Syrup,0,g,10,Strictly Avoid,Glucose syrup critically worsens severe PCOS,ADA
+PCOS,Severe,Metabolic syndrome,Corn Syrup,0,g,10,Strictly Avoid,HFCS is critically harmful in severe PCOS,ADA
+Hypothyroidism,Mild,TSH 4.5-10,Sodium,2500,mg,3,Limit,Moderate sodium restriction supports thyroid health,NHS
+Hypothyroidism,Mild,TSH 4.5-10,Cholesterol,300,mg,3,Limit,Hypothyroidism raises cholesterol requiring dietary monitoring,NHS
+Hypothyroidism,Moderate,TSH 10-20,Sodium,2000,mg,5,Avoid Often,Sodium restriction supports hypothyroid management,NHS
+Hypothyroidism,Moderate,TSH 10-20,Cholesterol,200,mg,5,Avoid Often,Cholesterol restriction important in moderate hypothyroidism,NHS
+Hypothyroidism,Severe,TSH >20,Sodium,1500,mg,7,Avoid,Strict sodium restriction needed in severe hypothyroidism,NHS
+Hypothyroidism,Severe,TSH >20,Cholesterol,150,mg,7,Avoid,Strict cholesterol management required,NHS
+Hyperthyroidism,Mild,TSH 0.1-0.4,Sodium,2300,mg,3,Limit,Moderate sodium helps manage blood pressure in hyperthyroidism,NHS
+Hyperthyroidism,Mild,TSH 0.1-0.4,Calories,2500,kcal,3,Limit,Hyperthyroidism increases metabolic rate requiring caloric adjustment,NHS
+Hyperthyroidism,Moderate,TSH <0.1,Sodium,2000,mg,5,Avoid Often,Sodium restriction helps manage hyperthyroid-related hypertension,NHS
+Hyperthyroidism,Moderate,TSH <0.1,Calories,2800,kcal,4,Limit,Increased calories needed but refined sources avoided,NHS
+Hyperthyroidism,Severe,TSH <0.01,Sodium,1500,mg,7,Avoid,Strict sodium control needed in severe hyperthyroidism,NHS
+Hyperthyroidism,Severe,TSH <0.01,Saturated Fat,10,g,8,Avoid,Saturated fat worsens cardiac risk in hyperthyroidism,AHA
+High Cholesterol,Borderline,LDL 130-159,Added Sugar,25,g,4,Limit,Sugar elevates triglyceride levels,AHA
+High Cholesterol,Borderline,LDL 130-159,Glucose Syrup,15,g,6,Avoid Often,Glucose syrup raises triglycerides linked to cholesterol,AHA
+High Cholesterol,High,LDL 160-189,Added Sugar,15,g,6,Avoid Often,Excess sugar raises VLDL and triglycerides,AHA
+High Cholesterol,High,LDL 160-189,Glucose Syrup,0,g,8,Avoid,Glucose syrup critically worsens lipid profile,AHA
+High Cholesterol,Very High,LDL >=190,Added Sugar,0,g,9,Strictly Avoid,Zero added sugar required at very high LDL,AHA
+High Cholesterol,Very High,LDL >=190,Glucose Syrup,0,g,10,Strictly Avoid,Glucose syrup critically worsens hypercholesterolemia,AHA
+Fatty Liver,Mild,Grade 1 Steatosis,Alcohol,0,g,9,Strictly Avoid,Alcohol directly causes hepatic steatosis,WHO
+Fatty Liver,Mild,Grade 1 Steatosis,Trans Fat,1,g,7,Avoid,Trans fat worsens liver inflammation,AHA
+Fatty Liver,Moderate,Grade 2 Steatosis,Trans Fat,0,g,9,Strictly Avoid,Trans fat critically worsens hepatic steatosis,AHA
+Fatty Liver,Moderate,Grade 2 Steatosis,Refined Flour,30,g,7,Avoid,Refined carbs promote de novo lipogenesis in liver,NHS
+Fatty Liver,Severe,Grade 3 NASH,Refined Flour,0,g,10,Strictly Avoid,All refined carbs strictly contraindicated in NASH,NHS
+Fatty Liver,Severe,Grade 3 NASH,Corn Syrup,0,g,10,Strictly Avoid,HFCS critically accelerates NASH progression to cirrhosis,NHS
+Hypertension,Elevated,BP 120-129,White Bread,80,g,2,Limit,White bread has high glycemic load contributing to weight gain,NHS
+Hypertension,Stage1,BP 130-139,White Bread,50,g,4,Limit,Refined carbs promote obesity worsening hypertension,NHS
+Hypertension,Stage2,BP >=140,White Bread,30,g,6,Avoid Often,Refined flour contributes to metabolic syndrome,NHS
+Diabetes,Prediabetic,Fasting Sugar 100-125,MSG,400,mg,3,Limit,MSG may affect appetite regulation in diabetic-prone individuals,FSSAI
+Diabetes,Diabetic,Fasting Sugar >=126,White Bread,0,g,8,Avoid,White bread has very high glycemic index harmful for diabetics,NHS
+Obesity,Overweight,BMI 25-29.9,White Bread,60,g,4,Limit,White bread is calorie dense with low satiety,NHS
+Obesity,Obese I,BMI 30-34.9,White Bread,30,g,6,Avoid Often,White bread promotes fat storage in obese patients,NHS
+Obesity,Obese II,BMI 35-39.9,White Bread,0,g,7,Avoid,All refined bread contraindicated in severe obesity,NHS
+Obesity,Obese III,BMI >=40,White Bread,0,g,9,Strictly Avoid,White bread strictly contraindicated in morbid obesity,NHS
+Heart Disease,Mild,EF 50-55%,Refined Flour,50,g,4,Limit,Refined flour raises glycemic load worsening cardiac risk,NHS
+Heart Disease,Moderate,EF 40-49%,Refined Flour,30,g,6,Avoid Often,Refined carbs worsen cardiac metabolic risk,NHS
+Heart Disease,Severe,EF <40%,Refined Flour,0,g,8,Avoid,All refined carbs contraindicated in severe heart failure,NHS
+PCOS,Mild,Irregular cycles,White Bread,50,g,5,Avoid Often,White bread spikes insulin worsening PCOS,NHS
+PCOS,Moderate,Androgen excess,White Bread,30,g,7,Avoid,Refined carbs worsen androgen excess in PCOS,NHS
+PCOS,Severe,Metabolic syndrome,White Bread,0,g,9,Strictly Avoid,All refined carbs contraindicated in severe PCOS,NHS
+High Cholesterol,Borderline,LDL 130-159,Corn Syrup,15,g,5,Avoid Often,Corn syrup elevates triglyceride levels,AHA
+High Cholesterol,High,LDL 160-189,Corn Syrup,0,g,8,Avoid,Corn syrup significantly worsens lipid profile,AHA
+High Cholesterol,Very High,LDL >=190,Corn Syrup,0,g,10,Strictly Avoid,HFCS critically worsens hypercholesterolemia,AHA
+Kidney Disease,Stage3,eGFR 30-59,Energy Drinks,0,ml,9,Strictly Avoid,Energy drinks overload failing kidneys with electrolytes,NKF
+Kidney Disease,Stage4,eGFR 15-29,Energy Drinks,0,ml,10,Strictly Avoid,Energy drinks are critically dangerous in advanced CKD,NKF
+Kidney Disease,Stage5,eGFR <15,Bakery Products,0,g,9,Strictly Avoid,Baked goods contain hidden phosphorus dangerous in ESRD,NKF
+Kidney Disease,Stage4,eGFR 15-29,Bakery Products,0,g,8,Avoid,Bakery products contain phosphorus additives harmful in CKD,NKF
+Kidney Disease,Stage3,eGFR 30-59,Bakery Products,30,g,6,Avoid Often,Phosphorus in bakery products stresses stage 3 kidneys,NKF
+Kidney Disease,Stage2,eGFR 60-89,Instant Noodles,0,serving,6,Avoid Often,High sodium and phosphate in instant noodles harm kidneys,FSSAI
+Kidney Disease,Stage1,eGFR >=90,Instant Noodles,1,serving,4,Limit,Sodium content in instant noodles should be monitored,FSSAI
+Fatty Liver,Mild,Grade 1 Steatosis,Bakery Products,50,g,5,Avoid Often,Bakery products high in trans fat promote liver fat,NHS
+Fatty Liver,Moderate,Grade 2 Steatosis,Bakery Products,0,g,8,Avoid,Bakery products worsen hepatic steatosis,NHS
+Fatty Liver,Severe,Grade 3 NASH,Bakery Products,0,g,10,Strictly Avoid,All trans fat containing foods strictly contraindicated in NASH,NHS
+Fatty Liver,Mild,Grade 1 Steatosis,Processed Meat,40,g,5,Avoid Often,Saturated fat in processed meat promotes liver fat,WHO
+Fatty Liver,Moderate,Grade 2 Steatosis,Processed Meat,20,g,7,Avoid,Processed meat worsens hepatic inflammation,WHO
+Fatty Liver,Severe,Grade 3 NASH,Glucose Syrup,0,g,10,Strictly Avoid,Glucose syrup critically accelerates NASH,NHS
+Hypothyroidism,Severe,TSH >20,Calories,1800,kcal,7,Avoid,Caloric restriction important in severe hypothyroidism,NHS
+Hypothyroidism,Moderate,TSH 10-20,Calories,2000,kcal,5,Avoid Often,Metabolic slowdown requires caloric moderation,NHS
+Hyperthyroidism,Mild,TSH 0.1-0.4,Cholesterol,250,mg,3,Limit,Hyperthyroidism can lower cholesterol but dietary balance needed,NHS
+Hyperthyroidism,Moderate,TSH <0.1,Cholesterol,200,mg,5,Avoid Often,Monitor cholesterol carefully with thyroid treatment,NHS
+Hyperthyroidism,Severe,TSH <0.01,Cholesterol,150,mg,7,Avoid,Strict cholesterol management with severe hyperthyroidism,NHS

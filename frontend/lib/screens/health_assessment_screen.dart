@@ -110,18 +110,27 @@ class _HealthAssessmentScreenState extends State<HealthAssessmentScreen> {
             Wrap(
               spacing: 8, runSpacing: 8,
               children: AppConstants.healthConditions.map((c) {
-                final selected = _conditions.contains(c);
-                final noneActive = _conditions.contains('None') && c != 'None';
+                final isSelected = _conditions.contains(c);
+                // Disable others when None active, but None stays tappable to deselect
+                final isDisabled = _conditions.contains('None') && c != 'None';
                 return FilterChip(
                   label: Text(c),
-                  selected: selected,
-                  // Disable other chips when None is selected
-                  onSelected: noneActive ? null : (val) => setState(() {
-                    if (val) {
-                      if (c == 'None') _conditions.clear();
-                      _conditions.add(c);
+                  selected: isSelected,
+                  onSelected: isDisabled ? null : (val) => setState(() {
+                    if (c == 'None') {
+                      if (isSelected) {
+                        _conditions.remove('None'); // deselect None → re-enable all
+                      } else {
+                        _conditions.clear();
+                        _conditions.add('None');
+                      }
                     } else {
-                      _conditions.remove(c);
+                      if (val) {
+                        _conditions.remove('None');
+                        _conditions.add(c);
+                      } else {
+                        _conditions.remove(c);
+                      }
                     }
                   }),
                 );

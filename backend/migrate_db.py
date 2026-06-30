@@ -14,7 +14,7 @@ DB_PATH = os.path.join(os.path.dirname(__file__), "health_app.db")
 
 def migrate():
     if not os.path.exists(DB_PATH):
-        print("No existing DB found — nothing to migrate. Just start uvicorn.")
+        print("No existing DB found.Nothing to migrate. Just start uvicorn.")
         return
 
     conn = sqlite3.connect(DB_PATH)

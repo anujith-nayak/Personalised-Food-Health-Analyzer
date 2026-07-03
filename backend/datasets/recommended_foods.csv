@@ -1,0 +1,44 @@
+Condition,FoodToAvoid,BetterAlternative,Reason,ServingAdvice
+Diabetes,White bread,Whole wheat bread or oats,Lower glycemic index,1-2 slices per meal
+Diabetes,Sugary drinks,Plain water or unsweetened green tea,No added sugar,8 glasses water daily
+Diabetes,Biscuits with sugar,Oat biscuits or rice cakes,Minimal sugar lower GI,1-2 biscuits as snack
+Diabetes,Chocolate,Dark chocolate 70% or nuts,Lower sugar content,Small portion only
+Diabetes,Ice cream,Greek yogurt with berries,Less sugar more protein,Half cup serving
+Diabetes,Instant noodles,Whole grain pasta or brown rice,Lower GI complex carbs,Small portion
+Diabetes,Energy drinks,Coconut water or plain water,No sugar no caffeine,As needed
+Diabetes,Candy,Fresh fruits like apple or pear,Natural sugar with fiber,1 fruit serving
+Hypertension,Chips,Unsalted roasted makhana or nuts,No added salt,Small handful
+Hypertension,Pickles,Fresh cucumber or lemon juice,No sodium,Moderate serving
+Hypertension,Instant noodles,Home cooked oats or daliya,Very low sodium,1 bowl
+Hypertension,Processed meat,Grilled chicken or fish,No preservatives no nitrates,100g serving
+Hypertension,Salted snacks,Unsalted nuts or fruits,No sodium,Small portion
+Hypertension,Canned foods,Fresh or frozen vegetables,No added salt,As needed
+Obesity,Fried snacks,Baked or air fried alternatives,Much less fat and calories,Small portion
+Obesity,Sugary drinks,Plain water or lemon water,Zero calories,8 glasses daily
+Obesity,Fast food,Home cooked dal and vegetables,Less fat and calories,Balanced plate
+Obesity,Ice cream,Frozen banana or mango,Natural sugar with fiber,Small portion
+Obesity,Bakery products,Homemade whole wheat snacks,Less fat no trans fat,Small portion
+Obesity,Soft drinks,Coconut water or buttermilk,Fewer calories,1 glass
+Heart Disease,Fried foods,Steamed or boiled foods,No trans fat,Moderate serving
+Heart Disease,Processed meat,Lean chicken or fish,Less saturated fat,100g serving
+Heart Disease,Butter,Olive oil or coconut oil in small amounts,Better fat profile,1 tsp only
+Heart Disease,Full fat dairy,Skimmed milk or low fat yogurt,Less saturated fat,1 cup
+Heart Disease,Red meat,Fish especially salmon or tuna,Omega 3 fatty acids,100g twice weekly
+Kidney Disease,Colas and soft drinks,Plain water or lemon water,No phosphoric acid,8 glasses daily
+Kidney Disease,Processed meat,Egg whites or fresh chicken,Low phosphorus low sodium,100g serving
+Kidney Disease,Bananas,Apples or berries,Lower potassium,1 fruit serving
+Kidney Disease,Potatoes,White rice or pasta in moderation,Lower potassium,Moderate portion
+Kidney Disease,Nuts,Rice crackers or bread,Lower phosphorus,Small portion
+PCOS,Sugary foods,Fruits with fiber or nuts,Stabilizes insulin,Small portion
+PCOS,Refined flour,Whole grain alternatives,Prevents insulin spikes,Moderate serving
+PCOS,Deep fried foods,Baked or grilled alternatives,Less inflammation,Moderate serving
+PCOS,Processed foods,Fresh home cooked meals,No preservatives no additives,Regular meals
+Thyroid,Processed foods,Fresh whole foods,No additives,Regular balanced meals
+Thyroid,Excess soy,Moderate legumes like lentils,Less thyroid interference,Moderate serving
+Hypothyroidism,Refined flour,Whole grains,Better metabolism support,Moderate serving
+Hypothyroidism,Sugary foods,Fruits with fiber,Stabilizes blood sugar,Small portion
+General,Chips,Roasted makhana or unsalted popcorn,Much healthier snack option,Small handful
+General,Chocolate,Dark chocolate 70% or dried fruits,Less sugar and more antioxidants,Small portion
+General,Biscuits,Rice cakes or oat crackers,Less sugar and fat,2-3 pieces
+General,Soft drinks,Coconut water or fresh lime water,Natural hydration no sugar,1-2 glasses
+General,Fast food,Homemade sandwiches or wraps,Controlled ingredients,1 serving

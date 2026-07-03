@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'food_scan_screen.dart';
 
 class ScanSelectionScreen extends StatelessWidget {
   const ScanSelectionScreen({super.key});
@@ -6,7 +7,7 @@ class ScanSelectionScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Food Scan')),
+      appBar: AppBar(title: const Text('Food Scanner')),
       body: Padding(
         padding: const EdgeInsets.all(24),
         child: Column(
@@ -19,44 +20,48 @@ class ScanSelectionScreen extends StatelessWidget {
                     ?.copyWith(fontWeight: FontWeight.bold)),
             const SizedBox(height: 8),
             Text(
-              'AI-powered scanning is coming in Phase 2.',
+              'Scan a packaged food label to check if it\'s safe for your health.',
               style: Theme.of(context).textTheme.bodyMedium,
             ),
             const SizedBox(height: 32),
+
+            // Option 1 — Packaged Food Label (WORKING)
             _ScanCard(
               icon: Icons.qr_code_scanner,
               title: 'Scan Packaged Food Label',
+              badge: 'Available',
+              badgeColor: Colors.green,
               description:
-                  'Scan food package labels and ingredient lists to check if they suit your health conditions.',
+                  'Point your camera at any packaged food label. '
+                  'We\'ll extract ingredients and nutrition info and check them '
+                  'against your health profile.',
               buttonLabel: 'Open Scanner',
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (_) => const FoodScanScreen()),
+              ),
             ),
             const SizedBox(height: 16),
+
+            // Option 2 — Live Food Scan (Phase 2)
             _ScanCard(
               icon: Icons.camera_alt,
-              title: 'Live Food Scan',
+              title: 'Live Food Recognition',
+              badge: 'Phase 2',
+              badgeColor: Colors.amber[700]!,
               description:
-                  'Point your camera at any food item to get instant health recommendations.',
-              buttonLabel: 'Open Camera',
+                  'Capture a real food item using your camera. '
+                  'AI will identify the food and give instant health recommendations. '
+                  'Coming in Phase 2 with ML integration.',
+              buttonLabel: 'Coming Soon',
+              onTap: () => _showComingSoon(context),
             ),
           ],
         ),
       ),
     );
   }
-}
-
-class _ScanCard extends StatelessWidget {
-  final IconData icon;
-  final String title;
-  final String description;
-  final String buttonLabel;
-
-  const _ScanCard({
-    required this.icon,
-    required this.title,
-    required this.description,
-    required this.buttonLabel,
-  });
 
   void _showComingSoon(BuildContext context) {
     showDialog(
@@ -65,7 +70,7 @@ class _ScanCard extends StatelessWidget {
         icon: const Icon(Icons.rocket_launch, size: 48),
         title: const Text('Coming in Phase 2'),
         content: const Text(
-          'AI-powered food scanning with machine learning models will be available in Phase 2.',
+          'Live food recognition with AI/ML models will be available in Phase 2.',
         ),
         actions: [
           FilledButton(
@@ -75,13 +80,33 @@ class _ScanCard extends StatelessWidget {
       ),
     );
   }
+}
+
+class _ScanCard extends StatelessWidget {
+  final IconData icon;
+  final String title;
+  final String badge;
+  final Color badgeColor;
+  final String description;
+  final String buttonLabel;
+  final VoidCallback onTap;
+
+  const _ScanCard({
+    required this.icon,
+    required this.title,
+    required this.badge,
+    required this.badgeColor,
+    required this.description,
+    required this.buttonLabel,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
     final cs = Theme.of(context).colorScheme;
     return Card(
       child: Padding(
-        padding: const EdgeInsets.all(24),
+        padding: const EdgeInsets.all(20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -92,9 +117,9 @@ class _ScanCard extends StatelessWidget {
                   color: cs.primaryContainer,
                   borderRadius: BorderRadius.circular(12),
                 ),
-                child: Icon(icon, size: 32, color: cs.onPrimaryContainer),
+                child: Icon(icon, size: 28, color: cs.onPrimaryContainer),
               ),
-              const SizedBox(width: 16),
+              const SizedBox(width: 12),
               Expanded(
                 child: Text(title,
                     style: Theme.of(context)
@@ -102,16 +127,34 @@ class _ScanCard extends StatelessWidget {
                         .titleMedium
                         ?.copyWith(fontWeight: FontWeight.bold)),
               ),
+              Container(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                decoration: BoxDecoration(
+                  color: badgeColor.withOpacity(0.15),
+                  borderRadius: BorderRadius.circular(20),
+                  border: Border.all(color: badgeColor.withOpacity(0.4)),
+                ),
+                child: Text(badge,
+                    style: TextStyle(
+                        color: badgeColor,
+                        fontSize: 11,
+                        fontWeight: FontWeight.bold)),
+              ),
             ]),
-            const SizedBox(height: 16),
-            Text(description),
+            const SizedBox(height: 12),
+            Text(description,
+                style: Theme.of(context)
+                    .textTheme
+                    .bodySmall
+                    ?.copyWith(color: Colors.grey[600])),
             const SizedBox(height: 16),
             SizedBox(
               width: double.infinity,
               child: FilledButton.icon(
-                icon: Icon(icon),
+                icon: Icon(icon, size: 18),
                 label: Text(buttonLabel),
-                onPressed: () => _showComingSoon(context),
+                onPressed: onTap,
               ),
             ),
           ],

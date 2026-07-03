@@ -16,6 +16,8 @@ dependencies:
   http: ^1.2.2
   # Secure token storage
   flutter_secure_storage: ^9.2.2
+  # Image picker (camera + gallery)
+  image_picker: ^1.1.2
   # UI
   cupertino_icons: ^1.0.8
 

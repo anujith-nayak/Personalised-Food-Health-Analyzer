@@ -72,20 +72,19 @@ export default function DashboardPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Navbar />
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8">
+      <div className="max-w-6xl mx-auto px-3 sm:px-6 py-5 sm:py-8">
 
-        {/* Header */}
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6">
           <div>
-            <h1 className="text-2xl font-extrabold text-gray-900">Good day, {user.name.split(' ')[0]} 👋</h1>
-            <p className="text-gray-500 mt-0.5">Here's your health overview</p>
+            <h1 className="text-xl sm:text-2xl font-extrabold text-gray-900">Good day, {user.name.split(' ')[0]} 👋</h1>
+            <p className="text-gray-500 text-sm mt-0.5">Here's your health overview</p>
           </div>
-          <div className="flex gap-3">
+          <div className="flex flex-wrap gap-2">
             <button onClick={() => load(true)} className="btn-ghost flex items-center gap-2 text-sm border border-gray-200">
               <RefreshCw className={`w-4 h-4 ${refreshing ? 'animate-spin' : ''}`} /> Refresh
             </button>
             <Link to="/edit-profile" className="btn-outline text-sm py-2 px-4">
-              <Pencil className="w-4 h-4" /> Edit Profile
+              <Pencil className="w-4 h-4" /> Edit
             </Link>
             <Link to="/scan" className="btn-primary text-sm py-2 px-4">
               <ScanLine className="w-4 h-4" /> Scan Food
@@ -110,8 +109,8 @@ export default function DashboardPage() {
           )}
         </div>
 
-        {/* Main grid */}
-        <div className="grid lg:grid-cols-3 gap-6">
+        {/* Main grid — single column on mobile, 3 cols on large */}
+        <div className="grid lg:grid-cols-3 gap-4 sm:gap-6">
 
           {/* Left column */}
           <div className="lg:col-span-1 space-y-6">

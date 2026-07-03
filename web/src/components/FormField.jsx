@@ -11,7 +11,8 @@ export function FormField({ label, error, children }) {
 export function Input({ label, error, ...props }) {
   return (
     <FormField label={label} error={error}>
-      <input className={`input-field ${error ? 'border-red-400 focus:ring-red-400' : ''}`} {...props} />
+      {/* text-base = 16px — prevents iOS auto-zoom on input focus */}
+      <input className={`input-field text-base ${error ? 'border-red-400 focus:ring-red-400' : ''}`} {...props} />
     </FormField>
   )
 }

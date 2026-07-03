@@ -5,16 +5,23 @@ Startup:
     uvicorn app.main:app --reload
 
 Swagger UI:
-    http://localhost:8000/docs
+    http://localhost:8001/docs
 """
+import logging
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+
+# Enable INFO logging so our debug prints appear in terminal
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(name)s] %(levelname)s: %(message)s"
+)
 
 # Import models so SQLAlchemy registers them before create_all
 from app.database.db import Base, engine
 from app.models import user  # noqa: F401
 
-from app.routes import auth, profile, health, dashboard, scanner
+from app.routes import auth, profile, health, dashboard, scanner, packaged_food
 
 # Auto-create all database tables on startup (SQLite file created if not exists)
 Base.metadata.create_all(bind=engine)
@@ -48,6 +55,7 @@ app.include_router(profile.router)
 app.include_router(health.router)
 app.include_router(dashboard.router)
 app.include_router(scanner.router)
+app.include_router(packaged_food.router)  # Phase 2: Packaged food analysis
 
 
 @app.get("/", tags=["Status"])

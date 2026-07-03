@@ -1,0 +1,69 @@
+Ingredient,Category,Nutrient_Flag,Condition,Impact,RiskWeight,Recommendation,Reason,Source
+Sodium,Mineral,High Sodium,Hypertension,Raises blood pressure,8,Avoid,Excess sodium directly elevates blood pressure,WHO
+Sodium,Mineral,High Sodium,Heart Disease,Increases cardiac fluid load,8,Avoid,High sodium increases fluid retention and cardiac workload,AHA
+Sodium,Mineral,High Sodium,Kidney Disease,Worsens kidney function,9,Strictly Avoid,Kidneys struggle to excrete excess sodium in CKD,NKF
+Sodium,Mineral,High Sodium,Obesity,Promotes fluid retention,4,Limit,Sodium-rich foods are often calorie-dense processed foods,WHO
+Added Sugar,Carbohydrate,High Sugar,Diabetes,Raises blood glucose,10,Strictly Avoid,Direct glucose load rapidly elevates blood sugar,ADA
+Added Sugar,Carbohydrate,High Sugar,Obesity,Promotes fat storage,8,Avoid,Empty calories from sugar directly cause weight gain,WHO
+Added Sugar,Carbohydrate,High Sugar,PCOS,Worsens insulin resistance,8,Avoid,Sugar spikes insulin worsening PCOS hormonal imbalance,ADA
+Added Sugar,Carbohydrate,High Sugar,High Cholesterol,Raises triglycerides,7,Avoid,Excess sugar converts to triglycerides in the liver,AHA
+Sugar,Carbohydrate,High Sugar,Diabetes,Raises blood glucose,10,Strictly Avoid,Direct glucose load rapidly elevates blood sugar,ADA
+Sugar,Carbohydrate,High Sugar,Obesity,Promotes fat storage,8,Avoid,Empty calories from sugar directly cause weight gain,WHO
+Saturated Fat,Fat,High Saturated Fat,Heart Disease,Raises LDL cholesterol,9,Strictly Avoid,Saturated fat directly raises LDL promoting atherosclerosis,AHA
+Saturated Fat,Fat,High Saturated Fat,Obesity,Promotes visceral fat,7,Avoid,Saturated fat promotes abdominal fat accumulation,WHO
+Saturated Fat,Fat,High Saturated Fat,Diabetes,Worsens insulin resistance,6,Avoid Often,Saturated fat impairs insulin receptor function,ADA
+Trans Fat,Fat,Trans Fat,Heart Disease,Raises LDL lowers HDL,10,Strictly Avoid,Trans fat is the most damaging dietary fat for the heart,AHA
+Trans Fat,Fat,Trans Fat,Obesity,Promotes visceral fat,8,Avoid,Trans fat promotes abdominal obesity,WHO
+Trans Fat,Fat,Trans Fat,Diabetes,Severely worsens insulin resistance,8,Avoid,Trans fat impairs glucose metabolism,ADA
+Palm Oil,Fat,Saturated Fat,Heart Disease,Raises LDL cholesterol,6,Avoid Often,Palm oil is high in saturated fatty acids,AHA
+Palm Oil,Fat,Saturated Fat,Obesity,Promotes fat storage,5,Limit,Palm oil is calorie dense,WHO
+Refined Flour,Carbohydrate,High GI,Diabetes,Spikes blood glucose,8,Avoid,High glycemic index causes rapid blood sugar elevation,ADA
+Refined Flour,Carbohydrate,High GI,Obesity,Promotes fat storage,7,Avoid,Refined carbs spike insulin promoting fat storage,WHO
+Refined Flour,Carbohydrate,High GI,PCOS,Worsens insulin resistance,7,Avoid,Refined carbs worsen the insulin-androgen cycle in PCOS,NHS
+Wheat Flour,Carbohydrate,High GI,Diabetes,Spikes blood glucose,7,Avoid Often,Wheat flour raises blood sugar quickly,ADA
+Wheat Flour,Carbohydrate,High GI,Obesity,Promotes fat storage,5,Limit,Refined wheat flour spikes insulin,WHO
+Maida,Carbohydrate,High GI,Diabetes,Spikes blood glucose,8,Avoid,Maida has very high glycemic index,ADA
+Maida,Carbohydrate,High GI,Obesity,Promotes fat storage,7,Avoid,Refined flour promotes fat storage,WHO
+Glucose Syrup,Carbohydrate,Very High GI,Diabetes,Critically spikes blood sugar,10,Strictly Avoid,Glucose syrup has extremely high glycemic index,ADA
+Glucose Syrup,Carbohydrate,Very High GI,Obesity,Promotes rapid weight gain,8,Avoid,High calorie liquid carbohydrate promotes obesity,WHO
+Glucose Syrup,Carbohydrate,Very High GI,PCOS,Critically worsens insulin resistance,9,Strictly Avoid,Glucose syrup causes massive insulin spikes,ADA
+Corn Syrup,Carbohydrate,Very High Fructose,Diabetes,Causes blood sugar spikes,10,Strictly Avoid,HFCS has very high glycemic impact,ADA
+Corn Syrup,Carbohydrate,Very High Fructose,Obesity,Promotes visceral fat,9,Strictly Avoid,HFCS promotes visceral adiposity and metabolic syndrome,WHO
+High Fructose Corn Syrup,Carbohydrate,Very High Fructose,Diabetes,Causes blood sugar spikes,10,Strictly Avoid,HFCS has very high glycemic impact,ADA
+MSG,Food Additive,Sodium Additive,Hypertension,Adds sodium load,5,Avoid Often,MSG significantly adds to dietary sodium intake,FSSAI
+MSG,Food Additive,Appetite Stimulant,Obesity,May stimulate appetite,4,Limit,MSG may activate appetite signaling pathways,FSSAI
+Monosodium Glutamate,Food Additive,Sodium Additive,Hypertension,Adds sodium load,5,Avoid Often,MSG significantly adds to dietary sodium intake,FSSAI
+Processed Meat,Meat Product,High Sodium and Nitrates,Hypertension,Raises blood pressure,8,Avoid,High sodium and nitrates in processed meat elevate BP,WHO
+Processed Meat,Meat Product,High Sodium and Nitrates,Heart Disease,Increases cardiovascular risk,9,Strictly Avoid,Processed meat is a major risk factor for heart disease,AHA
+Processed Meat,Meat Product,High Sodium and Nitrates,Kidney Disease,Overloads kidney filtration,9,Strictly Avoid,Phosphorus and sodium in processed meat harm kidneys,NKF
+Salt,Mineral,High Sodium,Hypertension,Raises blood pressure,8,Avoid,Salt directly elevates blood pressure,WHO
+Salt,Mineral,High Sodium,Heart Disease,Increases cardiac fluid load,7,Avoid,Excess salt increases fluid retention,AHA
+Salt,Mineral,High Sodium,Kidney Disease,Worsens kidney function,8,Strictly Avoid,Salt overloads kidneys in CKD,NKF
+Soft Drinks,Beverage,High Sugar,Diabetes,Spikes blood glucose,9,Strictly Avoid,Sugary drinks rapidly elevate blood sugar,ADA
+Soft Drinks,Beverage,High Sugar,Obesity,Provides empty liquid calories,8,Avoid,Liquid calories from sodas promote weight gain,WHO
+Energy Drinks,Beverage,Caffeine and Sugar,Heart Disease,Triggers arrhythmias,10,Strictly Avoid,Energy drinks are linked to cardiac events,AHA
+Energy Drinks,Beverage,Caffeine and Sugar,Hypertension,Spikes blood pressure acutely,9,Strictly Avoid,High caffeine dangerously raises BP,AHA
+Energy Drinks,Beverage,Caffeine and Sugar,Diabetes,Very high sugar load,9,Strictly Avoid,Energy drinks have extremely high sugar content,ADA
+Pickles,Preserved Food,Very High Sodium,Hypertension,Critically raises blood pressure,9,Strictly Avoid,Pickles contain extremely high levels of sodium,NHS
+Pickles,Preserved Food,Very High Sodium,Kidney Disease,Overloads renal sodium excretion,8,Avoid,Very high sodium in pickles harmful for CKD,NKF
+Instant Noodles,Processed Food,High Sodium,Hypertension,Very high sodium content,8,Avoid,Instant noodles contain extremely high sodium per serving,FSSAI
+Instant Noodles,Processed Food,High Sodium,Diabetes,High glycemic refined carbs,8,Avoid,Refined carbs in instant noodles spike blood sugar,ADA
+Instant Noodles,Processed Food,High Sodium,Kidney Disease,Sodium and phosphate overload,8,Avoid,Multiple minerals in instant noodles stress kidneys,NKF
+White Bread,Baked Good,High GI,Diabetes,Rapidly spikes blood sugar,8,Avoid,White bread has glycemic index close to glucose,ADA
+White Bread,Baked Good,High GI,Obesity,Promotes fat storage,6,Avoid Often,High GI carbs spike insulin promoting fat storage,WHO
+Pastries,Baked Good,Trans Fat and Sugar,Heart Disease,Contains trans fat,9,Strictly Avoid,Commercial pastries contain trans fat harmful for heart,AHA
+Pastries,Baked Good,Trans Fat and Sugar,Diabetes,High sugar and refined carbs,9,Strictly Avoid,Pastries combine multiple diabetogenic ingredients,ADA
+Bakery Products,Baked Good,Trans Fat,Heart Disease,Trans fat and saturated fat,8,Avoid,Commercial baked goods contain harmful fats,AHA
+Bakery Products,Baked Good,Trans Fat,Diabetes,High refined carbs,8,Avoid,Refined flour in bakery products spikes blood sugar,ADA
+Milk Solids,Dairy,Lactose and Casein,Lactose Intolerance,Causes GI distress,7,Avoid,Contains lactose which causes digestive issues,NHS
+Milk Solids,Dairy,Lactose and Casein,Milk Allergy,Triggers allergic reaction,9,Strictly Avoid,Milk protein allergen present,NHS
+Milk Powder,Dairy,Lactose and Casein,Lactose Intolerance,Causes GI distress,7,Avoid,Contains lactose which causes digestive issues,NHS
+Milk Powder,Dairy,Lactose and Casein,Milk Allergy,Triggers allergic reaction,9,Strictly Avoid,Milk protein allergen present,NHS
+Whey,Dairy,Milk Protein,Milk Allergy,Triggers allergic reaction,8,Avoid,Whey is a milk protein allergen,NHS
+Casein,Dairy,Milk Protein,Milk Allergy,Triggers allergic reaction,9,Strictly Avoid,Casein is a primary milk allergen,NHS
+Artificial Colors,Food Additive,Synthetic Dye,Sensitivity,Hyperactivity reactions,4,Limit,Synthetic dyes may cause reactions in sensitive individuals,FSSAI
+Artificial Preservatives,Food Additive,Chemical Preservative,Sensitivity,Hyperactivity reactions,4,Limit,Preservatives may cause reactions in some individuals,FSSAI
+Sodium Benzoate,Food Additive,Preservative,Sensitivity,Hyperactivity in children,4,Limit,May cause hyperactivity in sensitive children,FSSAI
+Potassium Sorbate,Food Additive,Preservative,Sensitivity,Mild GI reactions,3,Limit,Generally safe but may cause reactions in some,FSSAI
+Sodium Chloride,Mineral,High Sodium,Hypertension,Raises blood pressure,8,Avoid,Table salt directly elevates blood pressure,WHO
+Sodium Chloride,Mineral,High Sodium,Kidney Disease,Overloads kidneys,8,Avoid,Salt overloads kidney filtration in CKD,NKF

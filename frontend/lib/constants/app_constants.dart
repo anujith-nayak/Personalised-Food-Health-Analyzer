@@ -7,7 +7,7 @@ class AppConstants {
   // Android emulator → 10.0.2.2  (default, no change needed)
   // iOS simulator    → localhost
   // Physical device  → your local IP from `ipconfig` e.g. 192.168.1.5
-  static const String baseUrl = 'http://10.0.2.2:8000'; // ← CHANGE THIS if using a physical device
+  static const String baseUrl = 'http://10.0.2.2:8001'; // ← CHANGE THIS if using a physical device
 
   static const String accessTokenKey  = 'access_token';
   static const String refreshTokenKey = 'refresh_token';

@@ -1,0 +1,41 @@
+Allergen,AllergyType,Trigger_Ingredient,Severity,Symptoms,RiskWeight,Recommendation,Cross_Reactive_Foods,Avoid_Label_Terms,Source
+Gluten,Food Intolerance,Wheat,Mild,Bloating and digestive discomfort,4,Limit,Barley Rye Spelt,Wheat flour Modified starch,NHS
+Gluten,Food Intolerance,Wheat,Moderate,Abdominal pain diarrhea fatigue,7,Avoid,Barley Rye Spelt Kamut,Wheat flour Semolina Durum,NHS
+Gluten,Celiac Disease,Wheat,Severe,Villous atrophy malabsorption,10,Strictly Avoid,Barley Rye Malt,Any wheat or gluten derivatives,NHS
+Gluten,Celiac Disease,Barley,Severe,Intestinal damage and autoimmune reaction,10,Strictly Avoid,Wheat Rye Malt,Barley extract Malt vinegar,NHS
+Gluten,Celiac Disease,Rye,Severe,Systemic autoimmune response,10,Strictly Avoid,Wheat Barley,Rye flour Rye bread,NHS
+Lactose,Food Intolerance,Milk,Mild,Gas and mild bloating,3,Limit,Cream Butter Ice cream,Milk solids Whey,NHS
+Lactose,Food Intolerance,Milk,Moderate,Diarrhea abdominal cramps nausea,6,Avoid Often,Cream Yogurt Cheese,Lactose Milk powder Casein,NHS
+Lactose,Food Intolerance,Milk,Severe,Severe gastrointestinal distress,8,Avoid,All dairy products,Any dairy ingredients,NHS
+Milk Protein,Food Allergy,Casein,Mild,Hives mild digestive symptoms,5,Avoid Often,Whey products Dairy,Casein Caseinate,NHS
+Milk Protein,Food Allergy,Casein,Moderate,Urticaria vomiting respiratory symptoms,8,Avoid,All dairy Goat milk,Milk derivatives Lactalbumin,AHA
+Milk Protein,Food Allergy,Casein,Severe,Anaphylaxis risk,10,Strictly Avoid,All mammalian milk products,Any milk protein,NHS
+Milk Protein,Food Allergy,Whey,Mild,Digestive discomfort skin reactions,5,Avoid Often,Other dairy proteins,Whey protein isolate,NHS
+Milk Protein,Food Allergy,Whey,Severe,Anaphylaxis risk,10,Strictly Avoid,All dairy products,Whey protein lactoglobulin,NHS
+Peanut,Food Allergy,Peanut,Mild,Oral tingling hives,5,Avoid,Tree nuts Soy,Groundnut oil Peanut flour,NHS
+Peanut,Food Allergy,Peanut,Moderate,Urticaria vomiting angioedema,8,Avoid,Lupin Tree nuts,Peanut butter Arachis oil,NHS
+Peanut,Food Allergy,Peanut,Severe,Anaphylaxis life-threatening,10,Strictly Avoid,Tree nuts Soy Lupin,All peanut derivatives,NHS
+Tree Nuts,Food Allergy,Almonds,Mild,Oral allergy syndrome,4,Avoid Often,Other tree nuts Peanuts,Almond oil almond extract,NHS
+Tree Nuts,Food Allergy,Almonds,Severe,Anaphylaxis risk,9,Strictly Avoid,All tree nuts,Any nut derivatives,NHS
+Tree Nuts,Food Allergy,Cashews,Mild,Skin reactions digestive upset,5,Avoid Often,Pistachios Mango,Cashew nut butter,NHS
+Tree Nuts,Food Allergy,Cashews,Severe,Severe anaphylaxis,10,Strictly Avoid,Pistachios other tree nuts,Any cashew derivatives,NHS
+Tree Nuts,Food Allergy,Walnuts,Moderate,Urticaria asthma symptoms,7,Avoid,Pecans other tree nuts,Walnut oil walnut extract,NHS
+Tree Nuts,Food Allergy,Walnuts,Severe,Anaphylaxis risk,10,Strictly Avoid,All tree nuts,Any walnut derivatives,NHS
+Egg,Food Allergy,Egg White,Mild,Hives digestive discomfort,4,Avoid Often,Products containing albumin,Albumin Lysozyme Globulin,NHS
+Egg,Food Allergy,Egg White,Moderate,Urticaria vomiting respiratory,7,Avoid,Mayonnaise baked goods,Egg powder Ovomucin,NHS
+Egg,Food Allergy,Egg White,Severe,Anaphylaxis risk,10,Strictly Avoid,All egg products,Any egg derivatives,NHS
+Soy,Food Allergy,Soy Protein,Mild,Hives digestive symptoms,4,Avoid Often,Other legumes,Soy lecithin textured protein,NHS
+Soy,Food Allergy,Soy Protein,Moderate,Urticaria vomiting angioedema,7,Avoid,Peanuts lupins edamame,Soy flour soya protein,NHS
+Soy,Food Allergy,Soy Protein,Severe,Anaphylaxis risk,9,Strictly Avoid,All soy products legumes,Hydrolyzed soy protein,NHS
+Fish,Food Allergy,Finfish,Severe,Anaphylaxis life-threatening,10,Strictly Avoid,All seafood products,Any fish derivatives,NHS
+Shellfish,Food Allergy,Shrimp,Moderate,Urticaria angioedema vomiting,8,Avoid,All crustaceans,Shrimp paste prawn,NHS
+Shellfish,Food Allergy,Shrimp,Severe,Severe anaphylaxis,10,Strictly Avoid,All crustaceans mollusks,Any crustacean derivatives,NHS
+Sesame,Food Allergy,Sesame Seeds,Moderate,Urticaria angioedema,7,Avoid,Seeds in general,Sesame flour benne,NHS
+Sesame,Food Allergy,Sesame Seeds,Severe,Anaphylaxis risk,9,Strictly Avoid,All sesame products,Any sesame derivatives,NHS
+Sulphites,Food Intolerance,Sulphur Dioxide,Moderate,Asthma exacerbation,7,Avoid,Dried fruits preserved foods,Sulphites bisulphite,NHS
+Corn,Food Intolerance,Corn Starch,Moderate,Significant GI distress,6,Avoid Often,Glucose syrup corn syrup,Modified corn starch dextrose,FSSAI
+Histamine,Food Intolerance,Fermented Foods,Moderate,Hives headache GI symptoms,6,Avoid Often,Processed meats soy sauce,Fermented or aged products,NHS
+Fructose,Food Intolerance,Fruit Sugar,Moderate,Significant GI distress malabsorption,6,Avoid Often,Dried fruits fruit drinks,Fructose sorbitol,NHS
+Artificial Colors,Food Sensitivity,Tartrazine E102,Mild,Hyperactivity skin reactions,4,Limit,Orange yellow colored foods,E102 tartrazine,FSSAI
+Artificial Preservatives,Food Sensitivity,Sodium Benzoate,Mild,Hyperactivity in children,4,Limit,Processed beverages jams,E211 sodium benzoate,FSSAI
+Artificial Sweeteners,Food Sensitivity,Aspartame,Mild,Headache in sensitive individuals,3,Limit,Diet beverages sugar-free products,Aspartame NutraSweet Equal,NHS

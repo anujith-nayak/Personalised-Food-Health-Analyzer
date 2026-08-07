@@ -146,6 +146,48 @@ DEFAULT_RULES: list[dict] = [
         ],
     },
 
+    # ── High Cholesterol ──────────────────────────────────────────────────────
+    {
+        "condition_key": "high_cholesterol",
+        "category_label": "High Cholesterol",
+        "foods": [
+            "Butter / Ghee in excess", "Red Meat (Beef, Pork, Lamb)",
+            "Full-fat Dairy (Cream, Cheese)", "Fried Foods",
+            "Processed Meats (Sausage, Salami, Hot Dogs)",
+            "Trans-fat Baked Goods (Biscuits, Pastries)",
+            "Coconut Oil / Palm Oil in excess",
+            "Egg Yolks in excess", "Organ Meats (Liver)",
+            "Fast Food", "Packaged Snacks",
+        ],
+    },
+
+    # ── Appendicitis (Acute) ───────────────────────────────────────────────────
+    {
+        "condition_key": "appendicitis_acute",
+        "category_label": "Appendicitis (Acute Phase)",
+        "foods": [
+            "Raw Vegetables", "High-Fibre Foods (Beans, Lentils, Whole Grains)",
+            "Fried / Oily Foods", "Spicy Foods",
+            "Red Meat", "Dairy in large amounts",
+            "Carbonated Drinks", "Alcohol",
+            "Caffeinated Beverages", "Processed Snacks",
+            "Seeds and Nuts", "Large Meals",
+        ],
+    },
+
+    # ── Appendicitis (Recovery) ────────────────────────────────────────────────
+    {
+        "condition_key": "appendicitis_recovery",
+        "category_label": "Appendicitis (Recovery Phase)",
+        "foods": [
+            "Fried / Oily Foods", "Spicy Foods",
+            "Alcohol", "Carbonated Drinks",
+            "Raw Vegetables (first 2 weeks)", "Whole Seeds and Nuts",
+            "Very High-Fibre Foods in first week", "Heavy Meats",
+            "Fast Food", "Processed Snacks",
+        ],
+    },
+
     # ── Current Health Conditions ─────────────────────────────────────────────
     {
         "condition_key": "fever",
@@ -293,17 +335,21 @@ STATUS_KEY_MAP = {
 # ── Rule loader / seeder ──────────────────────────────────────────────────────
 
 def seed_rules(db: "Session") -> None:
-    """Insert default rules into DB if table is empty. Idempotent."""
+    """Insert default rules into DB if any are missing. Idempotent per condition_key."""
     from app.models.user import FoodRestrictionRule
-    if db.query(FoodRestrictionRule).count() > 0:
-        return
+    existing_keys = {r.condition_key for r in db.query(FoodRestrictionRule).all()}
+    added = 0
     for rule in DEFAULT_RULES:
-        db.add(FoodRestrictionRule(
-            condition_key=rule["condition_key"],
-            category_label=rule["category_label"],
-            foods_json=rule["foods"],
-        ))
-    db.commit()
+        if rule["condition_key"] not in existing_keys:
+            db.add(FoodRestrictionRule(
+                condition_key=rule["condition_key"],
+                category_label=rule["category_label"],
+                foods_json=rule["foods"],
+            ))
+            added += 1
+    if added > 0:
+        db.commit()
+        print(f"[FoodRestrictions] Seeded {added} new rule(s).")
 
 
 def _get_rule(db: "Session", key: str) -> tuple[str, list[str]] | None:
@@ -355,9 +401,20 @@ def generate_grouped_restrictions(
         add_group(f"thyroid_{profile.thyroid_type}")
 
     # ── Other chronic conditions ──────────────────────────────────────────
-    for key in ["pcos", "pcod", "heart_disease", "kidney_disease", "obesity"]:
+    for key in ["pcos", "pcod", "heart_disease", "kidney_disease",
+                "obesity", "high_cholesterol"]:
         if getattr(profile, key, False):
             add_group(key)
+
+    # ── Appendicitis (phase-aware) ────────────────────────────────────────
+    if getattr(profile, "appendicitis", False):
+        phase = (getattr(profile, "appendicitis_phase", None) or "").lower()
+        if "acute" in phase:
+            add_group("appendicitis_acute")
+        elif "recovery" in phase or "post" in phase:
+            add_group("appendicitis_recovery")
+        else:
+            add_group("appendicitis_acute")   # safe default
 
     # ── Current health statuses ───────────────────────────────────────────
     for status in current_statuses:

@@ -60,10 +60,16 @@ class HealthProfile(Base):
     pcod_diagnosed = Column(Boolean, nullable=True)
 
     # Other
-    heart_disease  = Column(Boolean, default=False)
-    kidney_disease = Column(Boolean, default=False)
-    obesity        = Column(Boolean, default=False)
-    none           = Column(Boolean, default=False)
+    heart_disease      = Column(Boolean, default=False)
+    kidney_disease     = Column(Boolean, default=False)
+    obesity            = Column(Boolean, default=False)
+    high_cholesterol   = Column(Boolean, default=False)
+    appendicitis       = Column(Boolean, default=False)
+    appendicitis_phase = Column(String,  nullable=True)   # acute | recovery
+    other_condition    = Column(String,  nullable=True)   # free-text condition for AI
+    other_status       = Column(String,  nullable=True)   # free-text current health status
+    other_status       = Column(String,  nullable=True)   # free-text current health status
+    none               = Column(Boolean, default=False)
 
     created_at = Column(DateTime, default=datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)

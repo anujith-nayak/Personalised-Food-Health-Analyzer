@@ -21,10 +21,16 @@ logging.basicConfig(
 from app.database.db import Base, engine
 from app.models import user  # noqa: F401
 
-from app.routes import auth, profile, health, dashboard, scanner, packaged_food
+from app.routes import auth, profile, health, dashboard, scanner, packaged_food, ai_nutrition
 
 # Auto-create all database tables on startup (SQLite file created if not exists)
 Base.metadata.create_all(bind=engine)
+
+# ── Run schema migrations (adds new columns to existing tables) ───────────────
+# This is idempotent — safe to run on every startup.
+# Handles SQLite (dev) and PostgreSQL (prod) automatically.
+from app.database.migrate import run_migrations
+run_migrations(engine)
 
 # Seed default food restriction rules if table is empty
 from app.database.db import SessionLocal
@@ -56,6 +62,7 @@ app.include_router(health.router)
 app.include_router(dashboard.router)
 app.include_router(scanner.router)
 app.include_router(packaged_food.router)  # Phase 2: Packaged food analysis
+app.include_router(ai_nutrition.router)   # Phase 3: AI Nutrition Assistant
 
 
 @app.get("/", tags=["Status"])

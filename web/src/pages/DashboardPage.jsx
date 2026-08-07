@@ -149,7 +149,8 @@ export default function DashboardPage() {
               <div className="p-6">
                 {hp ? (
                   hp.hypertension || hp.diabetes || hp.thyroid || hp.pcos || hp.pcod ||
-                  hp.heart_disease || hp.kidney_disease || hp.obesity ? (
+                  hp.heart_disease || hp.kidney_disease || hp.obesity ||
+                  hp.high_cholesterol || hp.appendicitis || hp.other_condition ? (
                     <div className="flex flex-wrap gap-2">
                       {hp.hypertension  && <Chip label="Hypertension (BP)" color="red" />}
                       {hp.diabetes      && <Chip label="Diabetes"           color="orange" />}
@@ -159,6 +160,14 @@ export default function DashboardPage() {
                       {hp.heart_disease && <Chip label="Heart Disease"      color="red" />}
                       {hp.kidney_disease && <Chip label="Kidney Disease"    color="orange" />}
                       {hp.obesity       && <Chip label="Obesity"            color="orange" />}
+                      {hp.high_cholesterol && <Chip label="High Cholesterol" color="orange" />}
+                      {hp.appendicitis && (
+                        <Chip
+                          label={`Appendicitis (${hp.appendicitis_phase === 'recovery' ? 'Recovery' : 'Acute'})`}
+                          color="red"
+                        />
+                      )}
+                      {hp.other_condition && <Chip label={`Other: ${hp.other_condition}`} color="blue" />}
                     </div>
                   ) : <Chip label="None selected" color="green" />
                 ) : (
@@ -179,6 +188,9 @@ export default function DashboardPage() {
                 {statuses.length ? (
                   <div className="flex flex-wrap gap-2">
                     {statuses.map((s) => <Chip key={s} label={s} color={s === 'Normal' ? 'green' : 'orange'} />)}
+                    {data.health_profile?.other_status && (
+                      <Chip label={`Status: ${data.health_profile.other_status}`} color="blue" />
+                    )}
                   </div>
                 ) : <p className="text-gray-400 text-sm">No status recorded</p>}
               </div>

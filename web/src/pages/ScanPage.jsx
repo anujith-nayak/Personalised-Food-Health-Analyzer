@@ -90,6 +90,7 @@ export default function ScanPage() {
   const [error,       setError]       = useState(null)
   const [showPicker,  setShowPicker]  = useState(false)
   const [showCamera,  setShowCamera]  = useState(false)  // webcam modal
+  const [aiResult,    setAiResult]    = useState(null)   // AI analysis for Other condition
 
   const fileInputRef = useRef(null)
 
@@ -99,6 +100,7 @@ export default function ScanPage() {
     setFile(null)
     setResult(null)
     setError(null)
+    setAiResult(null)
   }, [])
 
   // ── Handle file selection ────────────────────────────────────────────────
@@ -131,6 +133,23 @@ export default function ScanPage() {
         headers: { 'Content-Type': 'multipart/form-data' },
       })
       setResult(res.data)
+      setAiResult(null)
+
+      // If the user has an "Other" condition, query AI for food-specific analysis
+      try {
+        const profileRes = await api.get('/health-profile')
+        const otherCond  = profileRes.data?.other_condition
+        if (otherCond) {
+          const aiRes = await api.post('/ai-nutrition/query', {
+            condition: otherCond,
+            nutrition: res.data.nutrition_facts || {},
+          })
+          setAiResult(aiRes.data)
+        }
+      } catch (e) {
+        // AI query is optional — don't fail the main scan result
+        console.warn('AI nutrition query skipped:', e.message)
+      }
     } catch (err) {
       setError(err.message || 'Analysis failed. Please try again.')
     } finally {
@@ -502,6 +521,78 @@ export default function ScanPage() {
                 <p className={`font-bold text-sm mb-1 ${rc.text}`}>⑤ Final Recommendation</p>
                 <p className="text-gray-800 text-sm leading-relaxed">
                   {result.final_recommendation}
+                </p>
+              </div>
+            )}
+
+            {/* AI Analysis — shown when user has an "Other" health condition */}
+            {aiResult && (
+              <div className="bg-blue-50 border-2 border-blue-200 rounded-2xl p-4 sm:p-5">
+                <p className="font-bold text-blue-800 text-sm mb-1">
+                  🤖 AI Analysis: {aiResult.condition}
+                  {aiResult.source === 'rule_engine' && (
+                    <span className="ml-2 text-xs font-normal text-blue-500">(Rule Engine)</span>
+                  )}
+                  {aiResult.source === 'ai_generated' && (
+                    <span className="ml-2 text-xs font-normal text-purple-500">(AI Generated)</span>
+                  )}
+                </p>
+                <p className="text-blue-700 text-sm leading-relaxed mb-3">{aiResult.summary}</p>
+
+                {aiResult.foods_to_avoid?.length > 0 && (
+                  <div className="mb-3">
+                    <p className="text-xs font-bold text-red-700 mb-1.5">⚠ Foods to Avoid:</p>
+                    <div className="flex flex-wrap gap-1.5">
+                      {aiResult.foods_to_avoid.map((f, i) => (
+                        <span key={i} className="text-xs bg-red-100 text-red-700 px-2.5 py-1 rounded-full">{f}</span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {aiResult.nutrients_to_limit?.length > 0 && (
+                  <div className="mb-3">
+                    <p className="text-xs font-bold text-orange-700 mb-1.5">⚡ Nutrients to Limit:</p>
+                    <div className="flex flex-wrap gap-1.5">
+                      {aiResult.nutrients_to_limit.map((n, i) => (
+                        <span key={i} className="text-xs bg-orange-100 text-orange-700 px-2.5 py-1 rounded-full">{n}</span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {aiResult.foods_to_prefer?.length > 0 && (
+                  <div className="mb-3">
+                    <p className="text-xs font-bold text-green-700 mb-1.5">✓ Recommended Foods:</p>
+                    <div className="flex flex-wrap gap-1.5">
+                      {aiResult.foods_to_prefer.map((f, i) => (
+                        <span key={i} className="text-xs bg-green-100 text-green-700 px-2.5 py-1 rounded-full">{f}</span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {aiResult.healthy_alternatives?.length > 0 && (
+                  <div className="mb-3">
+                    <p className="text-xs font-bold text-teal-700 mb-1">🥗 Healthier Alternatives:</p>
+                    <ul className="space-y-0.5">
+                      {aiResult.healthy_alternatives.map((a, i) => (
+                        <li key={i} className="text-xs text-teal-800">• {a}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {aiResult.sample_meal && (
+                  <div className="mt-2 p-3 bg-white rounded-xl border border-blue-100">
+                    <p className="text-xs font-bold text-gray-700 mb-1">🍽 Sample Meal Plan:</p>
+                    <p className="text-xs text-gray-600 leading-relaxed">{aiResult.sample_meal}</p>
+                  </div>
+                )}
+
+                <p className="text-xs text-gray-400 mt-3 italic">{aiResult.medical_disclaimer}</p>
+                <p className="text-xs text-blue-400 mt-1">
+                  Source: {aiResult.guideline_source}
                 </p>
               </div>
             )}

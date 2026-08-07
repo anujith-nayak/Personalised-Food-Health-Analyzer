@@ -104,6 +104,11 @@ class HealthProfileRequest(BaseModel):
     heart_disease: bool = False
     kidney_disease: bool = False
     obesity: bool = False
+    high_cholesterol: bool = False
+    appendicitis: bool = False
+    appendicitis_phase: Optional[str] = None   # acute | recovery
+    other_condition: Optional[str] = None      # free-text condition for AI
+    other_status: Optional[str] = None         # free-text current health status
     none: bool = False
     # Current health statuses
     current_health_statuses: List[str] = []
@@ -147,6 +152,11 @@ class HealthProfileResponse(BaseModel):
     heart_disease: bool
     kidney_disease: bool
     obesity: bool
+    high_cholesterol: bool = False
+    appendicitis: bool = False
+    appendicitis_phase: Optional[str] = None
+    other_condition: Optional[str] = None
+    other_status: Optional[str] = None
     none: bool
 
     model_config = {"from_attributes": True}

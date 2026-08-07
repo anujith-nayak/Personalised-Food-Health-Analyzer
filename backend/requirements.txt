@@ -13,6 +13,6 @@ aiosqlite==0.20.0
 # Packaged Food Analysis — Phase 2
 opencv-python-headless==4.13.0.92
 pytesseract==0.3.13
-pandas==3.0.3
-numpy==2.5.0
-pillow==12.2.0
+pandas==2.2.3
+numpy==2.2.6
+Pillow==11.3.0

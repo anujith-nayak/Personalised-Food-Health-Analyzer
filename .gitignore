@@ -32,3 +32,6 @@ Thumbs.db
 .vscode/
 .idea/
 *.swp
+BiteCheck_New/
+food label/
+backend/datasets/health_r_backup.csv

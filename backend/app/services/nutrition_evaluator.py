@@ -31,80 +31,171 @@ NUTRIENT_BENCHMARKS = {
 
 def evaluate_nutrient(key: str, value: float | None) -> dict:
     """
-    Return evaluation dict for one nutrient:
-      {nutrient, value, unit, status, status_color, note}
+    Return evaluation dict for one nutrient.
     """
+
     if value is None:
         return {
-            "nutrient":      _label(key),
-            "key":           key,
-            "value":         None,
-            "unit":          NUTRIENT_BENCHMARKS.get(key, (None, None, None, "", False))[3],
-            "status":        "Not Available",
-            "status_color":  "gray",
-            "note":          "Not found on label",
+            "nutrient": _label(key),
+            "key": key,
+            "value": None,
+            "unit": NUTRIENT_BENCHMARKS.get(key, (None, None, None, "", False))[3],
+            "status": "Not Available",
+            "status_color": "gray",
+            "note": "Not found on label",
         }
 
     bench = NUTRIENT_BENCHMARKS.get(key)
+
     if not bench:
         return {
-            "nutrient":      _label(key),
-            "key":           key,
-            "value":         value,
-            "unit":          "",
-            "status":        "Extracted",
-            "status_color":  "blue",
-            "note":          "",
+            "nutrient": _label(key),
+            "key": key,
+            "value": value,
+            "unit": "",
+            "status": "Extracted",
+            "status_color": "blue",
+            "note": "",
         }
 
     low_thresh, high_thresh, very_high_thresh, unit, higher_is_better = bench
 
-    # Special case: trans fat — any amount > 0 is flagged
+    # ---------- SPECIAL CASES ----------
+
+    if key == "protein":
+        if value <= 0:
+            status, color, note = "Poor", "red", "Contains almost no protein."
+        elif value < 5:
+            status, color, note = "Low", "orange", "Low protein content."
+        elif value < 15:
+            status, color, note = "Moderate", "yellow", "Moderate protein content."
+        else:
+            status, color, note = "Good", "green", "Good source of protein."
+
+        return {
+            "nutrient": _label(key),
+            "key": key,
+            "value": value,
+            "unit": unit,
+            "status": status,
+            "status_color": color,
+            "note": note,
+        }
+
+    if key == "fiber":
+        if value < 2:
+            status, color, note = "Low", "orange", "Low fibre content."
+        elif value < 5:
+            status, color, note = "Moderate", "yellow", "Moderate fibre content."
+        else:
+            status, color, note = "Good", "green", "Excellent source of dietary fibre."
+
+        return {
+            "nutrient": _label(key),
+            "key": key,
+            "value": value,
+            "unit": unit,
+            "status": status,
+            "status_color": color,
+            "note": note,
+        }
+
+    if key == "calories":
+        if value < 150:
+            status, color, note = "Good", "green", "Suitable calorie level."
+        elif value <= 250:
+            status, color, note = "Moderate", "yellow", "Moderate calorie content."
+        elif value <= 400:
+            status, color, note = "High", "orange", "High calorie content."
+        else:
+            status, color, note = "Very High", "red", "Very high calorie content."
+
+        return {
+            "nutrient": _label(key),
+            "key": key,
+            "value": value,
+            "unit": unit,
+            "status": status,
+            "status_color": color,
+            "note": note,
+        }
+
+    if key == "sugar":
+        if value <= 5:
+            status, color, note = "Good", "green", "Low sugar."
+        elif value <= 12:
+            status, color, note = "Moderate", "yellow", "Moderate sugar."
+        elif value <= 25:
+            status, color, note = "High", "orange", "High sugar."
+        else:
+            status, color, note = "Very High", "red", "Excessive sugar content."
+
+        return {
+            "nutrient": _label(key),
+            "key": key,
+            "value": value,
+            "unit": unit,
+            "status": status,
+            "status_color": color,
+            "note": note,
+        }
+
     if key == "trans_fat":
         if value == 0:
-            status, color, note = "Good",      "green",  "No trans fat detected"
+            status, color, note = "Good", "green", "No trans fat detected"
         elif value <= 0.5:
-            status, color, note = "Moderate",  "yellow", "Trace amounts of trans fat"
+            status, color, note = "Moderate", "yellow", "Trace amounts of trans fat"
         elif value <= 2:
-            status, color, note = "High",      "orange", "Contains trans fat"
+            status, color, note = "High", "orange", "Contains trans fat"
         else:
-            status, color, note = "Very High", "red",    "High trans fat content"
-        return {"nutrient": _label(key), "key": key, "value": value, "unit": unit,
-                "status": status, "status_color": color, "note": note}
+            status, color, note = "Very High", "red", "High trans fat content"
+
+        return {
+            "nutrient": _label(key),
+            "key": key,
+            "value": value,
+            "unit": unit,
+            "status": status,
+            "status_color": color,
+            "note": note,
+        }
+
+    # ---------- DEFAULT LOGIC ----------
 
     if higher_is_better:
-        # Nutrients where more is better (fiber, protein, etc.)
         if low_thresh and value < low_thresh:
             status, color = "Low", "orange"
             note = f"Less than recommended {low_thresh}{unit}"
         else:
             status, color = "Good", "green"
             note = "Adequate amount"
+
     else:
-        # Nutrients where less is better
         if very_high_thresh and value > very_high_thresh:
             status, color = "Very High", "red"
             note = f"Significantly exceeds {very_high_thresh}{unit} per serving"
+
         elif high_thresh and value > high_thresh:
             status, color = "High", "orange"
             note = f"Exceeds {high_thresh}{unit} per serving"
+
         elif high_thresh and value > high_thresh * 0.6:
             status, color = "Moderate", "yellow"
             note = f"Approaching limit of {high_thresh}{unit}"
+
         else:
             status, color = "Good", "green"
             note = "Within healthy range"
 
     return {
-        "nutrient":      _label(key),
-        "key":           key,
-        "value":         value,
-        "unit":          unit,
-        "status":        status,
-        "status_color":  color,
-        "note":          note,
+        "nutrient": _label(key),
+        "key": key,
+        "value": value,
+        "unit": unit,
+        "status": status,
+        "status_color": color,
+        "note": note,
     }
-
 
 def evaluate_all_nutrients(nutrition: dict) -> list[dict]:
     """Evaluate every nutrient in extraction order."""

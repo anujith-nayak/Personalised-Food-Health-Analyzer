@@ -616,19 +616,34 @@ def extract_ingredients(text: str) -> list[str]:
 def parse_food_label(ocr_text: str) -> dict:
     """
     Main entry point called by the packaged food route.
-    Returns the same structure as before — API response format is unchanged.
+    Uses canonical RapidFuzz + Spatial NutrientParser.
     """
+    from app.services.ocr.base import OCRResult, OCRLine
+    from app.services.ocr.nutrient_parser import NutrientParser
+
     logger.info("[EXTRACTOR] ===== RAW OCR TEXT (first 800 chars) =====")
     logger.info(ocr_text[:800])
     logger.info("[EXTRACTOR] ==========================================")
 
-    nutrition   = extract_nutrition(ocr_text)
+    lines = [OCRLine(text=line.strip(), confidence=0.8) for line in ocr_text.split("\n") if line.strip()]
+    dummy_ocr_result = OCRResult(engine_name="PaddleOCR", raw_text=ocr_text, lines=lines, ocr_confidence=80.0)
+
+    parser = NutrientParser()
+    parsed_res = parser.parse(dummy_ocr_result)
+
     ingredients = extract_ingredients(ocr_text)
-    name        = extract_product_name(ocr_text)
+    name = extract_product_name(ocr_text)
 
     return {
         "product_name": name,
-        "ingredients":  ingredients,
-        "nutrition":    nutrition,
+        "ingredients": ingredients,
+        "nutrition": parsed_res["nutrition"],
+        "ocr_confidence": parsed_res["ocr_confidence"],
+        "parser_confidence": parsed_res["parser_confidence"],
+        "overall_confidence": parsed_res["overall_confidence"],
+        "extraction_status": parsed_res["extraction_status"],
+        "missing_nutrients": parsed_res["missing_nutrients"],
+        "is_partial": parsed_res["is_partial"],
         "raw_ocr_text": ocr_text[:2000],
     }
+

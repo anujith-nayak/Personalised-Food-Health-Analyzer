@@ -1,0 +1,383 @@
+{
+  "hemoglobin": {
+    "display_name": "Hemoglobin (Hb)",
+    "unit": "g/dL",
+    "normal_range": "13.5 - 17.5",
+    "min_plausible": 3.0,
+    "max_plausible": 25.0,
+    "aliases": [
+      "hemoglobin (hb)",
+      "hemoglobin",
+      "hb",
+      "hgb",
+      "haemoglobin"
+    ]
+  },
+  "hematocrit": {
+    "display_name": "Hematocrit (Hct)",
+    "unit": "%",
+    "normal_range": "38.3 - 48.6",
+    "min_plausible": 10.0,
+    "max_plausible": 70.0,
+    "aliases": [
+      "hematocrit (hct)",
+      "hematocrit",
+      "hct",
+      "pcv",
+      "packed cell volume"
+    ]
+  },
+  "rbc": {
+    "display_name": "Red Blood Cell Count (RBC)",
+    "unit": "mill/cmm",
+    "normal_range": "4.5 - 6.0",
+    "min_plausible": 1.0,
+    "max_plausible": 10.0,
+    "aliases": [
+      "red blood cell count (rbc)",
+      "red blood cell count",
+      "rbc count",
+      "rbc",
+      "erythrocyte count",
+      "total rbc count"
+    ]
+  },
+  "mch": {
+    "display_name": "Mean Corpuscular Hemoglobin (MCH)",
+    "unit": "pg",
+    "normal_range": "27.0 - 33.0",
+    "min_plausible": 10.0,
+    "max_plausible": 60.0,
+    "aliases": [
+      "mean corpuscular hemoglobin (mch)",
+      "mean corpuscular hemoglobin",
+      "mch"
+    ]
+  },
+  "mchc": {
+    "display_name": "Mean Corpuscular Hemoglobin Concentration (MCHC)",
+    "unit": "g/dL",
+    "normal_range": "31.5 - 35.5",
+    "min_plausible": 15.0,
+    "max_plausible": 50.0,
+    "aliases": [
+      "mean corpuscular hemoglobin concentration (mchc)",
+      "mean corpuscular hemoglobin concentration",
+      "mchc",
+      "mean corpuscular hemoglobin",
+      "mean corpuscular"
+    ]
+  },
+  "rdw": {
+    "display_name": "Red Cell Distribution Width (RDW)",
+    "unit": "%",
+    "normal_range": "11.5 - 14.5",
+    "min_plausible": 5.0,
+    "max_plausible": 35.0,
+    "aliases": [
+      "red cell distribution width (rdw)",
+      "red cell distribution width",
+      "rdw",
+      "rdw-cv",
+      "rdw-sd"
+    ]
+  },
+  "fasting_glucose": {
+    "display_name": "Fasting Glucose",
+    "unit": "mg/dL",
+    "normal_range": "70 - 99",
+    "min_plausible": 30.0,
+    "max_plausible": 700.0,
+    "aliases": [
+      "fasting blood glucose",
+      "fasting blood sugar",
+      "fasting plasma glucose",
+      "fasting glucose",
+      "fbs",
+      "glucose fasting",
+      "fpg"
+    ]
+  },
+  "postprandial_glucose": {
+    "display_name": "Postprandial Glucose",
+    "unit": "mg/dL",
+    "normal_range": "70 - 139",
+    "min_plausible": 30.0,
+    "max_plausible": 700.0,
+    "aliases": [
+      "postprandial blood glucose",
+      "postprandial blood sugar",
+      "post prandial glucose",
+      "ppbs",
+      "pp glucose",
+      "2 hour postprandial glucose",
+      "post meal glucose"
+    ]
+  },
+  "random_glucose": {
+    "display_name": "Random Glucose",
+    "unit": "mg/dL",
+    "normal_range": "70 - 140",
+    "min_plausible": 30.0,
+    "max_plausible": 700.0,
+    "aliases": [
+      "random blood sugar",
+      "random blood glucose",
+      "rbs",
+      "random glucose"
+    ]
+  },
+  "hba1c": {
+    "display_name": "HbA1c",
+    "unit": "%",
+    "normal_range": "4.0 - 5.6",
+    "min_plausible": 3.0,
+    "max_plausible": 18.0,
+    "aliases": [
+      "hba1c",
+      "glycated hemoglobin",
+      "glycohemoglobin",
+      "hemoglobin a1c",
+      "a1c"
+    ]
+  },
+  "total_cholesterol": {
+    "display_name": "Total Cholesterol",
+    "unit": "mg/dL",
+    "normal_range": "< 200",
+    "min_plausible": 50.0,
+    "max_plausible": 800.0,
+    "aliases": [
+      "total cholesterol",
+      "serum cholesterol",
+      "cholesterol total",
+      "tc"
+    ]
+  },
+  "ldl": {
+    "display_name": "LDL Cholesterol",
+    "unit": "mg/dL",
+    "normal_range": "< 100",
+    "min_plausible": 10.0,
+    "max_plausible": 600.0,
+    "aliases": [
+      "ldl cholesterol",
+      "ldl-c",
+      "low density lipoprotein",
+      "ldl",
+      "direct ldl"
+    ]
+  },
+  "hdl": {
+    "display_name": "HDL Cholesterol",
+    "unit": "mg/dL",
+    "normal_range": "> 40",
+    "min_plausible": 10.0,
+    "max_plausible": 200.0,
+    "aliases": [
+      "hdl cholesterol",
+      "hdl-c",
+      "high density lipoprotein",
+      "hdl",
+      "direct hdl"
+    ]
+  },
+  "triglycerides": {
+    "display_name": "Triglycerides",
+    "unit": "mg/dL",
+    "normal_range": "< 150",
+    "min_plausible": 20.0,
+    "max_plausible": 1500.0,
+    "aliases": [
+      "triglycerides",
+      "tg",
+      "serum triglycerides",
+      "triglyceride"
+    ]
+  },
+  "vldl": {
+    "display_name": "VLDL Cholesterol",
+    "unit": "mg/dL",
+    "normal_range": "5 - 40",
+    "min_plausible": 1.0,
+    "max_plausible": 200.0,
+    "aliases": [
+      "vldl cholesterol",
+      "vldl",
+      "vldl-c",
+      "very low density lipoprotein"
+    ]
+  },
+  "non_hdl_cholesterol": {
+    "display_name": "Non-HDL Cholesterol",
+    "unit": "mg/dL",
+    "normal_range": "< 130",
+    "min_plausible": 20.0,
+    "max_plausible": 600.0,
+    "aliases": [
+      "non-hdl cholesterol",
+      "non hdl",
+      "non-hdl"
+    ]
+  },
+  "creatinine": {
+    "display_name": "Serum Creatinine",
+    "unit": "mg/dL",
+    "normal_range": "0.6 - 1.2",
+    "min_plausible": 0.2,
+    "max_plausible": 15.0,
+    "aliases": [
+      "serum creatinine",
+      "creatinine",
+      "s. creatinine",
+      "creat"
+    ]
+  },
+  "egfr": {
+    "display_name": "eGFR",
+    "unit": "mL/min/1.73m2",
+    "normal_range": "> 90",
+    "min_plausible": 5.0,
+    "max_plausible": 150.0,
+    "aliases": [
+      "egfr",
+      "estimated gfr",
+      "gfr"
+    ]
+  },
+  "urea": {
+    "display_name": "Blood Urea / BUN",
+    "unit": "mg/dL",
+    "normal_range": "7 - 20",
+    "min_plausible": 2.0,
+    "max_plausible": 200.0,
+    "aliases": [
+      "blood urea nitrogen",
+      "bun",
+      "blood urea",
+      "urea"
+    ]
+  },
+  "uric_acid": {
+    "display_name": "Uric Acid",
+    "unit": "mg/dL",
+    "normal_range": "3.5 - 7.2",
+    "min_plausible": 1.0,
+    "max_plausible": 25.0,
+    "aliases": [
+      "uric acid",
+      "serum uric acid",
+      "s. uric acid"
+    ]
+  },
+  "sodium": {
+    "display_name": "Serum Sodium",
+    "unit": "mEq/L",
+    "normal_range": "135 - 145",
+    "min_plausible": 100.0,
+    "max_plausible": 180.0,
+    "aliases": [
+      "serum sodium",
+      "sodium",
+      "na+"
+    ]
+  },
+  "potassium": {
+    "display_name": "Serum Potassium",
+    "unit": "mEq/L",
+    "normal_range": "3.5 - 5.1",
+    "min_plausible": 1.5,
+    "max_plausible": 10.0,
+    "aliases": [
+      "serum potassium",
+      "potassium",
+      "k+"
+    ]
+  },
+  "alt": {
+    "display_name": "ALT (SGPT)",
+    "unit": "U/L",
+    "normal_range": "7 - 56",
+    "min_plausible": 2.0,
+    "max_plausible": 2000.0,
+    "aliases": [
+      "alt",
+      "sgpt",
+      "alanine aminotransferase",
+      "alanine transaminase"
+    ]
+  },
+  "ast": {
+    "display_name": "AST (SGOT)",
+    "unit": "U/L",
+    "normal_range": "10 - 40",
+    "min_plausible": 2.0,
+    "max_plausible": 2000.0,
+    "aliases": [
+      "ast",
+      "sgot",
+      "aspartate aminotransferase",
+      "aspartate transaminase"
+    ]
+  },
+  "alp": {
+    "display_name": "Alkaline Phosphatase (ALP)",
+    "unit": "U/L",
+    "normal_range": "44 - 147",
+    "min_plausible": 10.0,
+    "max_plausible": 1500.0,
+    "aliases": [
+      "alkaline phosphatase",
+      "alp"
+    ]
+  },
+  "bilirubin": {
+    "display_name": "Total Bilirubin",
+    "unit": "mg/dL",
+    "normal_range": "0.1 - 1.2",
+    "min_plausible": 0.05,
+    "max_plausible": 40.0,
+    "aliases": [
+      "total bilirubin",
+      "bilirubin total",
+      "bilirubin"
+    ]
+  },
+  "albumin": {
+    "display_name": "Serum Albumin",
+    "unit": "g/dL",
+    "normal_range": "3.4 - 5.4",
+    "min_plausible": 1.0,
+    "max_plausible": 8.0,
+    "aliases": [
+      "serum albumin",
+      "albumin"
+    ]
+  },
+  "wbc": {
+    "display_name": "Total WBC Count",
+    "unit": "10^3/uL",
+    "normal_range": "4.5 - 11.0",
+    "min_plausible": 0.5,
+    "max_plausible": 100.0,
+    "aliases": [
+      "total wbc count",
+      "wbc count",
+      "wbc",
+      "white blood cell count",
+      "tlc"
+    ]
+  },
+  "platelets": {
+    "display_name": "Platelet Count",
+    "unit": "10^3/uL",
+    "normal_range": "150 - 450",
+    "min_plausible": 10.0,
+    "max_plausible": 1500.0,
+    "aliases": [
+      "platelet count",
+      "platelets",
+      "plt"
+    ]
+  }
+}

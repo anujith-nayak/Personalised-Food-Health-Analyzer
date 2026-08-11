@@ -43,7 +43,7 @@ router = APIRouter(prefix="/food", tags=["Packaged Food Analysis"])
 logger = logging.getLogger(__name__)
 
 
-def _build_health_dict(user: User, profile: HealthProfile | None) -> dict:
+def _build_health_dict(user: User, profile: HealthProfile | None, db: Session = None) -> dict:
     data = {"bmi_score": user.bmi_score, "bmi_category": user.bmi_category}
     if profile:
         data.update({
@@ -67,6 +67,14 @@ def _build_health_dict(user: User, profile: HealthProfile | None) -> dict:
             "appendicitis_phase": getattr(profile, "appendicitis_phase", None),
             "other_condition":   getattr(profile, "other_condition", None),
         })
+
+    if db:
+        try:
+            from app.services.blood_report.report_service import merge_blood_report_data_into_health_dict
+            data = merge_blood_report_data_into_health_dict(db, user.id, data)
+        except Exception as e:
+            logger.warning(f"Failed to merge blood report data into health dict: {e}")
+
     return data
 
 
@@ -173,35 +181,53 @@ async def analyze_food_label(
     if len(image_bytes) > 15 * 1024 * 1024:
         raise HTTPException(status_code=400, detail="Image too large. Max 15MB.")
 
-    # ── STEP 1: OCR ───────────────────────────────────────────────────────────
-    logger.info("STEP 1: Running OCR on uploaded image")
+    # ── STEP 1: OCR & Nutrient Parsing ───────────────────────────────────────
+    logger.info("STEP 1: Running image preprocessing, PaddleOCR & RapidFuzz NutrientParser")
+    from app.services.ocr_service import extract_ocr_result
+    from app.services.ocr.nutrient_parser import NutrientParser
+    from app.services.ingredient_extractor import extract_ingredients, extract_product_name
+
     try:
-        ocr_text = extract_text_from_image(image_bytes)
+        ocr_result, cropper_meta = extract_ocr_result(image_bytes)
     except ValueError as e:
         raise HTTPException(status_code=422, detail=str(e))
     except Exception as e:
         raise HTTPException(status_code=422, detail=f"OCR failed: {e}")
 
-    parsed       = parse_food_label(ocr_text)
-    ingredients  = parsed["ingredients"]
-    nutrition    = parsed["nutrition"]    # full dict including None values
-    product_name = parsed["product_name"]
+    parser = NutrientParser()
+    parsed_res = parser.parse(ocr_result)
+
+    ocr_text = ocr_result.raw_text
+    ingredients = extract_ingredients(ocr_text)
+    product_name = extract_product_name(ocr_text)
+    nutrition = parsed_res["nutrition"]  # canonical validated dict
 
     non_null_nutrition = {k: v for k, v in nutrition.items() if v is not None}
-    logger.info(f"STEP 1 DONE — product={product_name} extracted={list(non_null_nutrition.keys())}")
+    logger.info(
+        f"STEP 1 DONE — product={product_name} engine={ocr_result.engine_name} "
+        f"extracted={list(non_null_nutrition.keys())} overall_conf={parsed_res['overall_confidence']}%"
+    )
 
-    if not non_null_nutrition:
+    if not non_null_nutrition or parsed_res["overall_confidence"] == 0:
         return {
-            "product_name":    product_name,
-            "step":            1,
-            "error":           "nutrition_not_extracted",
-            "message":         (
+            "product_name": product_name,
+            "step": 1,
+            "error": "nutrition_not_extracted",
+            "message": (
                 "Could not extract nutrition values from this image. "
                 "Please retake the photo with the Nutrition Facts panel fully visible and well-lit."
             ),
-            "health_score":    None,
-            "risk_level":      "Unable to Analyse",
-            "risk_color":      "gray",
+            "health_score": None,
+            "risk_level": "Unable to Analyse",
+            "risk_color": "gray",
+            "ocr_confidence": parsed_res["ocr_confidence"],
+            "parser_confidence": parsed_res["parser_confidence"],
+            "overall_confidence": parsed_res["overall_confidence"],
+            "extraction_status": parsed_res["extraction_status"],
+            "missing_nutrients": parsed_res["missing_nutrients"],
+            "is_partial": parsed_res["is_partial"],
+            "is_fallback": ocr_result.is_fallback,
+            "engine_used": ocr_result.engine_name,
             "debug_ocr_snippet": ocr_text[:400],
         }
 
@@ -213,7 +239,7 @@ async def analyze_food_label(
     # ── STEP 3: User profile + disease analysis ───────────────────────────────
     logger.info("STEP 3: Running disease-specific analysis")
     profile     = db.query(HealthProfile).filter(HealthProfile.user_id == current_user.id).first()
-    health_dict = _build_health_dict(current_user, profile)
+    health_dict = _build_health_dict(current_user, profile, db)
     conditions  = _get_user_conditions(health_dict)
 
     # ── display_conditions initialized HERE — before any use ─────────────────
@@ -360,57 +386,95 @@ async def analyze_food_label(
 
     return {
         # ── Step 1 output ──────────────────────────────────────────────────
-        "product_name":       product_name,
-        "ingredients":        ingredients,
-        "nutrition_facts":    non_null_nutrition,
-        "raw_ocr_snippet":    ocr_text[:300],
+        "product_name": product_name,
+        "ingredients": ingredients,
+        "nutrition_facts": parsed_res.get("nutrition_facts", non_null_nutrition),
+        "nutrition_per_100g": parsed_res.get("nutrition_per_100g", {}),
+        "nutrition_per_serving": non_null_nutrition,
+        "value_basis": parsed_res.get("value_basis", "per_serving"),
+        "serving_size_g": parsed_res.get("serving_size_g"),
+        "raw_ocr_snippet": ocr_text[:300],
+        "ocr_confidence": parsed_res["ocr_confidence"],
+        "parser_confidence": parsed_res["parser_confidence"],
+        "overall_confidence": parsed_res["overall_confidence"],
+        "extraction_status": parsed_res["extraction_status"],
+        "missing_nutrients": parsed_res["missing_nutrients"],
+        "is_partial": parsed_res["is_partial"],
+        "is_fallback": ocr_result.is_fallback,
+        "engine_used": ocr_result.engine_name,
 
         # ── Step 2 output ──────────────────────────────────────────────────
         "nutrient_evaluation": nutrient_evaluation,
 
         # ── Step 3 output ──────────────────────────────────────────────────
-        "disease_impact":      disease_impacts,
-        "ingredient_analysis": ingredient_risks,   # Part 3 & 8: per-ingredient risk
+        "disease_impact": disease_impacts,
+        "ingredient_analysis": ingredient_risks,
 
         # ── Step 4 output ──────────────────────────────────────────────────
-        "health_score":        health_score,
-        "risk_level":          risk_level_info["level"],
-        "risk_color":          risk_level_info["color"],
-        "risk_advice":         risk_level_info["advice"],
-        "score_explanation":   score_explanation_parts,
-        "threshold_summary":   threshold_summary,
+        "health_score": health_score,
+        "risk_level": risk_level_info["level"],
+        "risk_color": risk_color_info if 'risk_color_info' in locals() else risk_level_info["color"],
+        "risk_advice": risk_level_info["advice"],
+        "score_explanation": score_explanation_parts,
+        "threshold_summary": threshold_summary,
 
         # ── Step 5 output ──────────────────────────────────────────────────
-        "reasons":             reasons,
+        "reasons": reasons,
         "affected_conditions": display_conditions,
-        "allergy_alerts":      allergy_alerts,
+        "allergy_alerts": allergy_alerts,
         "has_critical_allergen": any(a.get("severity") == "Severe" for a in allergy_alerts),
-        "foods_to_avoid":      recs["foods_to_avoid"],
+        "foods_to_avoid": recs["foods_to_avoid"],
         "better_alternatives": recs["better_alternatives"],
-        "recommended_foods":   recs["recommended_foods"],
-        "serving_advice":      recs["serving_advice"],
+        "recommended_foods": recs["recommended_foods"],
+        "serving_advice": recs["serving_advice"],
         "final_recommendation": final_recommendation,
 
         # User context
-        "user_conditions":  display_conditions,
+        "user_conditions": display_conditions,
         "personalized_for": current_user.name,
-        "user_bp":    f"{health_dict.get('systolic')}/{health_dict.get('diastolic')}" if health_dict.get("systolic") else None,
+        "user_bp": f"{health_dict.get('systolic')}/{health_dict.get('diastolic')}" if health_dict.get("systolic") else None,
         "user_sugar": health_dict.get("fasting_sugar"),
-        "user_bmi":   health_dict.get("bmi_score"),
+        "user_bmi": health_dict.get("bmi_score"),
     }
 
 
 @router.post("/extract-ocr")
 async def extract_ocr_only(file: UploadFile = File(...),
                             current_user: User = Depends(get_current_user)):
-    """OCR only — for testing."""
+    """OCR only — for testing PaddleOCR & RapidFuzz parser."""
     image_bytes = await file.read()
     try:
-        text   = extract_text_from_image(image_bytes)
-        parsed = parse_food_label(text)
-        return {"raw_text": text, **parsed}
+        from app.services.ocr_service import extract_ocr_result
+        from app.services.ocr.nutrient_parser import NutrientParser
+        from app.services.ingredient_extractor import extract_ingredients, extract_product_name
+
+        ocr_result, cropper_meta = extract_ocr_result(image_bytes)
+        parsed_res = NutrientParser().parse(ocr_result)
+        ingredients = extract_ingredients(ocr_result.raw_text)
+        product_name = extract_product_name(ocr_result.raw_text)
+
+        return {
+            "raw_text": ocr_result.raw_text,
+            "product_name": product_name,
+            "ingredients": ingredients,
+            "serving_size_g": parsed_res.get("serving_size_g"),
+            "value_basis": parsed_res.get("value_basis", "per_serving"),
+            "nutrition_facts": parsed_res.get("nutrition_facts"),
+            "nutrition_per_100g": parsed_res.get("nutrition_per_100g"),
+            "nutrition_per_serving": parsed_res.get("nutrition"),
+            "ocr_confidence": parsed_res["ocr_confidence"],
+            "parser_confidence": parsed_res["parser_confidence"],
+            "overall_confidence": parsed_res["overall_confidence"],
+            "extraction_status": parsed_res["extraction_status"],
+            "missing_nutrients": parsed_res["missing_nutrients"],
+            "is_partial": parsed_res["is_partial"],
+            "is_fallback": ocr_result.is_fallback,
+            "engine_used": ocr_result.engine_name,
+            "cropper_metadata": cropper_meta,
+        }
     except Exception as e:
         raise HTTPException(status_code=422, detail=str(e))
+
 
 
 @router.post("/debug-score")

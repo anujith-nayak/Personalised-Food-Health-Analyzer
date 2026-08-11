@@ -1,0 +1,133 @@
+{
+  "calories": {
+    "display_name": "Calories / Energy",
+    "unit": "kcal",
+    "sanity_range": [0, 2000],
+    "aliases": [
+      "calories", "energy", "kcal", "kj", "cal", "calori", "caloris", "calaries",
+      "energy kcal", "henergy", "energi", "energy value", "energy (kcal)", "energy kcal/100g"
+    ]
+  },
+  "total_fat": {
+    "display_name": "Total Fat",
+    "unit": "g",
+    "sanity_range": [0, 200],
+    "aliases": [
+      "total fat", "fat", "fat total", "lipids", "tot fat", "fats", "fat (g)",
+      "total fat (g)", "f4t", "total f4t", "fat, total"
+    ]
+  },
+  "saturated_fat": {
+    "display_name": "Saturated Fat",
+    "unit": "g",
+    "sanity_range": [0, 100],
+    "aliases": [
+      "saturated fat", "sat fat", "saturated", "saturates", "saturated fatty acids",
+      "of which saturates", "of which saturated", "saumedtal", "sat fatty acids",
+      "sat fat (g)", "saturated fat (g)", "sat. fat"
+    ]
+  },
+  "trans_fat": {
+    "display_name": "Trans Fat",
+    "unit": "g",
+    "sanity_range": [0, 20],
+    "aliases": [
+      "trans fat", "trans fatty acids", "trans", "tfransfatloy", "trans fat (g)",
+      "of which trans fat", "tfrans"
+    ]
+  },
+  "cholesterol": {
+    "display_name": "Cholesterol",
+    "unit": "mg",
+    "sanity_range": [0, 1500],
+    "aliases": [
+      "cholesterol", "chol", "cholest", "chol3sterol", "cholesterol (mg)", "cholest (mg)"
+    ]
+  },
+  "sodium": {
+    "display_name": "Sodium",
+    "unit": "mg",
+    "sanity_range": [0, 5000],
+    "aliases": [
+      "sodium", "salt", "na", "sod", "bodiam", "sod1um", "s0d1um", "sodium (mg)",
+      "sodium (g)", "sod. (mg)", "salt (g)"
+    ]
+  },
+  "carbohydrates": {
+    "display_name": "Carbohydrates",
+    "unit": "g",
+    "sanity_range": [0, 300],
+    "aliases": [
+      "carbohydrates", "carbohydrate", "total carbohydrate", "total carbohydrates",
+      "carbs", "carb", "of which carbohydrates", "carbohydrate (g)", "total carb"
+    ]
+  },
+  "fiber": {
+    "display_name": "Dietary Fiber",
+    "unit": "g",
+    "sanity_range": [0, 80],
+    "aliases": [
+      "dietary fiber", "dietary fibre", "fiber", "fibre", "roughage", "fib",
+      "fib.", "dietary fiber (g)", "fibre (g)"
+    ]
+  },
+  "sugar": {
+    "display_name": "Total Sugar",
+    "unit": "g",
+    "sanity_range": [0, 200],
+    "aliases": [
+      "total sugar", "total sugars", "sugar", "sugars", "sugats", "sugr",
+      "of which sugars", "sugars (g)", "total sugar (g)", "sug."
+    ]
+  },
+  "added_sugar": {
+    "display_name": "Added Sugar",
+    "unit": "g",
+    "sanity_range": [0, 200],
+    "aliases": [
+      "added sugar", "added sugars", "includes added sugars", "incl added sugars",
+      "added sugar (g)", "added sugars (g)"
+    ]
+  },
+  "protein": {
+    "display_name": "Protein",
+    "unit": "g",
+    "sanity_range": [0, 200],
+    "aliases": [
+      "protein", "proteins", "prot", "prot1in", "pr0tein", "prot.", "protein (g)",
+      "protein) ta"
+    ]
+  },
+  "potassium": {
+    "display_name": "Potassium",
+    "unit": "mg",
+    "sanity_range": [0, 6000],
+    "aliases": [
+      "potassium", "k", "potass", "potassium (mg)"
+    ]
+  },
+  "calcium": {
+    "display_name": "Calcium",
+    "unit": "mg",
+    "sanity_range": [0, 3000],
+    "aliases": [
+      "calcium", "ca", "calc", "calcium (mg)"
+    ]
+  },
+  "iron": {
+    "display_name": "Iron",
+    "unit": "mg",
+    "sanity_range": [0, 150],
+    "aliases": [
+      "iron", "fe", "iron (mg)"
+    ]
+  },
+  "serving_size": {
+    "display_name": "Serving Size",
+    "unit": "g",
+    "sanity_range": [1, 2000],
+    "aliases": [
+      "serving size", "per serving", "serv size", "serv. size", "serving"
+    ]
+  }
+}

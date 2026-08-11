@@ -8,6 +8,7 @@ import {
 } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import api from '../api/client'
+import { parseNutrientValue } from '../utils/nutrition'
 
 // ── Risk colour config ────────────────────────────────────────────────────────
 const RISK_COLORS = {
@@ -377,21 +378,54 @@ export default function ScanPage() {
 
             {/* STEP 1 — Extracted Nutrition Facts */}
             {result.nutrition_facts && Object.keys(result.nutrition_facts).length > 0 && (
-              <Section title="① Extracted Nutrition Facts">
+              <Section
+                title={
+                  <div className="flex items-center justify-between">
+                    <span>① Extracted Nutrition Facts</span>
+                    {result.serving_size_g && (
+                      <span className="text-xs font-normal text-gray-500 bg-gray-100 px-2 py-0.5 rounded-full">
+                        Serving size: {result.serving_size_g}g
+                      </span>
+                    )}
+                  </div>
+                }
+              >
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
-                    <tbody>
-                      {Object.entries(result.nutrition_facts).map(([k, v]) => (
-                        <tr key={k} className="border-b border-gray-50 last:border-0">
-                          <td className="py-2 text-gray-500 capitalize pr-4">
-                            {k.replace(/_/g, ' ')}
-                          </td>
-                          <td className="py-2 font-semibold text-right">
-                            {v}{k === 'calories' ? ' kcal' :
-                               k === 'sodium' || k === 'cholesterol' || k === 'potassium' ? ' mg' : ' g'}
-                          </td>
-                        </tr>
-                      ))}
+                    <thead>
+                      <tr className="border-b border-gray-200 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                        <th className="py-2.5 pr-4">Nutrient</th>
+                        <th className="py-2.5 px-3 text-right">Per Serving</th>
+                        <th className="py-2.5 pl-3 text-right">Per 100g</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-gray-50">
+                      {Object.entries(result.nutrition_facts).map(([k, rawVal]) => {
+                        const parsed = parseNutrientValue(rawVal, k)
+                        const label = k.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase())
+
+                        if (!parsed.isAvailable) {
+                          return (
+                            <tr key={k} className="hover:bg-gray-50/50">
+                              <td className="py-2 text-gray-500 font-medium pr-4">{label}</td>
+                              <td className="py-2 text-gray-400 italic text-right px-3" colSpan={2}>
+                                Not Available
+                              </td>
+                            </tr>
+                          )
+                        }
+
+                        const serveStr = parsed.perServing !== null ? `${parsed.perServing} ${parsed.unit}` : '—'
+                        const per100gStr = parsed.per100g !== null ? `${parsed.per100g} ${parsed.unit}` : '—'
+
+                        return (
+                          <tr key={k} className="hover:bg-gray-50/50">
+                            <td className="py-2 text-gray-700 font-medium capitalize pr-4">{label}</td>
+                            <td className="py-2 font-bold text-gray-900 text-right px-3">{serveStr}</td>
+                            <td className="py-2 text-gray-500 text-right pl-3">{per100gStr}</td>
+                          </tr>
+                        )
+                      })}
                     </tbody>
                   </table>
                 </div>
@@ -431,9 +465,9 @@ export default function ScanPage() {
                                                  gap-3 py-1.5 border-b border-gray-50 last:border-0">
                           <div className="min-w-0">
                             <span className="text-sm font-medium text-gray-800">{e.nutrient}</span>
-                            {e.value !== null && (
+                            {e.value !== null && e.value !== undefined && (
                               <span className="text-xs text-gray-400 ml-2">
-                                {e.value}{e.unit}
+                                {typeof e.value === 'object' ? parseNutrientValue(e.value, e.key || e.nutrient).displayText : `${e.value}${e.unit || ''}`}
                               </span>
                             )}
                             {e.note && (

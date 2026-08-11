@@ -264,7 +264,7 @@ export default function HealthAssessmentPage() {
 
       await submitHealthProfile(payload)
       toast.success('Health profile saved!')
-      navigate('/dashboard')
+      navigate('/blood-report')
     } catch (err) {
       toast.error(err.message || 'Failed to save')
     } finally {

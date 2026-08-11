@@ -7,7 +7,7 @@ import Card, { CardHeader } from '../components/Card'
 import BMIBadge from '../components/BMIBadge'
 import {
   User, Scale, HeartPulse, Activity,
-  ShieldAlert, ScanLine, Pencil, RefreshCw
+  ShieldAlert, ScanLine, Pencil, RefreshCw, FileText
 } from 'lucide-react'
 import toast from 'react-hot-toast'
 
@@ -193,6 +193,22 @@ export default function DashboardPage() {
                     )}
                   </div>
                 ) : <p className="text-gray-400 text-sm">No status recorded</p>}
+              </div>
+            </Card>
+
+            {/* Optional Blood Report Card */}
+            <Card>
+              <CardHeader icon={FileText} title="Blood Report (Optional)" />
+              <div className="p-6">
+                <p className="text-gray-500 text-xs mb-3 leading-relaxed">
+                  Upload your latest lab report to provide verified health values (HbA1c, Cholesterol, Glucose) for enhanced food health analysis.
+                </p>
+                <Link
+                  to="/blood-report"
+                  className="btn-outline w-full text-xs py-2.5 flex items-center justify-center gap-2 font-bold"
+                >
+                  <FileText className="w-4 h-4" /> Manage Blood Report
+                </Link>
               </div>
             </Card>
 

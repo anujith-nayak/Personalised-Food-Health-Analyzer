@@ -29,6 +29,7 @@ class User(Base):
     health_profile          = relationship("HealthProfile", back_populates="user", uselist=False)
     current_health_statuses = relationship("CurrentHealthStatus", back_populates="user")
     food_restrictions       = relationship("FoodRestriction", back_populates="user")
+    blood_reports           = relationship("BloodReport", back_populates="user", cascade="all, delete-orphan")
 
 
 class HealthProfile(Base):

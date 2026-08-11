@@ -19,9 +19,9 @@ logging.basicConfig(
 
 # Import models so SQLAlchemy registers them before create_all
 from app.database.db import Base, engine
-from app.models import user  # noqa: F401
+from app.models import user, blood_report  # noqa: F401
 
-from app.routes import auth, profile, health, dashboard, scanner, packaged_food, ai_nutrition
+from app.routes import auth, profile, health, dashboard, scanner, packaged_food, ai_nutrition, blood_report
 
 # Auto-create all database tables on startup (SQLite file created if not exists)
 Base.metadata.create_all(bind=engine)
@@ -63,6 +63,7 @@ app.include_router(dashboard.router)
 app.include_router(scanner.router)
 app.include_router(packaged_food.router)  # Phase 2: Packaged food analysis
 app.include_router(ai_nutrition.router)   # Phase 3: AI Nutrition Assistant
+app.include_router(blood_report.router)    # Optional Blood Report module
 
 
 @app.get("/", tags=["Status"])

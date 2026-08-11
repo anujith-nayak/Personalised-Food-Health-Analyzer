@@ -8,6 +8,7 @@ import HealthAssessmentPage from './pages/HealthAssessmentPage'
 import DashboardPage from './pages/DashboardPage'
 import EditProfilePage from './pages/EditProfilePage'
 import ScanPage      from './pages/ScanPage'
+import BloodReportPage from './pages/BloodReportPage'
 
 function PrivateRoute({ children }) {
   const { authenticated } = useAuth()
@@ -28,6 +29,7 @@ export default function App() {
         <Route path="/register" element={<PublicRoute><RegisterPage /></PublicRoute>} />
         <Route path="/bmi"      element={<PrivateRoute><BmiPage /></PrivateRoute>} />
         <Route path="/health-assessment" element={<PrivateRoute><HealthAssessmentPage /></PrivateRoute>} />
+        <Route path="/blood-report" element={<PrivateRoute><BloodReportPage /></PrivateRoute>} />
         <Route path="/dashboard"   element={<PrivateRoute><DashboardPage /></PrivateRoute>} />
         <Route path="/edit-profile" element={<PrivateRoute><EditProfilePage /></PrivateRoute>} />
         <Route path="/scan"        element={<PrivateRoute><ScanPage /></PrivateRoute>} />

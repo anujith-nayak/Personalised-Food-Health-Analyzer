@@ -8,7 +8,9 @@ import {
 } from '../api/bloodReport'
 import Navbar from '../components/Navbar'
 import Spinner from '../components/Spinner'
+import BloodBiomarkerAnalysis from '../components/BloodBiomarkerAnalysis'
 import toast from 'react-hot-toast'
+
 import {
   FileText, Upload, CheckCircle2, AlertTriangle, ArrowRight,
   Trash2, Edit3, ShieldCheck, ArrowLeft, RefreshCw, X, Plus
@@ -403,7 +405,13 @@ export default function BloodReportPage() {
             </div>
           </div>
         )}
+
+        {/* Evidence-Based Knowledge Base Biomarker Analysis & Recommendations */}
+        {report?.biomarker_analysis?.length > 0 && (
+          <BloodBiomarkerAnalysis biomarkerAnalysis={report.biomarker_analysis} />
+        )}
       </div>
     </div>
   )
 }
+

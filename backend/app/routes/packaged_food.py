@@ -435,7 +435,12 @@ async def analyze_food_label(
         "user_bp": f"{health_dict.get('systolic')}/{health_dict.get('diastolic')}" if health_dict.get("systolic") else None,
         "user_sugar": health_dict.get("fasting_sugar"),
         "user_bmi": health_dict.get("bmi_score"),
+
+        # ── Knowledge Base Recommendation Engine output ────────────────────
+        "blood_biomarker_analysis": health_dict.get("blood_biomarker_analysis", []),
+        "knowledge_base_analysis": health_dict.get("knowledge_base_analysis", {}),
     }
+
 
 
 @router.post("/extract-ocr")

@@ -35,11 +35,15 @@ run_migrations(engine)
 # Seed default food restriction rules if table is empty
 from app.database.db import SessionLocal
 from app.utils.food_restrictions import seed_rules
+from app.services.knowledge_base.seed_database import seed_knowledge_base
+
 _db = SessionLocal()
 try:
     seed_rules(_db)
+    seed_knowledge_base()
 finally:
     _db.close()
+
 
 app = FastAPI(
     title="FoodHealth AI API",

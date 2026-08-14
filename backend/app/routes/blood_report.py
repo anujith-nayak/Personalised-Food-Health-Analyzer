@@ -77,6 +77,26 @@ async def get_blood_report(
     report_data = get_user_blood_report(db, current_user.id)
     if not report_data:
         return {"has_report": False, "report": None}
+
+    # Generate Knowledge Base analysis for results
+    try:
+        from app.services.knowledge_base.recommendation_engine import KnowledgeBaseRecommendationEngine
+        results_list = report_data.get("results", [])
+        kb_input_values = {}
+        for r in results_list:
+            key_name = r.get("display_name") or r.get("parameter_key")
+            if key_name and r.get("value") is not None:
+                kb_input_values[key_name] = r["value"]
+                kb_input_values[r.get("parameter_key")] = r["value"]
+
+        engine = KnowledgeBaseRecommendationEngine()
+        kb_res = engine.generate_recommendations(blood_report_values=kb_input_values)
+        report_data["biomarker_analysis"] = kb_res.get("biomarker_analysis", [])
+        report_data["knowledge_base_analysis"] = kb_res
+    except Exception as e:
+        report_data["biomarker_analysis"] = []
+        report_data["knowledge_base_analysis"] = {}
+
     return {"has_report": True, "report": report_data}
 
 
@@ -99,11 +119,28 @@ async def confirm_blood_report(
             report_id=report_id,
             confirmed_items=confirmed_dicts,
         )
+
+        # Generate Knowledge Base analysis for confirmed values
+        try:
+            from app.services.knowledge_base.recommendation_engine import KnowledgeBaseRecommendationEngine
+            kb_input_values = {
+                item.get("display_name") or item.get("parameter_key"): item["value"]
+                for item in confirmed_dicts if item.get("value") is not None
+            }
+            engine = KnowledgeBaseRecommendationEngine()
+            kb_res = engine.generate_recommendations(blood_report_values=kb_input_values)
+            res["biomarker_analysis"] = kb_res.get("biomarker_analysis", [])
+            res["knowledge_base_analysis"] = kb_res
+        except Exception:
+            res["biomarker_analysis"] = []
+            res["knowledge_base_analysis"] = {}
+
         return res
     except ValueError as ve:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=str(ve))
     except Exception as e:
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=str(e))
+
 
 
 @router.delete("/{report_id}")

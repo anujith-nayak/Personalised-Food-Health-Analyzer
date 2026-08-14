@@ -306,4 +306,25 @@ def merge_blood_report_data_into_health_dict(
 
     health_dict["blood_report_active"] = True
     health_dict["confirmed_lab_values"] = lab_summary
+    health_dict["confirmed_raw_values"] = confirmed_map
+
+    # ── Knowledge Base Recommendation Engine Integration ─────────────────────
+    try:
+        from app.services.knowledge_base.recommendation_engine import KnowledgeBaseRecommendationEngine
+        # Map parameter keys and display names to dict for interpreter
+        kb_input_values = {}
+        for r in confirmed_results:
+            key_name = r.display_name or r.parameter_key
+            kb_input_values[key_name] = r.value
+            kb_input_values[r.parameter_key] = r.value
+
+        engine = KnowledgeBaseRecommendationEngine()
+        kb_res = engine.generate_recommendations(blood_report_values=kb_input_values)
+
+        health_dict["knowledge_base_analysis"] = kb_res
+        health_dict["blood_biomarker_analysis"] = kb_res.get("biomarker_analysis", [])
+    except Exception as e:
+        logger.warning(f"Failed to generate knowledge base recommendations for blood report: {e}")
+
     return health_dict
+

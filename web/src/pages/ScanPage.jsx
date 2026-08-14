@@ -9,6 +9,8 @@ import {
 import { Link } from 'react-router-dom'
 import api from '../api/client'
 import { parseNutrientValue } from '../utils/nutrition'
+import BloodBiomarkerAnalysis from '../components/BloodBiomarkerAnalysis'
+
 
 // ── Risk colour config ────────────────────────────────────────────────────────
 const RISK_COLORS = {
@@ -531,6 +533,12 @@ export default function ScanPage() {
                 </div>
               </Section>
             )}
+
+            {/* Evidence-Based Knowledge Base Blood Biomarker Analysis */}
+            {result.blood_biomarker_analysis?.length > 0 && (
+              <BloodBiomarkerAnalysis biomarkerAnalysis={result.blood_biomarker_analysis} />
+            )}
+
 
             {/* STEP 4 — Score Explanation */}
             {result.score_explanation?.length > 0 && (

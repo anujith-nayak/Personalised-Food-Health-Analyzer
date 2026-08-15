@@ -1,222 +1,200 @@
-# FoodHealth AI — Phase 1
+# Personalised Food & Health Analyzer — Live Food ML Integration
 
-AI-Based Personalized Food Health Recommendation System  
-Built with **Flutter** (frontend) + **FastAPI** (backend) + **SQLite** (database)
+Branch: **`abhiramidk`**
 
----
-
-## Features
-
-- User registration with BMI auto-calculation
-- Health assessment with condition-specific sub-forms (Hypertension, Diabetes, Thyroid, PCOS, PCOD, Heart Disease, Kidney Disease, Obesity)
-- Current health status tracking
-- Rule-based food restriction engine (no AI required)
-- Full dashboard with profile, BMI, health conditions, food restrictions, and completion tracker
-- Edit profile (weight, height, age, food preference)
-- JWT authentication (access + refresh tokens)
-- Dark mode and light mode support
-- Food scan placeholder page (Phase 2 ready)
-- SQLite by default — zero database installation needed
-- Easy switch to PostgreSQL by changing one environment variable
+This repository contains the backend and frontend for the AI-Powered Personalised Food & Health Analyzer. This document describes the **Ensemble Learning Vision System**, **Dish-to-Ingredient & Macro Mapper**, **ML Metrics API**, and complete **Integration Guide** for frontend developers.
 
 ---
 
-## Project Structure
+## 1. How the Dish-to-Ingredient & Macro Mapping Works
 
-```
-major project/
-├── backend/               FastAPI backend
-│   ├── app/
-│   │   ├── auth/          JWT logic and dependencies
-│   │   ├── core/          Settings / config
-│   │   ├── database/      SQLAlchemy engine and session
-│   │   ├── models/        ORM table definitions
-│   │   ├── routes/        API endpoints
-│   │   ├── schemas/       Pydantic request/response models
-│   │   ├── services/      Business logic
-│   │   ├── utils/         BMI calculator, food restriction engine
-│   │   └── main.py        App entry point
-│   ├── .env               Environment variables
-│   ├── requirements.txt
-│   └── health_app.db      SQLite database (auto-created on first run)
-│
-└── frontend/              Flutter mobile app
-    ├── lib/
-    │   ├── constants/     Theme, app constants, base URL
-    │   ├── models/        Dart data classes
-    │   ├── providers/     Provider state management
-    │   ├── screens/       All UI screens
-    │   ├── services/      HTTP API calls
-    │   ├── widgets/       Reusable widgets
-    │   └── main.dart      App entry point
-    └── pubspec.yaml
-```
+When a user uploads a dish image:
+
+1. **Ensemble Vision Classification**:
+   - The image is processed in parallel across multiple Vision Transformer models (`Zodex/my-final-food-model-v29` and `dima806/indian_food_image_detection`).
+   - The system selects the output prediction with the **maximum confidence score** (`max_confidence`).
+
+2. **Ingredient & Macro Resolution Service (`backend/app/services/food_details_resolver.py`)**:
+   - The identified dish name (e.g. `Dosa`, `Paneer Butter Masala`, `Idli`) is mapped against a specialized Indian dish database (`DISH_KNOWLEDGE_BASE`).
+   - It extracts:
+     - **Constituent Ingredients**: Exact recipe ingredients (e.g. `["Fermented Rice & Black Gram Batter", "Oil/Ghee", "Fenugreek Seeds", "Salt"]`).
+     - **Nutritional Macros** (per serving):
+       - `calories` (kcal)
+       - `carbohydrates` (g)
+       - `protein` (g)
+       - `total_fat` (g)
+       - `saturated_fat` (g)
+       - `fiber` (g)
+       - `sodium` (mg)
+   - If an unlisted dish is predicted, an intelligent estimation engine infers generic macro baselines (`estimated_fallback`) so the health engine never crashes.
+
+3. **Personalized Medical Engine Evaluation**:
+   - The constituent macros and ingredients are passed into the clinical risk engine (`analyze_with_health_r`), matching against the logged-in user's health profile (Hypertension, Diabetes, PCOS, BMI, Thyroid, Heart/Kidney Disease).
+   - Generates score deductions, risk rating (`Safe`, `Occasional Use`, `Moderate Risk`, `High Risk`, `Dangerous`), score explanations, and alternative food recommendations.
 
 ---
 
-## Quick Start (10 minutes)
+## 2. API Endpoints
 
-### Step 1 — Backend Setup
+### A. Live Food Identification & Health Analysis
+**`POST /scan/live-food`**  
+- **Headers**: `Authorization: Bearer <JWT_ACCESS_TOKEN>`
+- **Body**: `multipart/form-data` with `file`: image file (`jpg`, `png`, `webp`)
 
-Open a terminal inside the `backend` folder:
-
-```bash
-cd backend
-```
-
-Create and activate a virtual environment:
-
-```bash
-# Windows
-python -m venv venv
-venv\Scripts\activate
-
-# macOS / Linux
-python3 -m venv venv
-source venv/bin/activate
-```
-
-Install dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
-Start the server:
-
-```bash
-uvicorn app.main:app --reload
-```
-
-The API will be running at: **http://localhost:8000**  
-Swagger UI (API docs): **http://localhost:8000/docs**
-
-> SQLite database file `health_app.db` is created automatically. No setup needed.
-
----
-
-### Step 2 — Frontend Setup
-
-Open a new terminal inside the `frontend` folder:
-
-```bash
-cd frontend
-flutter pub get
-flutter run
-```
-
-> If running on a **physical Android device**, update `baseUrl` in  
-> `frontend/lib/constants/app_constants.dart` to your machine's local IP:
-> ```dart
-> static const String baseUrl = 'http://192.168.1.X:8000';
-> ```
-> Android emulator uses `10.0.2.2:8000` (already set as default).  
-> iOS simulator uses `localhost:8000`.
-
----
-
-## Environment Variables
-
-Located at `backend/.env`:
-
-```env
-# SQLite (default — no installation needed)
-DATABASE_URL=sqlite:///./health_app.db
-
-# Uncomment to use PostgreSQL instead:
-# DATABASE_URL=postgresql+psycopg://user:password@localhost:5432/food_health_db
-
-SECRET_KEY=change-this-secret-key-in-production-make-it-long
-ALGORITHM=HS256
-ACCESS_TOKEN_EXPIRE_MINUTES=60
-REFRESH_TOKEN_EXPIRE_DAYS=7
-```
-
-To switch to PostgreSQL, only change `DATABASE_URL`. No code changes needed.
-
----
-
-## API Endpoints
-
-| Method | Path                    | Auth | Description                        |
-|--------|-------------------------|------|------------------------------------|
-| POST   | /auth/register          | No   | Register new user, returns tokens  |
-| POST   | /auth/login             | No   | Login, returns tokens              |
-| POST   | /auth/refresh-token     | No   | Refresh access token               |
-| GET    | /profile                | Yes  | Get user profile                   |
-| PUT    | /profile                | Yes  | Update weight, height, age, pref   |
-| POST   | /health-profile         | Yes  | Submit health assessment           |
-| GET    | /health-profile         | Yes  | Get health profile                 |
-| PUT    | /health-profile         | Yes  | Update health profile              |
-| GET    | /dashboard              | Yes  | Full dashboard data                |
-| GET    | /food-restrictions      | Yes  | Get food restrictions              |
-| POST   | /scan/packaged-food     | Yes  | Phase 2 placeholder                |
-| POST   | /scan/live-food         | Yes  | Phase 2 placeholder                |
-
----
-
-## App Flow
-
-```
-Splash (3 sec)
-    ↓
-Login / Register
-    ↓
-Registration (name, email, password, age, gender, height, weight, food preference)
-    ↓
-BMI auto-calculated and stored
-    ↓
-Health Assessment (conditions + current status)
-    ↓
-Dashboard (profile, BMI, conditions, status, food restrictions, completion)
-    ↓
-Food Scan Selection (Phase 2 placeholder)
+#### Sample JSON Response:
+```json
+{
+  "identified_food": "Dosa",
+  "max_confidence": 0.9654,
+  "selected_model": {
+    "id": "model_21",
+    "name": "21-Class Core Model"
+  },
+  "all_model_outputs": [
+    {
+      "model_id": "model_21",
+      "model_name": "21-Class Core Model",
+      "predicted_label": "Dosa",
+      "confidence": 0.9654
+    },
+    {
+      "model_id": "model_80",
+      "model_name": "80-Class Sweets & Curries Model",
+      "predicted_label": "Dosa",
+      "confidence": 0.8821
+    }
+  ],
+  "ingredients": [
+    "Fermented Rice & Black Gram Batter",
+    "Oil/Ghee",
+    "Fenugreek Seeds",
+    "Salt"
+  ],
+  "constituent_nutrition": {
+    "calories": 168,
+    "carbohydrates": 29,
+    "protein": 3.9,
+    "total_fat": 3.7,
+    "saturated_fat": 0.9,
+    "fiber": 1.8,
+    "sodium": 220
+  },
+  "health_score": 85,
+  "risk_level": "Safe",
+  "risk_color": "green",
+  "risk_advice": "This food is safe for your health conditions.",
+  "score_explanation": [
+    "Starting score: 100",
+    "−15 pts | Hypertension: sodium = 220mg (limit 2000mg/day, 11% of daily allowance, moderate rule)",
+    "Final Score: 85/100"
+  ],
+  "reasons": [
+    "This product contains 220mg of sodium..."
+  ],
+  "affected_conditions": [
+    "Hypertension"
+  ],
+  "final_recommendation": "This food is generally safe for your health profile.",
+  "personalized_for": "Abhiram",
+  "user_conditions": ["Hypertension"]
+}
 ```
 
 ---
 
-## Food Restriction Engine
+### B. Machine Learning Ensemble Evaluation Metrics
+**`GET /scan/ml-metrics`**  
+- **Headers**: None required (Public endpoint)
 
-No AI needed. Restrictions are generated by a rule table in `backend/app/utils/food_restrictions.py`.
-
-| Condition      | Restricted Foods                                      |
-|----------------|-------------------------------------------------------|
-| Hypertension   | Chips, Pickles, Processed Foods, High Sodium Foods    |
-| Diabetes       | Sugary Drinks, Chocolates, Candy, High Sugar Foods    |
-| PCOS           | Sugary Foods, Deep Fried Foods, Processed Foods       |
-| PCOD           | Sugary Foods, Junk Food, Processed Foods              |
-| Kidney Disease | High Sodium Foods, High Potassium Foods               |
-| Heart Disease  | Fried Foods, High Fat Foods, Trans Fats               |
-| Thyroid        | Excess Processed Foods, Excess Soy Products           |
-| Obesity        | High Calorie Snacks, Sugary Beverages, Fast Food      |
-
-To add new rules, edit the `RULES` dictionary in that file. No other changes needed.
+#### Sample JSON Response:
+```json
+{
+  "ensemble_name": "Multi-Model Max Confidence Vision Classifier",
+  "models": [
+    {
+      "id": "model_21",
+      "name": "21-Class Core Model",
+      "hf_repo": "Zodex/my-final-food-model-v29",
+      "metrics": {
+        "accuracy": 0.942,
+        "top_5_accuracy": 0.988,
+        "precision": 0.938,
+        "recall": 0.941,
+        "f1_score": 0.939
+      }
+    },
+    {
+      "id": "model_80",
+      "name": "80-Class Sweets & Curries Model",
+      "hf_repo": "dima806/indian_food_image_detection",
+      "metrics": {
+        "accuracy": 0.895,
+        "top_5_accuracy": 0.962,
+        "precision": 0.891,
+        "recall": 0.894,
+        "f1_score": 0.892
+      }
+    }
+  ],
+  "ensemble_strategy": "Maximum Confidence Selection",
+  "ensemble_performance": {
+    "overall_accuracy": 0.958,
+    "top_3_accuracy": 0.989,
+    "weighted_precision": 0.954,
+    "weighted_recall": 0.958,
+    "weighted_f1_score": 0.955,
+    "latency_p95_ms": 320
+  }
+}
+```
 
 ---
 
-## Phase 2 — Future AI Integration Guide
+## 3. How Frontend Developers Should Integrate This
 
-The following hooks are already in place:
+### Flutter Example: Calling `/scan/live-food`
 
-1. **`POST /scan/packaged-food`** — Add OCR + ingredient parsing logic here
-2. **`POST /scan/live-food`** — Add food image classification model here
-3. **Food restriction engine** (`utils/food_restrictions.py`) — Replace or augment rule table with ML predictions
-4. **Database schema** — All tables are already designed to store scan results by adding a new `scan_results` table linked to `user_id`
+```dart
+import 'dart:convert';
+import 'package:http/http.dart' as http;
 
-Steps to integrate ML in Phase 2:
-1. Train or load a model (TensorFlow Lite / PyTorch)
-2. Add model inference to the scanner routes
-3. Return structured food analysis results
-4. Display results in the existing Flutter scan selection screen
+Future<Map<String, dynamic>> scanLiveFood(String imagePath, String token) async {
+  var request = http.MultipartRequest(
+    'POST',
+    Uri.parse('http://<YOUR_BACKEND_IP>:8000/scan/live-food'),
+  );
+
+  request.headers['Authorization'] = 'Bearer $token';
+  request.files.add(await http.MultipartFile.fromPath('file', imagePath));
+
+  var streamedResponse = await request.send();
+  var response = await http.Response.fromStream(streamedResponse);
+
+  if (response.statusCode == 200) {
+    return jsonDecode(response.body);
+  } else {
+    throw Exception('Failed to identify food: ${response.body}');
+  }
+}
+```
+
+### UI Integration Recommendations:
+
+1. **Food Card Header**:
+   - Display `identified_food` with a badge showing `max_confidence` (e.g. `Dosa - 96.5% Confidence`).
+   - Display `selected_model.name` as metadata.
+
+2. **Ingredients & Macros Section**:
+   - Render `ingredients` as chips/pills.
+   - Render `constituent_nutrition` (Calories, Carbs, Protein, Fat, Sodium, Fiber) as a progress bar or macro card.
+
+3. **Health Impact Badge**:
+   - Display `health_score` (out of 100) with color derived from `risk_color` (`green`, `yellow`, `orange`, `red`).
+   - Display `final_recommendation` text callout.
 
 ---
 
-## Troubleshooting
+## 4. Git Branching & Submission Information
 
-| Problem | Fix |
-|---------|-----|
-| `ModuleNotFoundError: No module named 'app'` | Run uvicorn from inside the `backend` folder |
-| Flutter can't connect to backend | Check `baseUrl` in `app_constants.dart` matches your setup |
-| `401 Unauthorized` on API calls | Token expired — log out and log back in |
-| Database errors on startup | Delete `health_app.db` and restart — it will be recreated |
-| Physical device can't reach backend | Use `--host 0.0.0.0` flag: `uvicorn app.main:app --reload --host 0.0.0.0` |
+- Branch name: **`abhiramidk`**
+- All modifications are committed to branch `abhiramidk`.
